@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.1d8f05bc.css",
+    "main.js": "/portfolio/static/js/main.7a7103c0.js",
+    "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
+    "static/media/my-avatar.jpeg": "/portfolio/static/media/my-avatar.2ba7c5dec64516572759.jpeg",
+    "static/media/codificacion.png": "/portfolio/static/media/codificacion.11cb7e54326411ccd19e.png",
+    "static/media/torre-de-pc-config.png": "/portfolio/static/media/torre-de-pc-config.443a71d16ef26637fbff.png",
+    "static/media/telefono-inteligente.png": "/portfolio/static/media/telefono-inteligente.c670d7afe4c16803937d.png",
+    "static/media/codificacion-web.png": "/portfolio/static/media/codificacion-web.033fc164a26ee6787070.png",
+    "static/media/poppins-latin-400-normal.woff": "/portfolio/static/media/poppins-latin-400-normal.1458587c0aa7cd06b82b.woff",
+    "static/media/poppins-latin-400-normal.woff2": "/portfolio/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
+    "static/media/poppins-latin-ext-400-normal.woff": "/portfolio/static/media/poppins-latin-ext-400-normal.cf7e1ed83eb19f7b1ea6.woff",
+    "static/media/poppins-latin-ext-400-normal.woff2": "/portfolio/static/media/poppins-latin-ext-400-normal.6f94f40f848d79872444.woff2",
+    "index.html": "/portfolio/index.html",
+    "main.1d8f05bc.css.map": "/portfolio/static/css/main.1d8f05bc.css.map",
+    "main.7a7103c0.js.map": "/portfolio/static/js/main.7a7103c0.js.map",
+    "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d8f05bc.css",
+    "static/js/main.7a7103c0.js"
+  ]
+}
