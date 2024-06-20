@@ -31,20 +31,19 @@ const Sidebar = () => {
 
   return (
     <div className="relative text-gray-200 text-left">
-      <div className="ml-8 xl:ml-0 space-x-7 xl:space-x-0 xl:space-y-7 flex flex-row xl:flex-col items-center">
-        <figure className="xl:mt-16 my-7 xl:mb-0 bg-zinc-800 rounded-3xl overflow-hidden relative w-20 h-20 sm:w-28 sm:h-28 xl:w-36 xl:h-36">
-          <img
-            src={miAvatar}
-            alt="Rodrigo Chavarry"
-            className="w-full h-full object-cover"
-          />
+      <div className="ml-4 sm:ml-8 xl:ml-0 space-x-4 sm:space-x-7 xl:space-x-0 xl:space-y-7 flex flex-row xl:flex-col items-center">
+        <figure className="xl:mt-16 my-4 sm:my-7 xl:mb-0 bg-zinc-800 rounded-3xl overflow-hidden relative w-20 h-20 sm:w-28 sm:h-28 xl:w-36 xl:h-36 flex-shrink-0">
+          <img src={miAvatar} alt="Rodrigo Chavarry" />
         </figure>
 
         <div className="xl:pb-7 text-left xl:text-center">
-          <h1 className="text-2xl font-medium pb-6" title="Rodrigo Chavarry">
+          <h1
+            className="text-lg sm:text-2xl font-medium pb-3 sm:pb-6"
+            title="Rodrigo Chavarry"
+          >
             Rodrigo Chavarry
           </h1>
-          <p className="text-sm py-1.5 px-2.5 bg-zinc-800 rounded-lg inline-block">
+          <p className="text-xs sm:text-sm py-1.5 px-2.5 bg-zinc-800 rounded-lg inline-block">
             Full stack developer
           </p>
         </div>
@@ -60,61 +59,70 @@ const Sidebar = () => {
 
       {mostrarDatos && (
         <div className="shadow-md">
-          <div className="border-t border-zinc-700 mb-7 mx-7"></div>
+          <div className="border-t border-zinc-700 mb-4 sm:mb-7 mx-4 sm:mx-7"></div>
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-6 mx-7">
+          <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-3 sm:gap-6 mx-4 sm:mx-7">
             <li className="flex items-center space-x-4">
-              <div className="bg-neutral-900 p-3 rounded-md border-t border-l border-zinc-700 flex text-xl">
+              <div className="bg-neutral-900 p-1 sm:p-3 rounded-md border-t border-l border-zinc-700 flex text-xl">
                 <Icon icon="mdi:email-outline" className="text-sky-500" />
               </div>
               <div className="">
-                <p className="text-gray-400">Correo</p>
-                <a href="mailto:rodmat0905@gmail.com" className="text-gray-200">
+                <p className="text-xs sm:text-base text-gray-400">Correo</p>
+                <a
+                  href="mailto:rodmat0905@gmail.com"
+                  className="text-xs sm:text-base text-gray-200"
+                >
                   rodmat0905@gmail.com
                 </a>
               </div>
             </li>
 
             <li className="flex items-center space-x-4">
-              <div className="bg-neutral-900 p-3 rounded-md border-t border-l border-zinc-700 flex text-xl">
+              <div className="bg-neutral-900 p-1 sm:p-3 rounded-md border-t border-l border-zinc-700 flex text-xl">
                 <Icon icon="quill:phone" className="text-sky-500" />
               </div>
               <div className="">
-                <p className="text-gray-400">Teléfono</p>
-                <a href="tel:+51982199257" className="text-gray-200">
+                <p className="text-xs sm:text-base text-gray-400">Teléfono</p>
+                <a
+                  href="tel:+51982199257"
+                  className="text-xs sm:text-base text-gray-200"
+                >
                   +51 982-199-257
                 </a>
               </div>
             </li>
 
             <li className="flex items-center space-x-4">
-              <div className="bg-neutral-900 p-3 rounded-md border-t border-l border-zinc-700 flex text-xl">
+              <div className="bg-neutral-900 p-1 sm:p-3 rounded-md border-t border-l border-zinc-700 flex text-xl">
                 <Icon icon="ion:calendar-outline" className="text-sky-500" />
               </div>
               <div className="">
-                <p className="text-gray-400">Cumpleaños</p>
-                <time datetime="2003-05-09" className="text-gray-200">
+                <p className="text-xs sm:text-base text-gray-400">Cumpleaños</p>
+                <time
+                  datetime="2003-05-09"
+                  className="text-xs sm:text-base text-gray-200"
+                >
                   09 de Mayo, 2003
                 </time>
               </div>
             </li>
 
             <li className="flex items-center space-x-4">
-              <div className="bg-neutral-900 p-3 rounded-md border-t border-l border-zinc-700 flex text-xl">
+              <div className="bg-neutral-900 p-1 sm:p-3 rounded-md border-t border-l border-zinc-700 flex text-xl">
                 <Icon icon="mdi:map-marker-outline" className="text-sky-500" />
               </div>
-              <div className="">
-                <p className="text-gray-400">Ubicación</p>
-                <address className="text-gray-200">
+              <div className="sm:space-y-0 space-y-1">
+                <p className="text-xs sm:text-base text-gray-400">Ubicación</p>
+                <address className="text-xs sm:text-base text-gray-200">
                   San Miguel, Lima, Perú
                 </address>
               </div>
             </li>
           </ul>
 
-          <div className="xl:hidden border-t border-zinc-700 mx-7 mt-7"></div>
+          <div className="xl:hidden border-t border-zinc-700 mt-4 sm:mt-7 mx-4 sm:mx-7"></div>
 
-          <ul className="flex space-x-4 justify-center py-7">
+          <ul className="flex space-x-4 justify-center py-4 sm:py-7">
             <li className="">
               <a
                 href="https://github.com/rodmat95"

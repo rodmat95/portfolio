@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 @import "@fontsource/poppins";
 
 :root {
@@ -18,4 +21,54 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18181b;
+  border-radius: 5px;
+  border: 1px solid #3f3f46;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #27272a;
+}
+
+::-webkit-scrollbar-button {
+  height: 64px;
+}
+
+/*
+.custom-scrollbar {
+  scrollbar-width: 5px;
+  scrollbar-height: 5px;
+  scrollbar-color: #0ea5e9 transparent;
+  scrollbar-background: #27272a;
+  scrollbar-arrow-color: transparent;
+}
+*/
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 7px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #27272a;
+  border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #0ea5e9;
+  border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+  width: 100px;
 }
