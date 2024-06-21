@@ -72,3 +72,25 @@ code {
 .custom-scrollbar::-webkit-scrollbar-button {
   width: 100px;
 }
+
+.slick-dots li button {
+  background: rgb(38 38 38);
+  border-radius: 9999px;
+  margin-top: 1.25rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  display: block;
+}
+
+.slick-dots li.slick-active button {
+  background: rgb(14 165 233);
+  border-radius: 9999px;
+  margin-top: 1.25rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  display: block;
+}
+
+textarea::-webkit-resizer {
+  display: none;
+}

@@ -38,7 +38,7 @@ const Sidebar = () => {
 
         <div className="xl:pb-7 text-left xl:text-center">
           <h1
-            className="text-lg sm:text-2xl font-medium pb-3 sm:pb-6"
+            className="text-gray-100 text-lg sm:text-2xl font-medium pb-3 sm:pb-6"
             title="Rodrigo Chavarry"
           >
             Rodrigo Chavarry
@@ -50,7 +50,7 @@ const Sidebar = () => {
 
         <button
           onClick={toggleMostrarDatos}
-          class="xl:hidden bg-neutral-900 bg-gradient-to-br hover:from-sky-300 hover:via-neutral-900 hover:to-neutral-900 hover:border-sky-500 p-2 rounded-bl-2xl rounded-tr-2xl border-t border-l border-zinc-700 text-sky-500 text-xs font-bold absolute top-0 right-0"
+          className="xl:hidden bg-neutral-900 bg-gradient-to-br hover:from-sky-300 hover:via-neutral-900 hover:to-neutral-900 hover:border-sky-500 p-2 sm:p-3 rounded-bl-2xl rounded-tr-2xl border-t border-l border-zinc-700 text-sky-500 text-xs font-bold absolute top-0 right-0"
         >
           <span className="hidden sm:inline">Mostrar Datos</span>
           <Icon icon="uiw:down" className="text-sky-500 sm:hidden" />
@@ -70,7 +70,7 @@ const Sidebar = () => {
                 <p className="text-xs sm:text-base text-gray-400">Correo</p>
                 <a
                   href="mailto:rodmat0905@gmail.com"
-                  className="text-xs sm:text-base text-gray-200"
+                  className="text-xs sm:text-base"
                 >
                   rodmat0905@gmail.com
                 </a>
@@ -83,10 +83,7 @@ const Sidebar = () => {
               </div>
               <div className="">
                 <p className="text-xs sm:text-base text-gray-400">Teléfono</p>
-                <a
-                  href="tel:+51982199257"
-                  className="text-xs sm:text-base text-gray-200"
-                >
+                <a href="tel:+51982199257" className="text-xs sm:text-base">
                   +51 982-199-257
                 </a>
               </div>
@@ -98,10 +95,7 @@ const Sidebar = () => {
               </div>
               <div className="">
                 <p className="text-xs sm:text-base text-gray-400">Cumpleaños</p>
-                <time
-                  datetime="2003-05-09"
-                  className="text-xs sm:text-base text-gray-200"
-                >
+                <time dateTime="2003-05-09" className="text-xs sm:text-base">
                   09 de Mayo, 2003
                 </time>
               </div>
@@ -113,7 +107,7 @@ const Sidebar = () => {
               </div>
               <div className="sm:space-y-0 space-y-1">
                 <p className="text-xs sm:text-base text-gray-400">Ubicación</p>
-                <address className="text-xs sm:text-base text-gray-200">
+                <address className="text-xs sm:text-base">
                   San Miguel, Lima, Perú
                 </address>
               </div>

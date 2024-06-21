@@ -28,8 +28,8 @@ const Navbar = () => {
     <div className="relative">
       <article className="p-6">{renderComponent()}</article>
 
-      <nav class="bg-zinc-800 bg-opacity-90 border border-zinc-700 rounded-tl-2xl rounded-tr-2xl fixed bottom-0 left-0 w-full z-50 lg:rounded-tl-none lg:rounded-bl-2xl lg:border-t-0 lg:border-r-0 lg:absolute lg:top-0 lg:right-0 lg:bottom-auto lg:left-auto lg:w-auto">
-        <ul class="flex justify-center px-7 py-4 text-xs sm:text-base space-x-3 sm:space-x-7 font-semibold">
+      <nav className="bg-zinc-800 bg-opacity-90 border border-zinc-700 rounded-tl-2xl rounded-tr-2xl fixed bottom-0 left-0 w-full z-50 lg:rounded-tl-none lg:rounded-bl-2xl lg:border-t-0 lg:border-r-0 lg:absolute lg:top-0 lg:right-0 lg:bottom-auto lg:left-auto lg:w-auto">
+        <ul className="flex justify-center px-7 py-4 text-xs sm:text-base space-x-3 sm:space-x-7 font-semibold">
           <li>
             <button
               className={`text-gray-300 hover:text-gray-400 ${

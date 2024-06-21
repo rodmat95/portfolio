@@ -8,19 +8,19 @@ const About = () => {
   return (
     <article className="text-gray-200 text-left">
       <header>
-        <h2 className="text-3xl font-bold">Acerca de Mí</h2>
+        <h2 className="text-gray-100 text-3xl font-bold">Acerca de Mí</h2>
       </header>
 
       <div className="w-8 h-1 my-2 sm:my-6 sm:w-10 sm:h-1.5 rounded-sm bg-sky-500"></div>
 
-      <section class="mb-10 text-gray-400 font-light leading-6">
-        <p className="mb-6">
+      <section className="mb-10 font-light leading-6">
+        <p className="text-sm sm:text-base mb-6">
           Soy un desarrollador full-stack motivado y orientado a resultados.
           Tengo una buena trayectoria en administración de bases de datos,
           implementación de servidores y diseño de interfaces.
         </p>
 
-        <p className="mb-6">
+        <p className="text-sm sm:text-base mb-6">
           Mi experiencia abarca el desarrollo de aplicaciones web con PHP y
           Laravel, aplicaciones móviles con Java y Firebase, y software
           empresarial con C# .NET y Java. Destaco en el diseño de soluciones
@@ -30,7 +30,7 @@ const About = () => {
       </section>
 
       <section className="mb-6">
-        <h3 className="text-2xl font-bold mb-5">Que Puedo Hacer</h3>
+        <h3 className="text-xl sm:text-2xl font-bold mb-5">Que Puedo Hacer</h3>
 
         <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <li className="flex sm:flex-row flex-col items-center sm:items-start space-x-4 bg-neutral-900 p-6 rounded-2xl border-t border-l border-zinc-700 text-xl">
@@ -40,9 +40,11 @@ const About = () => {
             </div>
 
             <div className="text-center sm:text-left">
-              <h4 className="font-semibold">Desarrollo Web</h4>
+              <h4 className="text-sm sm:text-base font-semibold">
+                Desarrollo Web
+              </h4>
 
-              <p class="text-gray-300 font-light text-sm sm:text-base">
+              <p className="text-gray-300 font-light text-sm sm:text-base">
                 Sitios web modernos y profesionales que potencian tu presencia
                 digital.
               </p>
@@ -56,9 +58,11 @@ const About = () => {
             </div>
 
             <div className="text-center sm:text-left">
-              <h4 className="font-semibold">Software de Escritorio</h4>
+              <h4 className="text-sm sm:text-base font-semibold">
+                Software de Escritorio
+              </h4>
 
-              <p class="text-gray-300 font-light text-sm sm:text-base">
+              <p className="text-gray-300 font-light text-sm sm:text-base">
                 Software de escritorio a medida para optimizar tu flujo de
                 trabajo.
               </p>
@@ -72,9 +76,11 @@ const About = () => {
             </div>
 
             <div className="text-center sm:text-left">
-              <h4 className="font-semibold">Aplicaciones Android</h4>
+              <h4 className="text-sm sm:text-base font-semibold">
+                Aplicaciones Android
+              </h4>
 
-              <p class="text-gray-300 font-light text-sm sm:text-base">
+              <p className="text-gray-300 font-light text-sm sm:text-base">
                 Desarrollo de aplicaciones móviles innovadoras que alcanzan y
                 conectan con millones de usuarios.
               </p>
@@ -88,9 +94,11 @@ const About = () => {
             </div>
 
             <div className="text-center sm:text-left">
-              <h4 className="font-semibold">Mantenimiento de Hardware</h4>
+              <h4 className="text-sm sm:text-base font-semibold">
+                Mantenimiento de Hardware
+              </h4>
 
-              <p class="text-gray-300 font-light text-sm sm:text-base">
+              <p className="text-gray-300 font-light text-sm sm:text-base">
                 Soluciones rápidas y confiables para mantener tu hardware en
                 óptimas condiciones.
               </p>
@@ -234,7 +242,7 @@ const About = () => {
           <div>
             <h4 data-modal-title>Daniel lewis</h4>
 
-            <time datetime="2021-06-14">14 June, 2021</time>
+            <time dateTime="2021-06-14">14 June, 2021</time>
 
             <div data-modal-text>
               <p>
