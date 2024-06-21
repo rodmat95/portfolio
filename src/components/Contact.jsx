@@ -164,7 +164,7 @@ const Contact = () => {
             type="submit"
           >
             <Icon icon="bxs:paper-plane" className="text-base"></Icon>
-            <span>Send Message</span>
+            <span>Enviar mensaje</span>
           </button>
         </form>
       </section>

@@ -2,6 +2,13 @@ import { Icon } from "@iconify/react";
 import Slider from "react-slick";
 
 const Resume = () => {
+  const openPdf = () => {
+    window.open(
+      `${process.env.PUBLIC_URL}/assets/pdfs/Cv - Rodrigo Chavarry.pdf`,
+      "_blank"
+    );
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -32,8 +39,11 @@ const Resume = () => {
 
   return (
     <article className="text-gray-200 text-left">
-      <header>
+      <header className="flex flex-row items-center gap-3">
         <h2 className="text-3xl font-bold">Currículum</h2>
+        <button onClick={openPdf}>
+          <Icon icon="ic:round-link" className="hover:text-sky-500 text-3xl" />
+        </button>
       </header>
 
       <div className="w-8 h-1 mt-2 mb-3 sm:mt-6 sm:mb-7 sm:w-10 sm:h-1.5 rounded-sm bg-sky-500"></div>
@@ -102,7 +112,7 @@ const Resume = () => {
                 Mayo 2023
               </span>
               <p className="text-sm sm:text-base font-light">
-                Adquirí habilidades prácticas en el ensamblaje, configuración y
+                Aprendí habilidades prácticas en el ensamblaje, configuración y
                 mantenimiento preventivo/correctivo de computadoras personales,
                 incluyendo la identificación y resolución de problemas de
                 hardware y software.
@@ -130,7 +140,7 @@ const Resume = () => {
                 Junio 2023
               </span>
               <p className="text-sm sm:text-base font-light">
-                Aprendí los conceptos básicos de electrónica, incluyendo
+                Obtuve los conceptos básicos de electrónica, incluyendo
                 circuitos, componentes, leyes fundamentales y herramientas de
                 medición.
               </p>
@@ -157,7 +167,7 @@ const Resume = () => {
                 Abril 2024
               </span>
               <p className="text-sm sm:text-base font-light">
-                Obtuve conocimientos prácticos para crear y personalizar sitios
+                Adquirí conocimientos prácticos para crear y personalizar sitios
                 web y blogs utilizando WordPress, uno de los sistemas de gestión
                 de contenido (CMS) más populares.
               </p>

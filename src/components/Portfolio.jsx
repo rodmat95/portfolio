@@ -16,15 +16,25 @@ const Portfolio = () => {
   const [isActive, setIsActive] = useState(false);
 
   const projects = [
-    { id: 1, title: "Finance", category: "web", image: project1 },
-    { id: 2, title: "Orizon", category: "web", image: project2 },
-    { id: 3, title: "Fundo", category: "escritorio", image: project3 },
-    { id: 4, title: "Brawlhalla", category: "móvil", image: project4 },
-    { id: 5, title: "DSM.", category: "escritorio", image: project5 },
-    { id: 6, title: "MetaSpark", category: "escritorio", image: project6 },
-    { id: 7, title: "Summary", category: "web", image: project7 },
-    { id: 8, title: "Task Manager", category: "móvil", image: project8 },
-    { id: 9, title: "Arrival", category: "web", image: project9 },
+    { id: 1, title: "TiendaLTE", category: "web", image: project1 },
+    //{ id: 2, title: "Finance", category: "web", image: project2 },
+    {
+      id: 3,
+      title: "Sistema de citas",
+      category: "escritorio",
+      image: project3,
+    },
+    { id: 4, title: "TrucksGPS", category: "móvil", image: project4 },
+    {
+      id: 5,
+      title: "Sistema de Ventas",
+      category: "escritorio",
+      image: project5,
+    },
+    //{ id: 6, title: "MetaSpark", category: "escritorio", image: project6 },
+    //{ id: 7, title: "Summary", category: "web", image: project7 },
+    //{ id: 8, title: "Task Manager", category: "móvil", image: project8 },
+    //{ id: 9, title: "Arrival", category: "web", image: project9 },
   ];
 
   const filterProjects = (category) => {
