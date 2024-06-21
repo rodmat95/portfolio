@@ -1,14 +1,9 @@
 import { Icon } from "@iconify/react";
 import Slider from "react-slick";
 
-const Resume = () => {
-  const openPdf = () => {
-    window.open(
-      `${process.env.PUBLIC_URL}/assets/pdfs/Cv - Rodrigo Chavarry.pdf`,
-      "_blank"
-    );
-  };
+import Pdf from "../assets/pdfs/Cv - Rodrigo Chavarry.pdf";
 
+const Resume = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -41,9 +36,9 @@ const Resume = () => {
     <article className="text-gray-200 text-left">
       <header className="flex flex-row items-center gap-3">
         <h2 className="text-3xl font-bold">Currículum</h2>
-        <button onClick={openPdf}>
+        <a href={Pdf} target="_blank" rel="noopener noreferrer">
           <Icon icon="ic:round-link" className="hover:text-sky-500 text-3xl" />
-        </button>
+        </a>
       </header>
 
       <div className="w-8 h-1 mt-2 mb-3 sm:mt-6 sm:mb-7 sm:w-10 sm:h-1.5 rounded-sm bg-sky-500"></div>
