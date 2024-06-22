@@ -101,16 +101,16 @@ const Resume = () => {
             </div>
             <div className="space-y-3">
               <h4 className="font-semibold text-sm sm:text-base">
-                Ensamblaje y mantenimiento de PC
+                Ensamblaje, Mantenimiento y Reparación de PC y Laptops
               </h4>
               <span className="block text-xs sm:text-sm font-normal leading-none text-sky-500">
-                Mayo 2023
+                Mayo 2023 — Junio 2023
               </span>
               <p className="text-sm sm:text-base font-light">
                 Aprendí habilidades prácticas en el ensamblaje, configuración y
-                mantenimiento preventivo/correctivo de computadoras personales,
-                incluyendo la identificación y resolución de problemas de
-                hardware y software.
+                mantenimiento preventivo/correctivo de computadoras de
+                escritorio y portátiles, incluyendo la identificación y
+                resolución de problemas de hardware y software.
               </p>
             </div>
           </li>
@@ -229,7 +229,7 @@ const Resume = () => {
                 BIO Business Intelligence Outsourcing
               </h4>
               <span className="block text-xs sm:text-sm font-normal leading-none text-sky-500">
-                Diciembre 2021 - Octubre 2022
+                Diciembre 2021 — Octubre 2022
               </span>
               <p className="text-sm sm:text-base font-light">
                 Me encargaba de atender la cartera de clientes de IziPay. Les
@@ -246,7 +246,52 @@ const Resume = () => {
       <section className="mb-5">
         <h3 className="text-xl sm:text-2xl font-bold mb-6">Mis habilidades</h3>
         <Slider {...settings}>
-          <div className="min-w-full">
+          <div className="bg-neutral-900 p-3 rounded-2xl border-t border-l border-zinc-700">
+            <h4 className="text-center text-lg font-semibold m-0">Frond End</h4>
+            <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
+              <li className="space-y-2">
+                <p className="text-center">HTML5</p>
+                <Icon icon="devicon:html5" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">CSS3</p>
+                <Icon icon="devicon:css3" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Tailwind CSS</p>
+                <Icon
+                  icon="logos:tailwindcss-icon"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Bootstrap</p>
+                <Icon
+                  icon="logos:bootstrap"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">JavaScript</p>
+                <Icon
+                  icon="logos:javascript"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">React</p>
+                <Icon icon="logos:react" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">SASS</p>
+                <Icon icon="logos:sass" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">jQuery</p>
+                <Icon icon="devicon:jquery" className="mx-auto text-2xl"></Icon>
+              </li>
+            </ul>
+            {/*
             <ul className="space-y-5 bg-neutral-900 p-5 sm:p-7 rounded-2xl border-t border-l border-zinc-700">
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
@@ -255,7 +300,6 @@ const Resume = () => {
                     90%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -263,6 +307,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">
@@ -272,7 +317,6 @@ const Resume = () => {
                     70%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -280,6 +324,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">
@@ -289,7 +334,6 @@ const Resume = () => {
                     55%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -297,6 +341,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">
@@ -306,7 +351,6 @@ const Resume = () => {
                     75%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -314,6 +358,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">
@@ -323,7 +368,6 @@ const Resume = () => {
                     85%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -332,8 +376,52 @@ const Resume = () => {
                 </div>
               </li>
             </ul>
+            */}
           </div>
-          <div className="min-w-full">
+
+          <div className="bg-neutral-900 p-3 rounded-2xl border-t border-l border-zinc-700">
+            <h4 className="text-center text-lg font-semibold m-0">Back End</h4>
+            <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
+              <li className="space-y-2">
+                <p className="text-center">PHP</p>
+                <Icon icon="devicon:php" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Laravel</p>
+                <Icon icon="logos:laravel" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Java</p>
+                <Icon icon="logos:java" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">C#</p>
+                <Icon icon="devicon:csharp" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">.NET</p>
+                <Icon
+                  icon="skill-icons:dotnet"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Node.js</p>
+                <Icon icon="logos:nodejs" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Python</p>
+                <Icon icon="logos:python" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">C++</p>
+                <Icon
+                  icon="logos:c-plusplus"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+            </ul>
+            {/*
             <ul className="space-y-5 bg-neutral-900 p-5 sm:p-7 rounded-2xl border-t border-l border-zinc-700">
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
@@ -344,7 +432,6 @@ const Resume = () => {
                     85%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -352,6 +439,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">Python</h5>
@@ -359,7 +447,6 @@ const Resume = () => {
                     65%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -367,6 +454,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">Java</h5>
@@ -374,7 +462,6 @@ const Resume = () => {
                     80%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -382,6 +469,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">C#/.NET</h5>
@@ -389,7 +477,6 @@ const Resume = () => {
                     70%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -397,6 +484,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">C++</h5>
@@ -404,7 +492,6 @@ const Resume = () => {
                     65%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -413,8 +500,56 @@ const Resume = () => {
                 </div>
               </li>
             </ul>
+            */}
           </div>
-          <div className="min-w-full">
+
+          <div className="bg-neutral-900 p-3 rounded-2xl border-t border-l border-zinc-700">
+            <h4 className="text-center text-lg font-semibold m-0">
+              Infraestructura de Datos
+            </h4>
+            <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
+              <li className="space-y-2">
+                <p className="text-center">SQL Server</p>
+                <Icon
+                  icon="devicon:microsoftsqlserver"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">MySQL</p>
+                <Icon icon="logos:mysql" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Firebase</p>
+                <Icon icon="logos:firebase" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Microsoft Azure</p>
+                <Icon
+                  icon="logos:microsoft-azure"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">MongoDB</p>
+                <Icon
+                  icon="devicon:mongodb"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Google Cloud Platform</p>
+                <Icon
+                  icon="skill-icons:gcp-light"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Amazon Web Services</p>
+                <Icon icon="logos:aws" className="mx-auto text-2xl"></Icon>
+              </li>
+            </ul>
+            {/*
             <ul className="space-y-5 bg-neutral-900 p-5 sm:p-7 rounded-2xl border-t border-l border-zinc-700">
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
@@ -425,7 +560,6 @@ const Resume = () => {
                     85%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -433,6 +567,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">MySQL</h5>
@@ -440,7 +575,6 @@ const Resume = () => {
                     80%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -448,6 +582,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">MongoDB</h5>
@@ -455,7 +590,6 @@ const Resume = () => {
                     65%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -464,8 +598,61 @@ const Resume = () => {
                 </div>
               </li>
             </ul>
+            */}
           </div>
-          <div className="min-w-full">
+
+          <div className="bg-neutral-900 p-3 rounded-2xl border-t border-l border-zinc-700">
+            <h4 className="text-center text-lg font-semibold m-0">
+              Entornos de Desarrollo
+            </h4>
+            <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
+              <li className="space-y-2">
+                <p className="text-center">Visual Studio Code</p>
+                <Icon icon="devicon:vscode" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Android Studio</p>
+                <Icon
+                  icon="devicon:androidstudio"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">NetBeans</p>
+                <Icon icon="" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Microsoft Visual Studio</p>
+                <Icon
+                  icon="devicon:visualstudio"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">XAMPP</p>
+                <Icon icon="logos:xampp" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">USBWebserver</p>
+                <Icon icon="logos:apache" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">IntelliJ IDEA</p>
+                <Icon
+                  icon="logos:intellij-idea"
+                  className="mx-auto text-2xl"
+                ></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">PyCharm</p>
+                <Icon icon="logos:pycharm" className="mx-auto text-2xl"></Icon>
+              </li>
+              <li className="space-y-2">
+                <p className="text-center">Notepad++</p>
+                <Icon icon="" className="mx-auto text-2xl"></Icon>
+              </li>
+            </ul>
+            {/*
             <ul className="space-y-5 bg-neutral-900 p-5 sm:p-7 rounded-2xl border-t border-l border-zinc-700">
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
@@ -474,7 +661,6 @@ const Resume = () => {
                     65%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -482,6 +668,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">
@@ -491,7 +678,6 @@ const Resume = () => {
                     60%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -499,6 +685,7 @@ const Resume = () => {
                   ></div>
                 </div>
               </li>
+
               <li className="space-y-2">
                 <div className="flex flex-row gap-2">
                   <h5 className="text-sm sm:text-base font-medium">
@@ -508,7 +695,6 @@ const Resume = () => {
                     50%
                   </data>
                 </div>
-
                 <div className="bg-neutral-800 h-2 rounded-full">
                   <div
                     className="bg-sky-500 h-full rounded-full"
@@ -517,6 +703,7 @@ const Resume = () => {
                 </div>
               </li>
             </ul>
+            */}
           </div>
         </Slider>
       </section>

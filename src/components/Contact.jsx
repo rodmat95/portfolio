@@ -87,7 +87,7 @@ const Contact = () => {
               />
               {errors.name?.type === "required" && (
                 <span className="text-red-500 text-sm">
-                  Este campo es requerido.
+                  Este campo es obligatorio.
                 </span>
               )}
             </div>
@@ -105,7 +105,7 @@ const Contact = () => {
               />
               {errors.email?.type === "required" && (
                 <span className="text-red-500 text-sm">
-                  Este campo es requerido.
+                  Este campo es obligatorio.
                 </span>
               )}
               {errors.email?.type === "pattern" && (
@@ -155,7 +155,7 @@ const Contact = () => {
           ></textarea>
           {errors.message?.type === "required" && (
             <span className="text-red-500 text-sm">
-              Este campo es requerido.
+              Este campo es obligatorio.
             </span>
           )}
 

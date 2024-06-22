@@ -139,12 +139,12 @@ const Sidebar = () => {
             </li>
             <li className="">
               <a
-                href="https://www.instagram.com/rc_095"
+                href="https://bento.me/rodmat95"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link text-2xl text-gray-400 hover:text-gray-200"
               >
-                <Icon icon="mdi:instagram" />
+                <Icon icon="simple-icons:bento" />
               </a>
             </li>
           </ul>
