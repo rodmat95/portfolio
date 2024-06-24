@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.20f45bf0.css",
-    "main.js": "/portfolio/static/js/main.b6d22f1d.js",
+    "main.css": "/portfolio/static/css/main.1d490029.css",
+    "main.js": "/portfolio/static/js/main.7fc77b88.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/Cv - Rodrigo Chavarry.pdf": "/portfolio/static/media/Cv - Rodrigo Chavarry.5935d57cc0691e6c929f.pdf",
     "static/media/my-avatar.jpeg": "/portfolio/static/media/my-avatar.2ba7c5dec64516572759.jpeg",
@@ -27,12 +27,12 @@
     "static/media/slick.ttf": "/portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/portfolio/index.html",
-    "main.20f45bf0.css.map": "/portfolio/static/css/main.20f45bf0.css.map",
-    "main.b6d22f1d.js.map": "/portfolio/static/js/main.b6d22f1d.js.map",
+    "main.1d490029.css.map": "/portfolio/static/css/main.1d490029.css.map",
+    "main.7fc77b88.js.map": "/portfolio/static/js/main.7fc77b88.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.20f45bf0.css",
-    "static/js/main.b6d22f1d.js"
+    "static/css/main.1d490029.css",
+    "static/js/main.7fc77b88.js"
   ]
 }
