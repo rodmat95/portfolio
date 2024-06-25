@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import miAvatar from "../assets/images/my-avatar.jpeg";
+import miAvatar from "../assets/photos/my-avatar.jpeg";
 import { useState, useEffect } from "react";
 
 const Sidebar = () => {
@@ -122,7 +122,7 @@ const Sidebar = () => {
                 href="https://github.com/rodmat95"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link text-2xl text-gray-400 hover:text-gray-200"
+                className="social-link text-2xl text-gray-400 hover:text-[#6e5494]"
               >
                 <Icon icon="mdi:github" />
               </a>
@@ -132,7 +132,7 @@ const Sidebar = () => {
                 href="https://www.linkedin.com/in/rodrigochavarry/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link text-2xl text-gray-400 hover:text-gray-200"
+                className="social-link text-2xl text-gray-400 hover:text-[#0e76a8]"
               >
                 <Icon icon="mdi:linkedin" />
               </a>
@@ -142,7 +142,7 @@ const Sidebar = () => {
                 href="https://bento.me/rodmat95"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link text-2xl text-gray-400 hover:text-gray-200"
+                className="social-link text-2xl text-gray-400 hover:text-[#788bff]"
               >
                 <Icon icon="simple-icons:bento" />
               </a>

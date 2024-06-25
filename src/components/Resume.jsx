@@ -43,11 +43,11 @@ const Resume = () => {
 
       <div className="w-8 h-1 mt-2 mb-3 sm:mt-6 sm:mb-7 sm:w-10 sm:h-1.5 rounded-sm bg-sky-500"></div>
 
-      <section class="mb-5">
+      <section className="mb-5">
         <ol className="relative">
-          <li class="relative flex items-center gap-6 pb-5">
-            <div class="after:absolute after:left-[5.5px] after:h-1/2 after:w-[1px] after:bg-sky-900 after:opacity-75 after:ml-2 sm:after:ml-4">
-              <div class=" bg-neutral-900 p-1.5 sm:p-3 rounded-md sm:rounded-xl border-t border-l border-zinc-700">
+          <li className="relative flex items-center gap-6 pb-5">
+            <div className="after:absolute after:left-[5.5px] after:h-1/2 after:w-[1px] after:bg-sky-900 after:opacity-75 after:ml-2 sm:after:ml-4">
+              <div className=" bg-neutral-900 p-1.5 sm:p-3 rounded-md sm:rounded-xl border-t border-l border-zinc-700">
                 <Icon
                   icon="ion:book-outline"
                   className="text-sky-500 text-lg"
@@ -57,13 +57,13 @@ const Resume = () => {
             <h3 className="text-xl sm:text-2xl font-bold">Educación</h3>
           </li>
 
-          <li class="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
-            <div class="after:absolute after:left-[5.5px] after:h-full after:w-[1px] after:bg-sky-900 after:opacity-75">
+          <li className="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
+            <div className="after:absolute after:left-[5.5px] after:h-full after:w-[1px] after:bg-sky-900 after:opacity-75">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
                 height="12"
-                class="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
+                className="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
@@ -87,13 +87,13 @@ const Resume = () => {
             </div>
           </li>
 
-          <li class="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
-            <div class="after:absolute after:left-[5.5px] after:h-full after:w-[1px] after:bg-sky-900 after:opacity-75">
+          <li className="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
+            <div className="after:absolute after:left-[5.5px] after:h-full after:w-[1px] after:bg-sky-900 after:opacity-75">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
                 height="12"
-                class="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
+                className="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
@@ -115,13 +115,13 @@ const Resume = () => {
             </div>
           </li>
 
-          <li class="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
-            <div class="after:absolute after:left-[5.5px] after:h-full after:w-[1px] after:bg-sky-900 after:opacity-75">
+          <li className="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
+            <div className="after:absolute after:left-[5.5px] after:h-full after:w-[1px] after:bg-sky-900 after:opacity-75">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
                 height="12"
-                class="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
+                className="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
@@ -142,13 +142,13 @@ const Resume = () => {
             </div>
           </li>
 
-          <li class="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
+          <li className="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
                 height="12"
-                class="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
+                className="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
@@ -173,9 +173,9 @@ const Resume = () => {
 
       <section className="mb-5">
         <ol className="relative">
-          <li class="relative flex items-center gap-6 pb-5">
-            <div class="after:absolute after:left-[5.5px] after:h-1/2 after:w-[1px] after:bg-sky-900 after:opacity-75 after:ml-2 sm:after:ml-4">
-              <div class=" bg-neutral-900 p-1.5 sm:p-3 rounded-md sm:rounded-xl border-t border-l border-zinc-700">
+          <li className="relative flex items-center gap-6 pb-5">
+            <div className="after:absolute after:left-[5.5px] after:h-1/2 after:w-[1px] after:bg-sky-900 after:opacity-75 after:ml-2 sm:after:ml-4">
+              <div className=" bg-neutral-900 p-1.5 sm:p-3 rounded-md sm:rounded-xl border-t border-l border-zinc-700">
                 <Icon
                   icon="mdi:work-outline"
                   className="text-sky-500 text-lg"
@@ -186,13 +186,13 @@ const Resume = () => {
           </li>
 
           {/* 
-          <li class="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
-            <div class="after:absolute after:left-[5.5px] after:h-full after:w-[1px] after:bg-sky-900 after:opacity-75">
+          <li className="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
+            <div className="after:absolute after:left-[5.5px] after:h-full after:w-[1px] after:bg-sky-900 after:opacity-75">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
                 height="12"
-                class="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
+                className="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
@@ -212,13 +212,13 @@ const Resume = () => {
           </li>
           */}
 
-          <li class="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
+          <li className="relative flex items-baseline gap-6 pb-5 ml-2 sm:ml-4">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
                 height="12"
-                class="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
+                className="bi bi-circle-fill fill-sky-500 rounded-full ring-4 ring-sky-900 ring-opacity-75"
                 viewBox="0 0 16 16"
               >
                 <circle cx="8" cy="8" r="8" />
@@ -248,7 +248,7 @@ const Resume = () => {
         <Slider {...settings}>
           <div className="bg-neutral-900 p-3 rounded-2xl border-t border-l border-zinc-700">
             <h4 className="text-center text-lg font-semibold m-0">Frond End</h4>
-            <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
+            <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
               <li className="space-y-2">
                 <p className="text-center">HTML5</p>
                 <Icon icon="devicon:html5" className="mx-auto text-2xl"></Icon>
@@ -381,7 +381,7 @@ const Resume = () => {
 
           <div className="bg-neutral-900 p-3 rounded-2xl border-t border-l border-zinc-700">
             <h4 className="text-center text-lg font-semibold m-0">Back End</h4>
-            <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
+            <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
               <li className="space-y-2">
                 <p className="text-center">PHP</p>
                 <Icon icon="devicon:php" className="mx-auto text-2xl"></Icon>
@@ -507,7 +507,7 @@ const Resume = () => {
             <h4 className="text-center text-lg font-semibold m-0">
               Infraestructura de Datos
             </h4>
-            <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
+            <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
               <li className="space-y-2">
                 <p className="text-center">SQL Server</p>
                 <Icon
@@ -605,7 +605,7 @@ const Resume = () => {
             <h4 className="text-center text-lg font-semibold m-0">
               Entornos de Desarrollo
             </h4>
-            <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
+            <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center mt-4 gap-y-6">
               <li className="space-y-2">
                 <p className="text-center">Visual Studio Code</p>
                 <Icon icon="devicon:vscode" className="mx-auto text-2xl"></Icon>
@@ -619,7 +619,17 @@ const Resume = () => {
               </li>
               <li className="space-y-2">
                 <p className="text-center">NetBeans</p>
-                <Icon icon="" className="mx-auto text-2xl"></Icon>
+                <img
+                  width="24"
+                  height="32"
+                  src="https://img.icons8.com/color/48/apache-netbeans.png"
+                  alt="NetBeans"
+                  className="mx-auto scale-110"
+                />
+                {/* <Icon
+                  icon="simple-icons:apachenetbeanside"
+                  className="mx-auto text-2xl text-[#0066cc]"
+                ></Icon> */}
               </li>
               <li className="space-y-2">
                 <p className="text-center">Microsoft Visual Studio</p>
@@ -649,7 +659,17 @@ const Resume = () => {
               </li>
               <li className="space-y-2">
                 <p className="text-center">Notepad++</p>
-                <Icon icon="" className="mx-auto text-2xl"></Icon>
+                <img
+                  width="24"
+                  height="32"
+                  alt="Notepad++"
+                  src="https://tech-wiki.net/images/a/a8/Notepad%2B%2B_logo.png"
+                  className="mx-auto scale-150"
+                ></img>
+                {/* <Icon
+                  icon="simple-icons:notepadplusplus"
+                  className="mx-auto text-2xl text-[#78cc54]"
+                ></Icon> */}
               </li>
             </ul>
             {/*

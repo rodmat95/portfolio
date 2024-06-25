@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
+import AppointmentManagement from "./Projects/AppointmentManagement";
+import InvoicingWithCRM from "./Projects/InvoicingWithCRM";
+import TiendaLTE from "./Projects/TiendaLTE";
+import TrucksGPS from "./Projects/TrucksGPS";
+
 import project1 from "../assets/images/project-1.jpg";
-import project2 from "../assets/images/project-2.png";
+// import project2 from "../assets/images/project-2.png";
 import project3 from "../assets/images/project-3.jpg";
 import project4 from "../assets/images/project-4.png";
 import project5 from "../assets/images/project-5.png";
-import project6 from "../assets/images/project-6.png";
-import project7 from "../assets/images/project-7.png";
-import project8 from "../assets/images/project-8.jpg";
-import project9 from "../assets/images/project-9.png";
+// import project6 from "../assets/images/project-6.png";
+// import project7 from "../assets/images/project-7.png";
+// import project8 from "../assets/images/project-8.jpg";
+// import project9 from "../assets/images/project-9.png";
 
 const Portfolio = () => {
+  const [showAppointmentManagement, setShowAppointmentManagement] =
+    useState(false);
+  const [showInvoicingWithCRM, setShowInvoicingWithCRM] = useState(false);
+  const [showTiendaLTE, setShowTiendaLTE] = useState(false);
+  const [showTrucksGPS, setShowTrucksGPS] = useState(false);
+
   const [activeFilter, setActiveFilter] = useState("todo");
   const [isActive, setIsActive] = useState(false);
 
@@ -20,14 +31,14 @@ const Portfolio = () => {
     //{ id: 2, title: "Finance", category: "web", image: project2 },
     {
       id: 3,
-      title: "Sistema de citas",
+      title: "Sistema de gestión de citas",
       category: "escritorio",
       image: project3,
     },
     { id: 4, title: "TrucksGPS", category: "móvil", image: project4 },
     {
       id: 5,
-      title: "Sistema de Ventas",
+      title: "Software de facturación con funciones CRM",
       category: "escritorio",
       image: project5,
     },
@@ -46,6 +57,46 @@ const Portfolio = () => {
     activeFilter === "todo"
       ? projects
       : projects.filter((project) => project.category === activeFilter);
+
+  const openPopup = (projectId) => {
+    switch (projectId) {
+      case 1:
+        setShowTiendaLTE(true);
+        break;
+      case 3:
+        setShowAppointmentManagement(true);
+        break;
+      case 4:
+        setShowTrucksGPS(true);
+        break;
+      case 5:
+        setShowInvoicingWithCRM(true);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const closePopups = () => {
+    setShowTiendaLTE(false);
+    setShowAppointmentManagement(false);
+    setShowTrucksGPS(false);
+    setShowInvoicingWithCRM(false);
+  };
+
+  const handleEscKey = (event) => {
+    if (event.key === "Escape") {
+      closePopups();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleEscKey);
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, []);
 
   return (
     <article className="text-gray-200 text-left">
@@ -122,7 +173,10 @@ const Portfolio = () => {
               }`}
               data-category={project.category}
             >
-              <button className="w-full text-left">
+              <button
+                className="w-full text-left"
+                onClick={() => openPopup(project.id)}
+              >
                 <div className="relative overflow-hidden rounded-xl mb-4">
                   <figure className="relative w-full rounded-xl overflow-hidden transition-transform duration-300 transform hover:scale-110">
                     <img
@@ -148,6 +202,14 @@ const Portfolio = () => {
           ))}
         </ul>
       </section>
+
+      <AppointmentManagement
+        show={showAppointmentManagement}
+        onClose={closePopups}
+      />
+      <InvoicingWithCRM show={showInvoicingWithCRM} onClose={closePopups} />
+      <TiendaLTE show={showTiendaLTE} onClose={closePopups} />
+      <TrucksGPS show={showTrucksGPS} onClose={closePopups} />
     </article>
   );
 };

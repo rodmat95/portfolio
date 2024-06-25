@@ -12,10 +12,15 @@
 }
 
 body {
+  margin: 0;
   background-color: black;
   font-family: var(--ff-poppins);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /*TODO: Buscar un mejor fondo de pantalla */
+  /* background: url("http://forums.crackberry.com/attachments/blackberry-10-wallpapers-f308/137432d1361639896t-z10-wallpaper-set-z10-music.jpg"); */
+  /* background-image: url("/src/assets/images/wallpaper-1.jpg"); */
 }
 
 code {
@@ -23,6 +28,16 @@ code {
     monospace;
 }
 
+canvas#canv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/** TODO: Barra de desplazamiento general */
 ::-webkit-scrollbar {
   width: 11px;
 }
@@ -45,14 +60,15 @@ code {
   height: 64px;
 }
 
+/** Barra de desplazamiento personalizada */
 /*
-.custom-scrollbar {
+//.custom-scrollbar {
   scrollbar-width: 5px;
   scrollbar-height: 5px;
   scrollbar-color: #0ea5e9 transparent;
   scrollbar-background: #27272a;
   scrollbar-arrow-color: transparent;
-}
+//}
 */
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -73,6 +89,7 @@ code {
   width: 100px;
 }
 
+/** Puntos de navegación */
 .slick-dots li button {
   background: rgb(38 38 38);
   border-radius: 9999px;
@@ -91,6 +108,68 @@ code {
   display: block;
 }
 
+/** Movimiento de error */
+@keyframes shake {
+  0% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+@layer utilities {
+  .shake {
+    animation: shake 0.2s 1;
+  }
+}
+
+/** Animacion de etiquetas */
+/*
+//.input-placeholder {
+  --tw-bg-opacity: 100;
+  background-color: rgba(24, 24, 27, var(--tw-bg-opacity));
+  top: -9px;
+//}
+
+//@media (min-width: 640px) {
+  .input-placeholder {
+    top: -13px;
+  }
+//}
+
+//input:focus + .placeholder,
+//input:not(:placeholder-shown) + .placeholder,
+//textarea:focus + .placeholder,
+//textarea:not(:placeholder-shown) + .placeholder {
+  @apply .input-placeholder;
+//}
+*/
+
+input:focus + .placeholder,
+input:not(:placeholder-shown) + .placeholder,
+textarea:focus + .placeholder,
+textarea:not(:placeholder-shown) + .placeholder {
+  --tw-bg-opacity: 100;
+  top: -8px;
+  background-color: rgba(24, 24, 27, var(--tw-bg-opacity));
+}
+
+@media (min-width: 640px) {
+  input:focus + .placeholder,
+  input:not(:placeholder-shown) + .placeholder,
+  textarea:focus + .placeholder,
+  textarea:not(:placeholder-shown) + .placeholder {
+    --tw-bg-opacity: 100;
+    top: -13px;
+    background-color: rgba(24, 24, 27, var(--tw-bg-opacity));
+  }
+}
+
+/** Eliminacion de redimensionamiento */
 textarea::-webkit-resizer {
   display: none;
 }

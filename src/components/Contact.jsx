@@ -1,21 +1,21 @@
-import { useRef } from "react";
+import { /*useEffect,*/ useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-// API Keys
+//* API Keys
 const KeyMap = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 const keyMail = process.env.REACT_APP_EMAILJS_API_KEY;
 
-// IDs de emailjs
+//* IDs de emailjs
 const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 
 const Contact = () => {
-  // Dirección del mapa
+  //* Dirección del mapa
   const dirección = "San Miguel 15086";
 
-  // URL del mapa
+  //* URL del mapa
   const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${KeyMap}&q=${encodeURIComponent(
     dirección
   )}&region=PE`;
@@ -28,15 +28,22 @@ const Contact = () => {
   } = useForm();
 
   const refForm = useRef();
+  const [enviado, setEnviado] = useState(false);
 
   const onSubmit = (data, event) => {
-    //console.log(data);
+    //// console.log(data);
     event.preventDefault();
 
     emailjs
       .sendForm(serviceId, templateId, refForm.current, keyMail)
-      .then((result) => console.log(result.text))
-      .catch((error) => console.error(error));
+      .then((result) => {
+        console.log(result.text);
+        setEnviado(true);
+      })
+      .catch((error) => {
+        console.error(error);
+        //? Aquí podrías manejar errores si es necesario
+      });
   };
 
   const checkbox = watch("checkbox");
@@ -76,50 +83,82 @@ const Contact = () => {
           className="py-6 space-y-6"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="grid grid-cols-1 gap-2">
+            <div className="relative grid gap-2">
               <input
-                name="name"
+                name="fullName"
                 type="text"
-                {...register("name", { required: true })}
-                className="placeholder:font-medium placeholder:text-gray-400 h-min bg-zinc-900 text-xs sm:text-base font-normal py-3 px-5 border border-zinc-700 rounded-xl outline-none focus:border-sky-500 invalid:focus:border-red-500"
-                placeholder="Nombre completo"
-                required
+                inputMode="text"
+                autoComplete="name"
+                {...register("fullName", {
+                  required: "Este campo es obligatorio.",
+                  pattern: {
+                    value:
+                      /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+(\s[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+)*$/,
+                    message:
+                      "Debe ingresar su nombre y apellido, iniciando con mayúsculas.",
+                  },
+                })}
+                className={`h-min py-3 px-5 text-xs sm:text-base font-normal bg-zinc-900 border rounded-xl outline-none ${
+                  errors.fullName
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-500 shake"
+                    : "border-zinc-700 focus:border-sky-500 focus:ring-sky-500"
+                }`}
+                placeholder=" "
               />
-              {errors.name?.type === "required" && (
-                <span className="text-red-500 text-sm">
-                  Este campo es obligatorio.
+              <label
+                className={`placeholder absolute top-3 left-4 px-1 text-gray-400 text-xs sm:text-base font-medium transition-all duration-300 pointer-events-none ${
+                  errors.fullName ? "shake" : ""
+                }`}
+              >
+                Nombre completo
+              </label>
+              {errors.fullName && (
+                <span className="text-red-500 text-xs">
+                  {errors.fullName.message}
                 </span>
               )}
             </div>
-            <div className="grid grid-cols-1 gap-2">
+
+            <div className="relative grid gap-2">
               <input
                 name="email"
                 type="email"
+                inputMode="email"
                 {...register("email", {
-                  required: true,
-                  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
+                  required: "Este campo es obligatorio.",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Debe ingresar un correo electrónico válido.",
+                  },
                 })}
-                className="placeholder:font-medium placeholder:text-gray-400 h-min bg-zinc-900 text-xs sm:text-base font-normal py-3 px-5 border border-zinc-700 rounded-xl outline-none focus:border-sky-500 invalid:focus:border-red-500"
-                placeholder="Correo electrónico"
-                required
+                //// ref={emailInputRef}
+                className={`h-min py-3 px-5 text-xs sm:text-base font-normal bg-zinc-900 border rounded-xl outline-none ${
+                  errors.email
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-500 shake"
+                    : "border-zinc-700 focus:border-sky-500 focus:ring-sky-500"
+                }`}
+                placeholder=" "
               />
-              {errors.email?.type === "required" && (
-                <span className="text-red-500 text-sm">
-                  Este campo es obligatorio.
-                </span>
-              )}
-              {errors.email?.type === "pattern" && (
-                <span className="text-red-500 text-sm">
-                  El formato del correo es incorrecto
+              <label
+                className={`placeholder absolute top-3 left-4 px-1 text-gray-400 text-xs sm:text-base font-medium transition-all duration-300 pointer-events-none ${
+                  errors.email ? "shake" : ""
+                }`}
+              >
+                Correo electrónico
+              </label>
+              {errors.email && (
+                <span className="text-red-500 text-xs">
+                  {errors.email.message}
                 </span>
               )}
             </div>
           </div>
+
           <div className="flex items-center gap-3">
             <input
               type="checkbox"
               {...register("checkbox", {})}
-              className="appearance-none w-3 h-3 bg-zinc-800 border border-zinc-700 hover:border-sky-500 rounded checked:bg-sky-900 checked:border-sky-500"
+              className="w-3 h-3 bg-zinc-800 border-zinc-700 hover:border-sky-500 rounded checked:bg-sky-900 checked:border-sky-500 checked:hover:bg-sky-500 checked:focus:bg-sky-500 focus:ring-offset-0 focus:ring-0"
             />
             <label className="text-xs sm:text-base font-normal">
               ¿Incluir Celular?
@@ -127,40 +166,84 @@ const Contact = () => {
           </div>
 
           {checkbox && (
-            <div className="grid grid-cols-1 gap-2 sm:w-1/2 sm:pr-3">
+            <div className="relative grid grid-cols-1 gap-2 sm:w-1/2 sm:pr-3">
               <input
                 name="tel"
                 type="tel"
+                inputMode="tel"
+                maxLength="11"
                 {...register("tel", {
-                  required: true,
-                  pattern: /^(9\d{8})$/,
+                  required: "Este campo es obligatorio.",
+                  pattern: {
+                    value: /^9/,
+                    message: "Debe comenzar con 9.",
+                  },
+                  validate: (value) => {
+                    const peruvianNumberPattern =
+                      /^(\d{9}|\d{3}\s\d{3}\s\d{3}|\d{3}-\d{3}-\d{3})$/;
+                    if (!peruvianNumberPattern.test(value)) {
+                      return "Debe ingresar un número que siga un formato peruano válido.";
+                    }
+                    return true;
+                  },
                 })}
-                className="placeholder:font-medium placeholder:text-gray-400 h-min bg-zinc-900 text-xs sm:text-base font-normal py-3 px-5 border border-zinc-700 rounded-xl outline-none focus:border-sky-500 invalid:focus:border-red-500"
-                placeholder="Celular"
+                className={`h-min py-3 px-5 text-xs sm:text-base font-normal bg-zinc-900 border rounded-xl outline-none ${
+                  errors.tel
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-500 shake"
+                    : "border-zinc-700 focus:border-sky-500 focus:ring-sky-500"
+                }`}
+                placeholder=" "
               />
-              {errors.tel?.type === "pattern" && (
-                <span className="text-red-500 text-sm">
-                  Ingrese un número de teléfono válido.
+              <label
+                className={`placeholder absolute top-3 left-4 px-1 text-gray-400 text-xs sm:text-base font-medium transition-all duration-300 pointer-events-none ${
+                  errors.tel ? "shake" : ""
+                }`}
+              >
+                Número de celular
+              </label>
+              {errors.tel && (
+                <span className="text-red-500 text-xs">
+                  {errors.tel.message}
                 </span>
               )}
             </div>
           )}
 
-          <textarea
-            name="message"
-            {...register("message", { required: true })}
-            className="placeholder:font-medium placeholder:text-gray-400 bg-zinc-900 text-xs sm:text-base font-normal py-3 px-5 border border-zinc-700 rounded-xl outline-none resize-y min-h-20 h-24 max-h-48 w-full focus:border-sky-500 invalid:focus:border-red-500"
-            placeholder="Tu mensaje"
-            required
-          ></textarea>
-          {errors.message?.type === "required" && (
-            <span className="text-red-500 text-sm">
-              Este campo es obligatorio.
-            </span>
+          <div className="relative">
+            <textarea
+              name="message"
+              {...register("message", {
+                required: "Este campo es obligatorio.",
+              })}
+              className={`py-3 px-5 text-xs sm:text-base font-normal bg-zinc-900 border rounded-xl outline-none resize-y min-h-20 h-24 max-h-48 w-full ${
+                errors.message
+                  ? "border-red-500 focus:border-red-500 focus:ring-red-500 shake"
+                  : "border-zinc-700 focus:border-sky-500 focus:ring-sky-500"
+              }`}
+              placeholder=" "
+            ></textarea>
+            <label
+              className={`placeholder absolute top-3 left-4 px-1 text-gray-400 text-xs sm:text-base font-medium transition-all duration-300 pointer-events-none ${
+                errors.message ? "shake" : ""
+              }`}
+            >
+              Tu mensaje
+            </label>
+            {errors.message && (
+              <span className="text-red-500 text-xs">
+                {errors.message.message}
+              </span>
+            )}
+          </div>
+
+          {enviado && (
+            <p className="text-sky-500 text-xs sm:text-sm mt-2">
+              Mensaje enviado correctamente.
+            </p>
           )}
 
           <button
-            className="md:ml-auto relative w-full md:w-auto flex justify-center items-center gap-2 px-5 py-3 rounded-xl text-sm sm:text-base capitalize shadow-lg transition duration-250 ease-in-out bg-gradient-to-br from-neutral-900 border-t border-l border-zinc-700 via-transparent to-transparent text-sky-500 hover:from-sky-300 hover:via-neutral-900 hover:to-neutral-900 hover:border-sky-500"
+            className="md:ml-auto relative w-full md:w-auto flex justify-center items-center gap-2 px-5 py-3 rounded-xl text-sm sm:text-base capitalize shadow-lg transition duration-250 ease-in-out bg-gradient-to-br from-neutral-900 border-t border-l border-zinc-700 text-sky-500 hover:from-sky-300 hover:via-neutral-900 hover:to-neutral-900 hover:border-sky-500"
             type="submit"
           >
             <Icon icon="bxs:paper-plane" className="text-base"></Icon>

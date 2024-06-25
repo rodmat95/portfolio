@@ -1,8 +1,8 @@
 import React from "react";
-import CodificacionWeb from "../assets/images/codificacion-web.png";
-import Codificacion from "../assets/images/codificacion.png";
-import TelefonoInteligente from "../assets/images/telefono-inteligente.png";
-import TorreDePcConfig from "../assets/images/torre-de-pc-config.png";
+import CodificacionWeb from "../assets/icons/codificacion-web.png";
+import Codificacion from "../assets/icons/codificacion.png";
+import TelefonoInteligente from "../assets/icons/telefono-inteligente.png";
+import TorreDePcConfig from "../assets/icons/torre-de-pc-config.png";
 
 const About = () => {
   return (
