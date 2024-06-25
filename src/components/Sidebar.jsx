@@ -1,9 +1,10 @@
 import { Icon } from "@iconify/react";
 import miAvatar from "../assets/photos/my-avatar.jpeg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Sidebar = () => {
   const [mostrarDatos, setMostrarDatos] = useState(false);
+  const contentRef = useRef(null);
 
   // Maneja el estado basado en el tamaño de la pantalla
   useEffect(() => {
@@ -57,7 +58,12 @@ const Sidebar = () => {
         </button>
       </div>
 
-      {mostrarDatos && (
+      <div
+        ref={contentRef}
+        className={`transition-all duration-500 ease-in-out overflow-hidden ${
+          mostrarDatos ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
         <div className="shadow-md">
           <div className="border-t border-zinc-700 mb-4 sm:mb-7 mx-4 sm:mx-7"></div>
 
@@ -149,7 +155,7 @@ const Sidebar = () => {
             </li>
           </ul>
         </div>
-      )}
+      </div>
     </div>
   );
 };

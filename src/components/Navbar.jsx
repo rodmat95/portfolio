@@ -28,7 +28,7 @@ const Navbar = () => {
     <div className="relative">
       <article className="p-6">{renderComponent()}</article>
 
-      <nav className="bg-zinc-800 bg-opacity-50 backdrop-blur-md border border-zinc-700 rounded-tl-2xl rounded-tr-2xl fixed bottom-0 left-0 w-full z-50 lg:rounded-tl-none lg:rounded-bl-2xl lg:border-t-0 lg:border-r-0 lg:absolute lg:top-0 lg:right-0 lg:bottom-auto lg:left-auto lg:w-auto">
+      <nav className="fixed z-10 w-full bottom-0 left-0 lg:absolute lg:top-0 lg:right-0 lg:bottom-auto lg:left-auto lg:w-auto bg-zinc-800 bg-opacity-50 backdrop-blur-md border border-zinc-700 rounded-tl-2xl rounded-tr-2xl lg:rounded-tl-none lg:rounded-bl-2xl lg:border-t-0 lg:border-r-0">
         <ul className="flex justify-center px-7 py-4 text-xs sm:text-base space-x-3 sm:space-x-7 font-semibold">
           <li>
             <button

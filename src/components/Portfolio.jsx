@@ -1,25 +1,24 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
-import AppointmentManagement from "./Projects/AppointmentManagement";
-import InvoicingWithCRM from "./Projects/InvoicingWithCRM";
+import ReneWorkflow from "./Projects/ReneWorkflow";
+import BillCRM from "./Projects/BillCRM";
 import TiendaLTE from "./Projects/TiendaLTE";
 import TrucksGPS from "./Projects/TrucksGPS";
 
 import project1 from "../assets/images/project-1.jpg";
-// import project2 from "../assets/images/project-2.png";
-import project3 from "../assets/images/project-3.jpg";
+import project2 from "../assets/images/project-2.jpg";
+import project3 from "../assets/images/project-3.png";
 import project4 from "../assets/images/project-4.png";
-import project5 from "../assets/images/project-5.png";
+// import project5 from "../assets/images/project-5.png";
 // import project6 from "../assets/images/project-6.png";
 // import project7 from "../assets/images/project-7.png";
 // import project8 from "../assets/images/project-8.jpg";
 // import project9 from "../assets/images/project-9.png";
 
 const Portfolio = () => {
-  const [showAppointmentManagement, setShowAppointmentManagement] =
-    useState(false);
-  const [showInvoicingWithCRM, setShowInvoicingWithCRM] = useState(false);
+  const [showReneWorkflow, setShowReneWorkflow] = useState(false);
+  const [showBillCRM, setShowBillCRM] = useState(false);
   const [showTiendaLTE, setShowTiendaLTE] = useState(false);
   const [showTrucksGPS, setShowTrucksGPS] = useState(false);
 
@@ -28,20 +27,10 @@ const Portfolio = () => {
 
   const projects = [
     { id: 1, title: "TiendaLTE", category: "web", image: project1 },
-    //{ id: 2, title: "Finance", category: "web", image: project2 },
-    {
-      id: 3,
-      title: "Sistema de gestión de citas",
-      category: "escritorio",
-      image: project3,
-    },
-    { id: 4, title: "TrucksGPS", category: "móvil", image: project4 },
-    {
-      id: 5,
-      title: "Software de facturación con funciones CRM",
-      category: "escritorio",
-      image: project5,
-    },
+    { id: 2, title: "ReneWorkflow", category: "escritorio", image: project2 },
+    { id: 3, title: "TrucksGPS", category: "móvil", image: project3 },
+    { id: 4, title: "BillCRM", category: "escritorio", image: project4 },
+    //{ id: 5, title: "Finance", category: "web", image: project5 },
     //{ id: 6, title: "MetaSpark", category: "escritorio", image: project6 },
     //{ id: 7, title: "Summary", category: "web", image: project7 },
     //{ id: 8, title: "Task Manager", category: "móvil", image: project8 },
@@ -63,14 +52,14 @@ const Portfolio = () => {
       case 1:
         setShowTiendaLTE(true);
         break;
-      case 3:
-        setShowAppointmentManagement(true);
+      case 2:
+        setShowReneWorkflow(true);
         break;
-      case 4:
+      case 3:
         setShowTrucksGPS(true);
         break;
-      case 5:
-        setShowInvoicingWithCRM(true);
+      case 4:
+        setShowBillCRM(true);
         break;
       default:
         break;
@@ -79,9 +68,9 @@ const Portfolio = () => {
 
   const closePopups = () => {
     setShowTiendaLTE(false);
-    setShowAppointmentManagement(false);
+    setShowReneWorkflow(false);
     setShowTrucksGPS(false);
-    setShowInvoicingWithCRM(false);
+    setShowBillCRM(false);
   };
 
   const handleEscKey = (event) => {
@@ -96,7 +85,7 @@ const Portfolio = () => {
     return () => {
       document.removeEventListener("keydown", handleEscKey);
     };
-  }, []);
+  });
 
   return (
     <article className="text-gray-200 text-left">
@@ -203,13 +192,37 @@ const Portfolio = () => {
         </ul>
       </section>
 
-      <AppointmentManagement
-        show={showAppointmentManagement}
-        onClose={closePopups}
-      />
-      <InvoicingWithCRM show={showInvoicingWithCRM} onClose={closePopups} />
-      <TiendaLTE show={showTiendaLTE} onClose={closePopups} />
-      <TrucksGPS show={showTrucksGPS} onClose={closePopups} />
+      <div
+        className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-300 ${
+          showReneWorkflow ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <ReneWorkflow show={showReneWorkflow} onClose={closePopups} />
+      </div>
+
+      <div
+        className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-300 ${
+          showBillCRM ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <BillCRM show={showBillCRM} onClose={closePopups} />
+      </div>
+
+      <div
+        className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-300 ${
+          showTiendaLTE ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <TiendaLTE show={showTiendaLTE} onClose={closePopups} />
+      </div>
+
+      <div
+        className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-300 ${
+          showTrucksGPS ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <TrucksGPS show={showTrucksGPS} onClose={closePopups} />
+      </div>
     </article>
   );
 };

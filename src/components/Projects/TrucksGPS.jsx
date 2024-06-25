@@ -27,7 +27,7 @@ const TrucksGPS = ({ show, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 px-4 bg-zinc-950 bg-opacity-50 flex items-center justify-center transition-opacity"
+      className="fixed inset-0 z-30 px-4 bg-zinc-950 bg-opacity-50 flex items-center justify-center transition-opacity"
       onClick={onClose}
     >
       <div
@@ -44,8 +44,21 @@ const TrucksGPS = ({ show, onClose }) => {
         >
           <Icon icon="ic:round-close" className="text-lg" />
         </button>
-        <h2 className="text-xl mb-4">TrucksGPS</h2>
-        <p>Este es el contenido de TrucksGPS.</p>
+        <h3 className="text-xl sm:text-2xl font-bold">TrucksGPS</h3>
+        <h4 className="text-sm sm:text-base font-semibold">
+          Aplicación Móvil para Gestión Integral de Flotas y Recursos.
+        </h4>
+        <p className="text-sm sm:text-base font-light">
+          Una aplicación móvil diseñada para optimizar la gestión de flotas de
+          transporte de carga. Simplifica el control de documentación legal,
+          optimiza la planificación y seguimiento de rutas en tiempo real, y
+          genera reportes detallados para una toma de decisiones informada. Con
+          funcionalidades como almacenamiento digital de documentos, alertas
+          automáticas de vencimiento, rastreo GPS, y comunicación en tiempo real
+          con los conductores, mejora la eficiencia operativa, garantiza el
+          cumplimiento normativo y aumenta la seguridad en las operaciones de
+          transporte.
+        </p>
       </div>
     </div>
   );

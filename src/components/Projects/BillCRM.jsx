@@ -1,21 +1,6 @@
-import { useEffect } from "react";
 import { Icon } from "@iconify/react";
 
-const TiendaLTE = ({ show, onClose }) => {
-  useEffect(() => {
-    const handleEscKey = (event) => {
-      if (event.key === "Escape" && show) {
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleEscKey);
-
-    return () => {
-      document.removeEventListener("keydown", handleEscKey);
-    };
-  }, [show, onClose]);
-
+const BillCRM = ({ show, onClose }) => {
   if (!show) return null;
 
   return (
@@ -35,8 +20,10 @@ const TiendaLTE = ({ show, onClose }) => {
         >
           <Icon icon="ic:round-close" className="text-lg" />
         </button>
-        <h3 className="text-xl mb-4">TiendaLTE</h3>
-        <h4 className="text-sm sm:text-base font-semibold"></h4>
+        <h3 className="text-xl sm:text-2xl font-bold">BillCRM</h3>
+        <h4 className="text-sm sm:text-base font-semibold">
+          Software de facturación con funciones CRM
+        </h4>
         <p className="text-sm sm:text-base font-light">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas
           porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies,
@@ -53,4 +40,4 @@ const TiendaLTE = ({ show, onClose }) => {
   );
 };
 
-export default TiendaLTE;
+export default BillCRM;
