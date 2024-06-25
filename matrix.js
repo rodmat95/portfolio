@@ -19,7 +19,7 @@ function matrix() {
   ctx.fillRect(0, 0, w, h);
 
   // Establecer el color en gris y la fuente en 15pt monoespaciada en el contexto de dibujo
-  ctx.fillStyle = "rgb(14 165 233 / 1)";
+  ctx.fillStyle = "#0EA5E9";
   ctx.font = "15pt monospace";
 
   // Para cada columna, colocar un carácter aleatorio al final
