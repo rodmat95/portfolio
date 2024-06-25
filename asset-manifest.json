@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.71002224.css",
-    "main.js": "/portfolio/static/js/main.969f4408.js",
+    "main.css": "/portfolio/static/css/main.688d7ef8.css",
+    "main.js": "/portfolio/static/js/main.7eeacef3.js",
     "static/js/845.185071e5.chunk.js": "/portfolio/static/js/845.185071e5.chunk.js",
     "static/media/Cv - Rodrigo Chavarry.pdf": "/portfolio/static/media/Cv - Rodrigo Chavarry.5935d57cc0691e6c929f.pdf",
     "static/media/my-avatar.jpeg": "/portfolio/static/media/my-avatar.2ba7c5dec64516572759.jpeg",
-    "static/media/project-4.png": "/portfolio/static/media/project-4.5a1aae0743b42f504f30.png",
+    "static/media/project-3.png": "/portfolio/static/media/project-3.5a1aae0743b42f504f30.png",
     "static/media/codificacion.png": "/portfolio/static/media/codificacion.11cb7e54326411ccd19e.png",
     "static/media/torre-de-pc-config.png": "/portfolio/static/media/torre-de-pc-config.443a71d16ef26637fbff.png",
-    "static/media/project-3.jpg": "/portfolio/static/media/project-3.958be988eb43058bd137.jpg",
+    "static/media/project-2.jpg": "/portfolio/static/media/project-2.958be988eb43058bd137.jpg",
     "static/media/telefono-inteligente.png": "/portfolio/static/media/telefono-inteligente.c670d7afe4c16803937d.png",
-    "static/media/project-5.png": "/portfolio/static/media/project-5.61aa84035e8ff5a95a47.png",
+    "static/media/project-4.png": "/portfolio/static/media/project-4.61aa84035e8ff5a95a47.png",
     "static/media/project-1.jpg": "/portfolio/static/media/project-1.2273185734a7aab2c003.jpg",
     "static/media/codificacion-web.png": "/portfolio/static/media/codificacion-web.033fc164a26ee6787070.png",
     "static/media/poppins-latin-400-normal.woff": "/portfolio/static/media/poppins-latin-400-normal.1458587c0aa7cd06b82b.woff",
@@ -22,12 +22,12 @@
     "static/media/slick.ttf": "/portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/portfolio/index.html",
-    "main.71002224.css.map": "/portfolio/static/css/main.71002224.css.map",
-    "main.969f4408.js.map": "/portfolio/static/js/main.969f4408.js.map",
+    "main.688d7ef8.css.map": "/portfolio/static/css/main.688d7ef8.css.map",
+    "main.7eeacef3.js.map": "/portfolio/static/js/main.7eeacef3.js.map",
     "845.185071e5.chunk.js.map": "/portfolio/static/js/845.185071e5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.71002224.css",
-    "static/js/main.969f4408.js"
+    "static/css/main.688d7ef8.css",
+    "static/js/main.7eeacef3.js"
   ]
 }
