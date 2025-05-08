@@ -21,12 +21,12 @@
   },
   "hero": {
     "title": "Landing pages que",
-    "titleHighlight": "convierten",
-    "subtitle": "Soy Tu Nombre, un desarrollador web enfocado en rendimiento, UI moderna y resultados reales.",
+    "titleHighlight": "impulsan tu negocio",
+    "subtitle": "Soy Rodrigo Chavarry, desarrollador web especializado en crear presencia digital moderna y efectiva para marcas y emprendedores.",
     "cta": "Ver Proyectos",
-    "availableForWork": "Disponible para trabajar",
+    "availableForWork": "Disponible para nuevos proyectos",
     "greeting": "Hola, soy",
-    "description": "Un desarrollador apasionado que crea experiencias digitales hermosas y funcionales que resuelven problemas reales.",
+    "description": "Un desarrollador enfocado en construir sitios funcionales y atractivos que conectan con tus clientes y generan resultados reales.",
     "viewWork": "Ver Mi Trabajo",
     "contactMe": "Contáctame",
     "letsTalkWhatsApp": "Chatea conmigo por WhatsApp",
@@ -34,12 +34,12 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "paragraph1": "Soy un desarrollador web apasionado enfocado en crear sitios web de alto rendimiento y visualmente impresionantes que impulsan resultados comerciales reales. Mi viaje comenzó hace 5 años cuando construí mi primer sitio de comercio electrónico y descubrí el impacto que el diseño y la optimización pueden tener en las tasas de conversión.",
-    "paragraph2": "Lo que distingue mi trabajo es mi enfoque holístico del desarrollo web. No solo construyo sitios web; creo experiencias digitales que equilibran el atractivo estético con la excelencia técnica. Cada proyecto que emprendo está optimizado para velocidad, accesibilidad y conversión, asegurando que tu sitio web no solo se vea genial sino que funcione excepcionalmente.",
-    "paragraph3": "Actualmente, estoy explorando la intersección de IA y desarrollo web, construyendo herramientas que ayudan a las empresas a automatizar sus estrategias de creación y personalización de contenido. También estoy profundizando mi experiencia en Animación Web y Diseño de Interacción para crear experiencias de usuario más atractivas.",
+    "paragraph1": "Soy un desarrollador web enfocado en ayudar a marcas y emprendedores a destacar en el entorno digital. Me especializo en la creación de landing pages modernas, optimizadas para conversión, diseño atractivo y excelente rendimiento.",
+    "paragraph2": "Mi enfoque combina estética, funcionalidad y velocidad para lograr sitios que no solo se ven bien, sino que cumplen objetivos. Trabajo cada proyecto con una mirada estratégica, buscando siempre transmitir la identidad de cada marca y facilitar el camino del usuario hacia la acción.",
+    "paragraph3": "Actualmente, sigo perfeccionando mis habilidades en diseño UI, desarrollo responsivo y optimización SEO para ofrecer soluciones aún más efectivas. Mi objetivo es que cada sitio que creo sea una herramienta poderosa para el crecimiento del negocio de mis clientes.",
     "stats": {
       "experience": "Años de Experiencia",
-      "projects": "Landing Pages",
+      "projects": "Web Pages",
       "clients": "Clientes Satisfechos"
     }
   },
@@ -110,19 +110,19 @@
         "title": "Desarrollo Frontend",
         "skills": [
           "HTML5, CSS3, JavaScript (ES6+)",
-          "React, Next.js, Vue.js",
-          "Tailwind CSS, SASS/SCSS",
+          "Angular, React, Next.js, Vue.js",
+          "Tailwind CSS, Bootstrap, SASS/SCSS",
           "Diseño Responsivo",
           "Accesibilidad (WCAG)"
         ]
       },
       "backend": {
         "title": "Desarrollo Backend",
-        "skills": ["Node.js, Express", "Python, Django", "APIs RESTful", "GraphQL", "Autenticación y Autorización"]
+        "skills": ["Node.js, Express", "PHP, Laravel", "Python, Django", "APIs RESTful", "GraphQL", "Autenticación y Autorización"]
       },
       "database": {
         "title": "Gestión de Bases de Datos",
-        "skills": ["MongoDB", "PostgreSQL, MySQL", "Firebase", "Modelado de Datos", "Optimización de Consultas"]
+        "skills": ["MongoDB", "PostgreSQL, SQL Server, MySQL", "Firebase", "Modelado de Datos", "Optimización de Consultas"]
       },
       "design": {
         "title": "Diseño UI/UX",
@@ -142,6 +142,7 @@
         "title": "Otras Tecnologías",
         "skills": [
           "TypeScript",
+          "Java, C#, .NET",
           "Redux, Context API",
           "Testing (Jest, React Testing Library)",
           "PWAs",
@@ -190,124 +191,124 @@
   },
   "process": {
     "title": "Mi Proceso",
-    "description": "Cómo abordo los proyectos desde el concepto hasta la finalización, asegurando calidad y satisfacción del cliente.",
+    "description": "Así es como gestiono cada proyecto, desde la idea inicial hasta el lanzamiento, enfocándome en la calidad, la conversión y la satisfacción del cliente.",
     "steps": {
       "discovery": {
         "title": "Descubrimiento",
-        "description": "Comienzo por entender tus objetivos, público objetivo y requisitos del proyecto. Esta fase implica discusiones en profundidad para alinear nuestra visión y establecer objetivos claros.",
+        "description": "Comienzo entendiendo tu negocio, el público al que te diriges y los objetivos de tu landing page. Esta etapa es clave para alinear la propuesta con lo que realmente necesita tu marca.",
         "activities": "Actividades Clave:",
         "activitiesList": [
-          "Entrevistas con stakeholders",
-          "Definición del alcance del proyecto",
-          "Establecimiento de objetivos y métricas de éxito",
-          "Planificación de cronograma y presupuesto"
+          "Reunión inicial para conocer tu negocio",
+          "Definición de objetivos concretos",
+          "Revisión de tu presencia digital actual",
+          "Estimación de tiempo y recursos"
         ]
       },
       "research": {
         "title": "Investigación",
-        "description": "Realizo una investigación exhaustiva para informar las decisiones de diseño y desarrollo, analizando competidores, necesidades de usuarios y mejores prácticas de la industria.",
+        "description": "Analizo tu sector, competidores y oportunidades para destacar visual y funcionalmente. Esta investigación alimenta cada decisión estratégica del diseño y desarrollo.",
         "activities": "Actividades Clave:",
         "activitiesList": [
-          "Análisis competitivo",
-          "Investigación de usuarios y personas",
-          "Evaluación de stack tecnológico",
-          "Análisis de tendencias del mercado"
+          "Análisis de sitios similares o competidores",
+          "Identificación de necesidades del usuario",
+          "Revisión de tendencias visuales actuales",
+          "Selección del stack tecnológico adecuado"
         ]
       },
       "design": {
         "title": "Diseño",
-        "description": "Creo wireframes y diseños visuales que se alinean con tu marca y objetivos del proyecto, enfocándome en la experiencia del usuario y la estética de la interfaz.",
+        "description": "Diseño interfaces limpias, centradas en la conversión y adaptadas a la identidad de tu marca. Cada componente busca guiar al usuario hacia una acción clara.",
         "activities": "Actividades Clave:",
         "activitiesList": [
-          "Wireframing y prototipado",
-          "Diseño UI e identidad visual",
-          "Mapeo de flujo de usuario",
-          "Creación de sistema de diseño"
+          "Wireframes y prototipos funcionales",
+          "Diseño visual responsivo",
+          "Definición de estructura y jerarquía visual",
+          "Selección de tipografía y colores alineados a la marca"
         ]
       },
       "development": {
         "title": "Desarrollo",
-        "description": "Transformo los diseños en código funcional, construyendo soluciones robustas y escalables con código limpio y mantenible y atención al rendimiento.",
+        "description": "Transformo los diseños en una landing page funcional, rápida y optimizada para SEO y performance. Utilizo tecnologías modernas como React, Laravel o Tailwind.",
         "activities": "Actividades Clave:",
         "activitiesList": [
-          "Desarrollo frontend y backend",
-          "Implementación responsiva",
-          "Integración de servicios de terceros",
-          "Revisiones de código y documentación"
+          "Maquetación HTML, CSS, Tailwind o Bootstrap",
+          "Integración de formularios de contacto o WhatsApp",
+          "Adaptación para móviles y tablets",
+          "Revisión de código y documentación"
         ]
       },
       "testing": {
         "title": "Pruebas",
-        "description": "Pruebo rigurosamente todos los aspectos del proyecto para asegurar funcionalidad, usabilidad y rendimiento en todos los dispositivos y navegadores.",
+        "description": "Antes de lanzar tu sitio, lo pruebo exhaustivamente para asegurar que funcione correctamente en todo tipo de dispositivos y navegadores.",
         "activities": "Actividades Clave:",
         "activitiesList": [
-          "Pruebas funcionales",
-          "Pruebas en múltiples navegadores y dispositivos",
-          "Optimización de rendimiento",
-          "Cumplimiento de accesibilidad"
+          "Pruebas de funcionamiento y formularios",
+          "Validación visual en distintos tamaños de pantalla",
+          "Revisión de tiempos de carga",
+          "Revisión de accesibilidad básica"
         ]
       },
       "launch": {
         "title": "Lanzamiento y Soporte",
-        "description": "Aseguro un despliegue sin problemas y proporciono soporte y mantenimiento continuos para mantener tu proyecto funcionando de manera óptima y evolucionando según sea necesario.",
+        "description": "Una vez todo está aprobado, lanzo tu landing page y quedo a tu disposición para soporte técnico, mejoras o actualizaciones posteriores.",
         "activities": "Actividades Clave:",
         "activitiesList": [
-          "Despliegue y lanzamiento",
-          "Configuración y monitoreo de analíticas",
-          "Soporte post-lanzamiento",
-          "Mejoras iterativas"
+          "Despliegue en servidor o hosting",
+          "Configuración de analítica y eventos",
+          "Soporte post-lanzamiento inicial",
+          "Opciones de mantenimiento mensual"
         ]
       }
     },
     "problemSolving": {
       "title": "Mi Enfoque de Resolución de Problemas",
-      "description": "Cuando me enfrento a desafíos complejos, sigo un enfoque estructurado que combina pensamiento analítico con resolución creativa de problemas:",
+      "description": "Mi forma de enfrentar desafíos técnicos y de diseño combina pensamiento estructurado, empatía por el usuario y soluciones prácticas orientadas al negocio:",
       "steps": [
         {
-          "title": "Definir el Problema",
-          "description": "Identifico claramente el problema central, separando síntomas de causas raíz para asegurarme de abordar el problema correcto."
+          "title": "Identificación Clara",
+          "description": "Distingo el problema real detrás de los síntomas, asegurándome de que mi solución responda a la necesidad correcta."
         },
         {
-          "title": "Investigar y Analizar",
-          "description": "Recopilo información relevante, analizo restricciones y exploro soluciones existentes para informar mi enfoque."
+          "title": "Análisis Contextual",
+          "description": "Reviso el contexto completo: datos, limitaciones y objetivos para encontrar una solución bien fundamentada."
         },
         {
-          "title": "Generar Múltiples Soluciones",
-          "description": "Hago lluvia de ideas de varios enfoques, considerando diferentes ángulos y tecnologías para encontrar la solución óptima."
+          "title": "Propuesta de Alternativas",
+          "description": "Planteo múltiples enfoques posibles, considerando su impacto visual, técnico y de conversión."
         },
         {
-          "title": "Evaluar y Seleccionar",
-          "description": "Evalúo cada solución potencial según criterios como viabilidad, escalabilidad y alineación con los objetivos del proyecto."
+          "title": "Selección Estratégica",
+          "description": "Elijo la solución más efectiva basada en viabilidad técnica, impacto en negocio y experiencia del usuario."
         },
         {
-          "title": "Implementar y Probar",
-          "description": "Desarrollo la solución elegida metódicamente, probando exhaustivamente en cada etapa para asegurar la efectividad."
+          "title": "Desarrollo y Validación",
+          "description": "Implemento la solución y la someto a pruebas para asegurar que funcione tal como se esperaba."
         },
         {
-          "title": "Reflexionar y Refinar",
-          "description": "Evalúo los resultados, recopilo comentarios y realizo mejoras iterativas para optimizar la solución."
+          "title": "Optimización",
+          "description": "Reviso resultados, recojo feedback y hago mejoras iterativas para perfeccionar la experiencia."
         }
       ]
     }
   },
   "services": {
     "title": "¿Cómo puedo ayudarte?",
-    "description": "Ofrezco una variedad de servicios para ayudarte a alcanzar tus objetivos digitales, desde landing pages personalizadas hasta consultoría técnica.",
+    "description": "Estas son las áreas en las que puedo aportar valor a tu negocio digital, especialmente si necesitas presencia web efectiva y enfocada en resultados.",
     "landingPages": {
       "title": "Landing Pages Personalizadas",
-      "description": "Landing pages de alta conversión y visualmente impresionantes diseñadas para mostrar tu producto e impulsar conversiones."
+      "description": "Sitios diseñados para captar clientes, optimizados para conversión, y adaptados a tu identidad visual y objetivos."
     },
     "webSpeed": {
       "title": "Optimización de Velocidad Web",
-      "description": "Ajuste de rendimiento para garantizar que tu sitio web cargue rápidamente y proporcione una experiencia de usuario fluida."
+      "description": "Mejoro el rendimiento de tu página para tiempos de carga rápidos, buena experiencia de usuario y mejores métricas en buscadores."
     },
     "responsive": {
       "title": "Diseño Responsive-first",
-      "description": "Sitios web que se ven y funcionan perfectamente en todos los dispositivos, desde escritorio hasta móvil."
+      "description": "Tu sitio funcionará y se verá perfecto en móviles, tablets y escritorio, con navegación fluida y diseño adaptativo."
     },
     "consulting": {
       "title": "Consultoría Técnica",
-      "description": "Asesoramiento experto sobre tecnologías web, optimización de rendimiento y mejora de tasas de conversión."
+      "description": "Te asesoro en decisiones tecnológicas, estructura web, mejora continua o implementación de herramientas digitales."
     }
   },
   "contact": {

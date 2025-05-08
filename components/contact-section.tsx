@@ -41,18 +41,18 @@ export default function ContactSection() {
             <p className="text-editorial-body mb-8">{t("contact.description")}</p>
 
             <div className="space-y-6">
-              <a href="mailto:your.email@example.com" className="flex items-center group">
+              <a href="mailto:rodmat0905@gmail.com" className="flex items-center group">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <div className="text-sm text-foreground/60">{t("contact.contactInfo.email")}</div>
-                  <div className="font-medium group-hover:text-primary transition-colors">your.email@example.com</div>
+                  <div className="font-medium group-hover:text-primary transition-colors">rodmat0905@gmail.com</div>
                 </div>
               </a>
 
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/rodmat95"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center group"
@@ -62,12 +62,12 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm text-foreground/60">{t("contact.contactInfo.github")}</div>
-                  <div className="font-medium group-hover:text-primary transition-colors">github.com/yourusername</div>
+                  <div className="font-medium group-hover:text-primary transition-colors">github.com/rodmat95</div>
                 </div>
               </a>
 
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/rodrigochavarry"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center group"
@@ -78,7 +78,7 @@ export default function ContactSection() {
                 <div>
                   <div className="text-sm text-foreground/60">{t("contact.contactInfo.linkedin")}</div>
                   <div className="font-medium group-hover:text-primary transition-colors">
-                    linkedin.com/in/yourusername
+                    linkedin.com/in/rodrigochavarry
                   </div>
                 </div>
               </a>

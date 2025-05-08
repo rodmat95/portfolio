@@ -21,12 +21,12 @@
   },
   "hero": {
     "title": "Landing pages that",
-    "titleHighlight": "convert",
-    "subtitle": "I'm Your Name, a web developer focused on performance, modern UI, and real results.",
+    "titleHighlight": "grow your business",
+    "subtitle": "I'm Rodrigo Chavarry, a web developer specialized in building modern and effective digital presence for brands and entrepreneurs.",
     "cta": "View Projects",
     "availableForWork": "Available for work",
     "greeting": "Hi, I'm",
-    "description": "A passionate developer crafting beautiful, functional digital experiences that solve real problems.",
+    "description": "A developer focused on building functional and attractive websites that connect with your audience and deliver real results.",
     "viewWork": "View My Work",
     "contactMe": "Contact Me",
     "letsTalkWhatsApp": "Chat with Me on WhatsApp",
@@ -34,12 +34,12 @@
   },
   "about": {
     "title": "About Me",
-    "paragraph1": "I'm a passionate web developer with a focus on creating high-performance, visually stunning websites that drive real business results. My journey began 5 years ago when I built my first e-commerce site and discovered the impact that thoughtful design and optimization can have on conversion rates.",
-    "paragraph2": "What sets my work apart is my holistic approach to web development. I don't just build websites; I create digital experiences that balance aesthetic appeal with technical excellence. Every project I undertake is optimized for speed, accessibility, and conversion, ensuring that your website not only looks great but performs exceptionally.",
-    "paragraph3": "Currently, I'm exploring the intersection of AI and web development, building tools that help businesses automate their content creation and personalization strategies. I'm also deepening my expertise in Web Animation and Interaction Design to create more engaging user experiences.",
+    "paragraph1": "I'm a web developer focused on helping brands and entrepreneurs stand out in the digital world. I specialize in creating modern landing pages, optimized for conversions, great design, and performance.",
+    "paragraph2": "My approach combines visual design, functionality, and speed to build websites that not only look great but also meet business goals. I treat every project strategically, ensuring it communicates your brand clearly and guides users toward action.",
+    "paragraph3": "I'm currently refining my skills in UI design, responsive development, and SEO optimization to deliver even more impactful solutions. My goal is to create websites that become powerful tools for my clients' business growth.",
     "stats": {
       "experience": "Years Experience",
-      "projects": "Landing Pages",
+      "projects": "Web Pages",
       "clients": "Happy Clients"
     }
   },
@@ -84,19 +84,19 @@
         "title": "Frontend Development",
         "skills": [
           "HTML5, CSS3, JavaScript (ES6+)",
-          "React, Next.js, Vue.js",
-          "Tailwind CSS, SASS/SCSS",
+          "Angular, React, Next.js, Vue.js",
+          "Tailwind CSS, Bootstrap, SASS/SCSS",
           "Responsive Design",
           "Accessibility (WCAG)"
         ]
       },
       "backend": {
         "title": "Backend Development",
-        "skills": ["Node.js, Express", "Python, Django", "RESTful APIs", "GraphQL", "Authentication & Authorization"]
+        "skills": ["Node.js, Express", "PHP, Laravel", "Python, Django", "RESTful APIs", "GraphQL", "Authentication & Authorization"]
       },
       "database": {
         "title": "Database Management",
-        "skills": ["MongoDB", "PostgreSQL, MySQL", "Firebase", "Data Modeling", "Query Optimization"]
+        "skills": ["MongoDB", "PostgreSQL, SQL Server, MySQL", "Firebase", "Data Modeling", "Query Optimization"]
       },
       "design": {
         "title": "UI/UX Design",
@@ -116,6 +116,7 @@
         "title": "Other Technologies",
         "skills": [
           "TypeScript",
+          "Java, C#, .NET",
           "Redux, Context API",
           "Testing (Jest, React Testing Library)",
           "PWAs",
@@ -164,124 +165,124 @@
   },
   "process": {
     "title": "My Process",
-    "description": "How I approach projects from concept to completion, ensuring quality and client satisfaction.",
+    "description": "This is how I handle each project, from idea to launch, focusing on quality, conversions, and client satisfaction.",
     "steps": {
       "discovery": {
         "title": "Discovery",
-        "description": "I begin by understanding your goals, target audience, and project requirements. This phase involves in-depth discussions to align our vision and set clear objectives.",
+        "description": "I begin by understanding your business, target audience, and goals. This phase is key to aligning the project with your brand’s actual needs.",
         "activities": "Key Activities:",
         "activitiesList": [
-          "Stakeholder interviews",
-          "Project scope definition",
-          "Goal setting and success metrics",
-          "Timeline and budget planning"
+          "Initial meeting to understand your business",
+          "Defining clear and measurable goals",
+          "Review of current digital presence",
+          "Time and resource estimation"
         ]
       },
       "research": {
         "title": "Research",
-        "description": "I conduct thorough research to inform design and development decisions, analyzing competitors, user needs, and industry best practices.",
+        "description": "I analyze your industry, competitors, and opportunities to ensure your website stands out both visually and functionally.",
         "activities": "Key Activities:",
         "activitiesList": [
           "Competitive analysis",
-          "User research and personas",
-          "Technology stack evaluation",
-          "Market trend analysis"
+          "User needs assessment",
+          "Visual trend research",
+          "Technology stack evaluation"
         ]
       },
       "design": {
         "title": "Design",
-        "description": "I create wireframes and visual designs that align with your brand and project goals, focusing on user experience and interface aesthetics.",
+        "description": "I design clean, conversion-focused interfaces aligned with your brand. Every element is created to guide the user toward clear action.",
         "activities": "Key Activities:",
         "activitiesList": [
-          "Wireframing and prototyping",
-          "UI design and visual identity",
-          "User flow mapping",
-          "Design system creation"
+          "Wireframing and functional prototypes",
+          "Responsive visual design",
+          "User flow planning",
+          "Design system and brand alignment"
         ]
       },
       "development": {
         "title": "Development",
-        "description": "I transform designs into functional code, building robust, scalable solutions with clean, maintainable code and attention to performance.",
+        "description": "I turn designs into fast, SEO-optimized code using modern tools like React, Laravel, and Tailwind CSS.",
         "activities": "Key Activities:",
         "activitiesList": [
           "Frontend and backend development",
-          "Responsive implementation",
-          "Integration of third-party services",
+          "Responsive layout implementation",
+          "Third-party service integration",
           "Code reviews and documentation"
         ]
       },
       "testing": {
         "title": "Testing",
-        "description": "I rigorously test all aspects of the project to ensure functionality, usability, and performance across devices and browsers.",
+        "description": "Before launching, I run tests to ensure functionality, performance, and full responsiveness across all browsers and devices.",
         "activities": "Key Activities:",
         "activitiesList": [
-          "Functional testing",
-          "Cross-browser and device testing",
+          "Functionality testing",
+          "Cross-device and browser compatibility",
           "Performance optimization",
-          "Accessibility compliance"
+          "Accessibility checks"
         ]
       },
       "launch": {
         "title": "Launch & Support",
-        "description": "I ensure smooth deployment and provide ongoing support and maintenance to keep your project running optimally and evolving as needed.",
+        "description": "After approval, I deploy your landing page and remain available for ongoing support, updates, or future improvements.",
         "activities": "Key Activities:",
         "activitiesList": [
-          "Deployment and launch",
-          "Analytics setup and monitoring",
-          "Post-launch support",
-          "Iterative improvements"
+          "Deployment and setup",
+          "Analytics configuration",
+          "Initial post-launch support",
+          "Optional maintenance packages"
         ]
       }
     },
     "problemSolving": {
       "title": "My Problem-Solving Approach",
-      "description": "When faced with complex challenges, I follow a structured approach that combines analytical thinking with creative problem-solving:",
+      "description": "When faced with technical or design challenges, I follow a structured and strategic approach that combines logic, empathy, and real-world efficiency.",
       "steps": [
         {
           "title": "Define the Problem",
-          "description": "I clearly identify the core issue, separating symptoms from root causes to ensure I'm addressing the right problem."
+          "description": "I clearly identify the core issue, separating symptoms from root causes to ensure we’re solving the right problem."
         },
         {
-          "title": "Research & Analyze",
-          "description": "I gather relevant information, analyze constraints, and explore existing solutions to inform my approach."
+          "title": "Research and Analyze",
+          "description": "I gather relevant information, evaluate constraints, and study existing solutions to inform my approach."
         },
         {
           "title": "Generate Multiple Solutions",
-          "description": "I brainstorm various approaches, considering different angles and technologies to find the optimal solution."
+          "description": "I brainstorm different approaches, considering various tools and technologies to find the optimal path."
         },
         {
-          "title": "Evaluate & Select",
-          "description": "I assess each potential solution against criteria like feasibility, scalability, and alignment with project goals."
+          "title": "Evaluate and Select",
+          "description": "Each solution is evaluated based on feasibility, scalability, and alignment with the project's goals."
         },
         {
-          "title": "Implement & Test",
-          "description": "I develop the chosen solution methodically, testing thoroughly at each stage to ensure effectiveness."
+          "title": "Implement and Test",
+          "description": "I develop the chosen solution and test it rigorously to ensure effectiveness and stability."
         },
         {
-          "title": "Reflect & Refine",
-          "description": "I evaluate outcomes, gather feedback, and make iterative improvements to optimize the solution."
+          "title": "Reflect and Refine",
+          "description": "I review outcomes, gather feedback, and make iterative improvements to refine the final result."
         }
       ]
     }
   },
   "services": {
-    "title": "How can I help you?",
-    "description": "I offer a range of services to help you achieve your digital goals, from custom landing pages to technical consulting.",
+    "title": "How Can I Help You?",
+    "description": "Here are the core services I offer to help your business grow online through clean, fast, and effective web solutions.",
     "landingPages": {
       "title": "Custom Landing Pages",
-      "description": "High-converting, visually stunning landing pages designed to showcase your product and drive conversions."
+      "description": "High-converting, visually stunning landing pages tailored to your brand and designed to drive action."
     },
     "webSpeed": {
-      "title": "Web Speed Optimization",
-      "description": "Performance tuning to ensure your website loads quickly and provides a smooth user experience."
+      "title": "Website Speed Optimization",
+      "description": "Performance tuning to ensure your site loads quickly and provides a smooth user experience."
     },
     "responsive": {
       "title": "Responsive-first Design",
-      "description": "Websites that look and function perfectly on all devices, from desktop to mobile."
+      "description": "Websites that look and perform flawlessly across all devices, from smartphones to desktops."
     },
     "consulting": {
       "title": "Technical Consulting",
-      "description": "Expert advice on web technologies, performance optimization, and conversion rate improvement."
+      "description": "Expert advice on choosing the right tech stack, improving conversion rates, or optimizing performance."
     }
   },
   "contact": {

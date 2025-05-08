@@ -80,7 +80,7 @@ export default function StickyNav() {
             onClick={(e) => handleNavClick(e, "home")}
             className="text-lg font-medium tracking-tight transition-colors hover:text-primary"
           >
-            <span className="font-bold">YourName</span>.dev
+            <span className="font-bold">Rodmat95</span>.dev
           </a>
 
           <nav className="hidden md:flex items-center space-x-8">
