@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, ExternalLink, Github } from "lucide-react"
@@ -16,6 +16,7 @@ interface ProjectDetailModalProps {
 export default function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps) {
   const { t } = useLanguage()
   const modalRef = useRef<HTMLDivElement>(null)
+  const [headerOffset, setHeaderOffset] = useState("5rem")
 
   // Close on escape key
   useEffect(() => {
@@ -39,11 +40,13 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
   // Dynamically adjust modal position based on header height
   useEffect(() => {
+    if (typeof window === "undefined") return
+
     const calculateHeaderOffset = () => {
       const header = document.querySelector("header")
       if (header) {
         const headerHeight = header.offsetHeight
-        document.documentElement.style.setProperty("--header-offset", `${headerHeight + 16}px`)
+        setHeaderOffset(`${headerHeight + 16}px`)
       }
     }
 
@@ -70,7 +73,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
           ref={modalRef}
           className="bg-background border rounded-lg shadow-xl w-full max-w-4xl max-h-[calc(100vh-80px)] md:max-h-[calc(100vh-100px)] overflow-y-auto mt-12 md:mt-14 lg:mt-16"
           style={{
-            marginTop: "var(--header-offset, 5rem)",
+            marginTop: headerOffset,
           }}
           initial={{ scale: 0.9, y: 20 }}
           animate={{ scale: 1, y: 0 }}

@@ -21,12 +21,15 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
 
   // After the existing useState declarations, add:
   useEffect(() => {
     // Function to set view based on screen width
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      const mobile = window.innerWidth < 768
+      setIsMobile(mobile)
+      if (mobile) {
         setView("list")
       }
     }
@@ -41,7 +44,9 @@ export default function ProjectsSection() {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  const ITEMS_PER_PAGE = view === "list" || window.innerWidth < 768 ? 3 : 6
+  const ITEMS_PER_PAGE = useMemo(() => {
+    return view === "list" || isMobile ? 3 : 6
+  }, [view, isMobile])
 
   // Fetch projects from Supabase
   useEffect(() => {
@@ -152,7 +157,7 @@ export default function ProjectsSection() {
         )}
 
         {/* Grid View (non-mobile only) */}
-        {!loading && view === "grid" && window.innerWidth >= 768 && filteredProjects.length > 0 && (
+        {!loading && view === "grid" && !isMobile && filteredProjects.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {currentProjects.map((project, index) => (
               <ProjectCardCompact key={project.id} project={project} index={index} onClick={handleProjectClick} />
@@ -161,7 +166,7 @@ export default function ProjectsSection() {
         )}
 
         {/* List View (or mobile) */}
-        {!loading && (view === "list" || window.innerWidth < 768) && filteredProjects.length > 0 && (
+        {!loading && (view === "list" || isMobile) && filteredProjects.length > 0 && (
           <div className="space-y-16">
             {currentProjects.map((project, index) => (
               <ProjectCard
