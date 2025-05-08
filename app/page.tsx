@@ -22,20 +22,21 @@ export default function Home() {
 
   // Smooth scrolling setup
   useEffect(() => {
+    if (typeof window === 'undefined') return; // Evita errores en SSR
     // Handle initial hash in URL
-    const hash = window.location.hash
+    const hash = window.location.hash;
     if (hash) {
-      const id = hash.replace("#", "")
-      const element = document.getElementById(id)
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
-          const yOffset = -80 // Header height offset
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
-          window.scrollTo({ top: y, behavior: "smooth" })
-        }, 100)
+          const yOffset = -80; // Header height offset
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }, 100);
       }
     }
-  }, [])
+  }, []);
 
   return (
     <div className="relative">
