@@ -71,7 +71,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
       >
         <motion.div
           ref={modalRef}
-          className="bg-background border rounded-lg shadow-xl w-full max-w-4xl max-h-[calc(100vh-80px)] md:max-h-[calc(100vh-100px)] overflow-y-auto mt-8 md:mt-10 lg:mt-12"
+          className="bg-background border rounded-lg shadow-xl w-full max-w-4xl overflow-y-auto"
           style={{
             marginTop: headerOffset,
           }}
