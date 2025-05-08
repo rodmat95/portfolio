@@ -71,7 +71,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
       >
         <motion.div
           ref={modalRef}
-          className="bg-background border rounded-lg shadow-xl w-full max-w-4xl overflow-y-auto mt-28 md:mt-24 lg:mt-20 mb-3"
+          className="bg-background border rounded-lg shadow-xl w-full max-w-4xl overflow-y-auto my-auto"
           initial={{ scale: 0.9, y: 20 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.9, y: 20 }}
