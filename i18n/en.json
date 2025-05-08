@@ -46,7 +46,7 @@
   "projects": {
     "title": "Featured Projects",
     "description": "A selection of my recent work. Each project represents a unique challenge and solution.",
-    "viewLive": "View Live Demo",
+    "viewLive": "View Live",
     "viewCode": "View Code",
     "viewDetails": "View Details",
     "goal": "The Goal",
