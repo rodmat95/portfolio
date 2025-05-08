@@ -1,0 +1,351 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "process": "Proceso",
+    "contact": "Contacto",
+    "letsTalk": "Hablemos",
+    "menu": "Menú",
+    "services": "Servicios"
+  },
+  "settings": {
+    "title": "Ajustes"
+  },
+  "themeToggle": {
+    "title": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
+  "hero": {
+    "title": "Landing pages que",
+    "titleHighlight": "convierten",
+    "subtitle": "Soy Tu Nombre, un desarrollador web enfocado en rendimiento, UI moderna y resultados reales.",
+    "cta": "Ver Proyectos",
+    "availableForWork": "Disponible para trabajar",
+    "greeting": "Hola, soy",
+    "description": "Un desarrollador apasionado que crea experiencias digitales hermosas y funcionales que resuelven problemas reales.",
+    "viewWork": "Ver Mi Trabajo",
+    "contactMe": "Contáctame",
+    "letsTalkWhatsApp": "Chatea conmigo por WhatsApp",
+    "whatsAppMessage": "Hola! Vi tu portafolio y me gustaría hablar sobre un proyecto."
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "paragraph1": "Soy un desarrollador web apasionado enfocado en crear sitios web de alto rendimiento y visualmente impresionantes que impulsan resultados comerciales reales. Mi viaje comenzó hace 5 años cuando construí mi primer sitio de comercio electrónico y descubrí el impacto que el diseño y la optimización pueden tener en las tasas de conversión.",
+    "paragraph2": "Lo que distingue mi trabajo es mi enfoque holístico del desarrollo web. No solo construyo sitios web; creo experiencias digitales que equilibran el atractivo estético con la excelencia técnica. Cada proyecto que emprendo está optimizado para velocidad, accesibilidad y conversión, asegurando que tu sitio web no solo se vea genial sino que funcione excepcionalmente.",
+    "paragraph3": "Actualmente, estoy explorando la intersección de IA y desarrollo web, construyendo herramientas que ayudan a las empresas a automatizar sus estrategias de creación y personalización de contenido. También estoy profundizando mi experiencia en Animación Web y Diseño de Interacción para crear experiencias de usuario más atractivas.",
+    "stats": {
+      "experience": "Años de Experiencia",
+      "projects": "Landing Pages",
+      "clients": "Clientes Satisfechos"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "description": "Una selección de mi trabajo reciente. Cada proyecto representa un desafío y solución únicos.",
+    "viewLive": "Ver Demo en Vivo",
+    "viewCode": "Ver Código",
+    "viewDetails": "Ver Detalles",
+    "goal": "El Objetivo",
+    "technologies": "Tecnologías",
+    "results": "Resultados",
+    "searchPlaceholder": "Buscar proyectos...",
+    "gridView": "Vista de cuadrícula",
+    "listView": "Vista de lista",
+    "noResults": "Ningún proyecto coincide con tus criterios de búsqueda.",
+    "clearFilters": "Limpiar filtros",
+    "pagination": {
+      "previous": "Página anterior",
+      "next": "Página siguiente"
+    },
+    "filters": {
+      "all": "Todos los Proyectos",
+      "web": "Desarrollo Web",
+      "mobile": "Apps Móviles",
+      "design": "Diseño UI/UX",
+      "ecommerce": "E-commerce",
+      "saas": "SaaS"
+    },
+    "viewProject": "Ver Proyecto",
+    "code": "Código",
+    "projectItems": {
+      "ecommerce": {
+        "title": "Plataforma E-commerce",
+        "description": "Una tienda en línea completa con gestión de productos, funcionalidad de carrito y pago seguro."
+      },
+      "portfolio": {
+        "title": "Sitio Web de Portafolio",
+        "description": "Un sitio web de portafolio responsivo que muestra trabajo creativo con un diseño moderno y minimalista."
+      },
+      "taskManager": {
+        "title": "App de Gestión de Tareas",
+        "description": "Una aplicación de productividad para organizar tareas, establecer plazos y seguir el progreso."
+      },
+      "weatherDashboard": {
+        "title": "Panel del Clima",
+        "description": "Una aplicación meteorológica en tiempo real con pronósticos basados en ubicación y mapas interactivos."
+      },
+      "socialMedia": {
+        "title": "Panel de Redes Sociales",
+        "description": "Un panel de análisis para seguir la participación en múltiples plataformas de redes sociales."
+      },
+      "recipeFinder": {
+        "title": "App Buscador de Recetas",
+        "description": "Una aplicación móvil para descubrir recetas basadas en ingredientes disponibles y preferencias dietéticas."
+      }
+    }
+  },
+  "skills": {
+    "title": "Mis Habilidades",
+    "description": "Una combinación de experiencia técnica y habilidades blandas que impulsan resultados exitosos en proyectos.",
+    "tabs": {
+      "technical": "Habilidades Técnicas",
+      "soft": "Habilidades Blandas"
+    },
+    "technical": {
+      "frontend": {
+        "title": "Desarrollo Frontend",
+        "skills": [
+          "HTML5, CSS3, JavaScript (ES6+)",
+          "React, Next.js, Vue.js",
+          "Tailwind CSS, SASS/SCSS",
+          "Diseño Responsivo",
+          "Accesibilidad (WCAG)"
+        ]
+      },
+      "backend": {
+        "title": "Desarrollo Backend",
+        "skills": ["Node.js, Express", "Python, Django", "APIs RESTful", "GraphQL", "Autenticación y Autorización"]
+      },
+      "database": {
+        "title": "Gestión de Bases de Datos",
+        "skills": ["MongoDB", "PostgreSQL, MySQL", "Firebase", "Modelado de Datos", "Optimización de Consultas"]
+      },
+      "design": {
+        "title": "Diseño UI/UX",
+        "skills": [
+          "Figma, Adobe XD",
+          "Wireframing y Prototipado",
+          "Investigación de Usuarios",
+          "Pruebas de Usabilidad",
+          "Sistemas de Diseño"
+        ]
+      },
+      "devops": {
+        "title": "DevOps y Despliegue",
+        "skills": ["Git, GitHub", "Pipelines CI/CD", "Docker", "AWS, Vercel, Netlify", "Optimización de Rendimiento"]
+      },
+      "other": {
+        "title": "Otras Tecnologías",
+        "skills": [
+          "TypeScript",
+          "Redux, Context API",
+          "Testing (Jest, React Testing Library)",
+          "PWAs",
+          "Optimización SEO"
+        ]
+      }
+    },
+    "soft": {
+      "problemSolving": {
+        "title": "Resolución de Problemas",
+        "description": "Abordo problemas complejos metódicamente, dividiéndolos en componentes manejables y desarrollando soluciones efectivas. Mi pensamiento analítico me permite identificar causas raíz e implementar soluciones sostenibles.",
+        "example": "Ejemplo:",
+        "exampleText": "Optimicé un sitio de comercio electrónico de carga lenta identificando cuellos de botella de rendimiento, reduciendo el tiempo de carga en un 60% mediante la división de código, optimización de imágenes y estrategias de almacenamiento en caché."
+      },
+      "communication": {
+        "title": "Comunicación",
+        "description": "Sobresalgo en traducir conceptos técnicos a un lenguaje claro y accesible para clientes y miembros del equipo. Mis habilidades de comunicación escrita y verbal aseguran que todas las partes interesadas permanezcan informadas y comprometidas durante los proyectos.",
+        "example": "Ejemplo:",
+        "exampleText": "Creé documentación completa y presentaciones amigables para el cliente que mejoraron la comprensión del proyecto y redujeron las solicitudes de soporte en un 40%."
+      },
+      "collaboration": {
+        "title": "Colaboración",
+        "description": "Prospero en entornos de equipo, valorando perspectivas diversas y contribuyendo constructivamente a los esfuerzos grupales. Mi enfoque colaborativo fomenta la innovación y asegura el éxito del proyecto a través del conocimiento y habilidades compartidas.",
+        "example": "Ejemplo:",
+        "exampleText": "Dirigí equipos multifuncionales en entornos de desarrollo ágil, facilitando la comunicación efectiva entre diseñadores, desarrolladores y partes interesadas."
+      },
+      "creativity": {
+        "title": "Creatividad",
+        "description": "Aporto pensamiento creativo a desafíos técnicos, desarrollando soluciones innovadoras que equilibran funcionalidad con estética. Mi capacidad para pensar fuera de lo convencional conduce a enfoques únicos y experiencias de usuario distintivas.",
+        "example": "Ejemplo:",
+        "exampleText": "Diseñé un sistema de navegación no convencional para el sitio web de un cliente que aumentó la participación del usuario en un 35% y se convirtió en un elemento distintivo de su marca."
+      },
+      "attention": {
+        "title": "Atención al Detalle",
+        "description": "Mantengo una atención meticulosa a los detalles en todos los aspectos de mi trabajo, desde la calidad del código hasta los elementos de la interfaz de usuario. Esta precisión asegura productos confiables y pulidos que cumplen con los más altos estándares.",
+        "example": "Ejemplo:",
+        "exampleText": "Implementé protocolos de prueba exhaustivos que detectaron inconsistencias sutiles de UI y casos extremos, resultando en una reducción del 90% en informes de errores posteriores al lanzamiento."
+      },
+      "adaptability": {
+        "title": "Adaptabilidad",
+        "description": "Me adapto rápidamente a nuevas tecnologías, requisitos cambiantes y alcances de proyectos en evolución. Mi flexibilidad me permite mantenerme efectivo en entornos dinámicos mientras mantengo el enfoque en los objetivos principales.",
+        "example": "Ejemplo:",
+        "exampleText": "Pivoteé un proyecto a mitad del desarrollo para acomodar nuevos requisitos comerciales, aprendiendo un nuevo framework en una semana para satisfacer las necesidades cambiantes del cliente."
+      }
+    }
+  },
+  "process": {
+    "title": "Mi Proceso",
+    "description": "Cómo abordo los proyectos desde el concepto hasta la finalización, asegurando calidad y satisfacción del cliente.",
+    "steps": {
+      "discovery": {
+        "title": "Descubrimiento",
+        "description": "Comienzo por entender tus objetivos, público objetivo y requisitos del proyecto. Esta fase implica discusiones en profundidad para alinear nuestra visión y establecer objetivos claros.",
+        "activities": "Actividades Clave:",
+        "activitiesList": [
+          "Entrevistas con stakeholders",
+          "Definición del alcance del proyecto",
+          "Establecimiento de objetivos y métricas de éxito",
+          "Planificación de cronograma y presupuesto"
+        ]
+      },
+      "research": {
+        "title": "Investigación",
+        "description": "Realizo una investigación exhaustiva para informar las decisiones de diseño y desarrollo, analizando competidores, necesidades de usuarios y mejores prácticas de la industria.",
+        "activities": "Actividades Clave:",
+        "activitiesList": [
+          "Análisis competitivo",
+          "Investigación de usuarios y personas",
+          "Evaluación de stack tecnológico",
+          "Análisis de tendencias del mercado"
+        ]
+      },
+      "design": {
+        "title": "Diseño",
+        "description": "Creo wireframes y diseños visuales que se alinean con tu marca y objetivos del proyecto, enfocándome en la experiencia del usuario y la estética de la interfaz.",
+        "activities": "Actividades Clave:",
+        "activitiesList": [
+          "Wireframing y prototipado",
+          "Diseño UI e identidad visual",
+          "Mapeo de flujo de usuario",
+          "Creación de sistema de diseño"
+        ]
+      },
+      "development": {
+        "title": "Desarrollo",
+        "description": "Transformo los diseños en código funcional, construyendo soluciones robustas y escalables con código limpio y mantenible y atención al rendimiento.",
+        "activities": "Actividades Clave:",
+        "activitiesList": [
+          "Desarrollo frontend y backend",
+          "Implementación responsiva",
+          "Integración de servicios de terceros",
+          "Revisiones de código y documentación"
+        ]
+      },
+      "testing": {
+        "title": "Pruebas",
+        "description": "Pruebo rigurosamente todos los aspectos del proyecto para asegurar funcionalidad, usabilidad y rendimiento en todos los dispositivos y navegadores.",
+        "activities": "Actividades Clave:",
+        "activitiesList": [
+          "Pruebas funcionales",
+          "Pruebas en múltiples navegadores y dispositivos",
+          "Optimización de rendimiento",
+          "Cumplimiento de accesibilidad"
+        ]
+      },
+      "launch": {
+        "title": "Lanzamiento y Soporte",
+        "description": "Aseguro un despliegue sin problemas y proporciono soporte y mantenimiento continuos para mantener tu proyecto funcionando de manera óptima y evolucionando según sea necesario.",
+        "activities": "Actividades Clave:",
+        "activitiesList": [
+          "Despliegue y lanzamiento",
+          "Configuración y monitoreo de analíticas",
+          "Soporte post-lanzamiento",
+          "Mejoras iterativas"
+        ]
+      }
+    },
+    "problemSolving": {
+      "title": "Mi Enfoque de Resolución de Problemas",
+      "description": "Cuando me enfrento a desafíos complejos, sigo un enfoque estructurado que combina pensamiento analítico con resolución creativa de problemas:",
+      "steps": [
+        {
+          "title": "Definir el Problema",
+          "description": "Identifico claramente el problema central, separando síntomas de causas raíz para asegurarme de abordar el problema correcto."
+        },
+        {
+          "title": "Investigar y Analizar",
+          "description": "Recopilo información relevante, analizo restricciones y exploro soluciones existentes para informar mi enfoque."
+        },
+        {
+          "title": "Generar Múltiples Soluciones",
+          "description": "Hago lluvia de ideas de varios enfoques, considerando diferentes ángulos y tecnologías para encontrar la solución óptima."
+        },
+        {
+          "title": "Evaluar y Seleccionar",
+          "description": "Evalúo cada solución potencial según criterios como viabilidad, escalabilidad y alineación con los objetivos del proyecto."
+        },
+        {
+          "title": "Implementar y Probar",
+          "description": "Desarrollo la solución elegida metódicamente, probando exhaustivamente en cada etapa para asegurar la efectividad."
+        },
+        {
+          "title": "Reflexionar y Refinar",
+          "description": "Evalúo los resultados, recopilo comentarios y realizo mejoras iterativas para optimizar la solución."
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "¿Cómo puedo ayudarte?",
+    "description": "Ofrezco una variedad de servicios para ayudarte a alcanzar tus objetivos digitales, desde landing pages personalizadas hasta consultoría técnica.",
+    "landingPages": {
+      "title": "Landing Pages Personalizadas",
+      "description": "Landing pages de alta conversión y visualmente impresionantes diseñadas para mostrar tu producto e impulsar conversiones."
+    },
+    "webSpeed": {
+      "title": "Optimización de Velocidad Web",
+      "description": "Ajuste de rendimiento para garantizar que tu sitio web cargue rápidamente y proporcione una experiencia de usuario fluida."
+    },
+    "responsive": {
+      "title": "Diseño Responsive-first",
+      "description": "Sitios web que se ven y funcionan perfectamente en todos los dispositivos, desde escritorio hasta móvil."
+    },
+    "consulting": {
+      "title": "Consultoría Técnica",
+      "description": "Asesoramiento experto sobre tecnologías web, optimización de rendimiento y mejora de tasas de conversión."
+    }
+  },
+  "contact": {
+    "title": "¿Tienes un proyecto en mente?",
+    "description": "Hablemos. Respondo dentro de las 24 horas.",
+    "alternativeMessage": "¿Prefieres usar un formulario en lugar de WhatsApp? Completa los detalles a continuación y me pondré en contacto contigo pronto.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "Tu dirección de correo",
+      "subject": "Asunto",
+      "subjectPlaceholder": "¿De qué se trata?",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+      "sending": "Enviando...",
+      "send": "Enviar Mensaje",
+      "success": "¡Mensaje enviado!",
+      "successDescription": "Gracias por contactarme. Te responderé pronto."
+    },
+    "contactInfo": {
+      "email": "Correo",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "tagline": "Código que convierte. Diseño que retiene.",
+    "availability": "Disponible para proyectos freelance a partir de"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "terms": "Términos de Servicio",
+    "privacy": "Privacidad"
+  },
+  "languageSwitcher": {
+    "label": "Idioma",
+    "languages": {
+      "es": "Español",
+      "en": "Inglés"
+    }
+  }
+}
