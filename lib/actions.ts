@@ -3,40 +3,44 @@
 import { supabase } from "@/lib/supabaseClient"
 import { z } from "zod"
 
-// Define el esquema de validación sin el campo subject
+// Define validation schema
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres" }),
   email: z.string().email({ message: "Por favor ingresa un correo electrónico válido" }),
   message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres" }),
 })
 
-// Tipo para los datos del formulario
+// Type for form data
 export type ContactFormData = z.infer<typeof contactFormSchema>
 
-// Tipo para la respuesta
+// Type for response
 export type SubmissionResponse = {
   success: boolean
   message: string
   errors?: Record<string, string[]>
+  debug?: any // For development debugging
 }
 
 export async function submitContactForm(formData: FormData): Promise<SubmissionResponse> {
   try {
-    // Extraer datos del formulario
+    // Extract form data
     const data = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       message: formData.get("message") as string,
     }
 
-    // Validar datos del formulario
+    // Log received data for debugging
+    console.log("Server action received data:", data)
+
+    // Validate form data
     const validationResult = contactFormSchema.safeParse(data)
 
-    // Si la validación falla, devolver errores
+    // If validation fails, return errors
     if (!validationResult.success) {
       const formattedErrors: Record<string, string[]> = {}
 
-      // Formatear errores de Zod en una estructura más utilizable
+      // Format Zod errors into a more usable structure
       validationResult.error.errors.forEach((error) => {
         const field = error.path[0] as string
         if (!formattedErrors[field]) {
@@ -52,35 +56,75 @@ export async function submitContactForm(formData: FormData): Promise<SubmissionR
       }
     }
 
-    // Si la validación pasa, insertar datos en Supabase
-    const { error } = await supabase.from("contact").insert([
-      {
-        name: data.name,
-        email: data.email,
-        message: data.message
-      },
-    ])
-
-    // Manejar error de Supabase
-    if (error) {
-      console.error("Error al insertar datos del formulario de contacto:", error)
+    // Check Supabase connection before attempting insert
+    const { error: connectionError } = await supabase.from("contact").select("id").limit(1)
+    if (connectionError) {
+      console.error("Supabase connection error:", connectionError)
       return {
         success: false,
-        message: "Hubo un problema al enviar tu mensaje. Por favor intenta nuevamente.",
+        message: "Error de conexión con la base de datos. Por favor intenta nuevamente más tarde.",
+        debug: connectionError,
       }
     }
 
-    // Devolver respuesta exitosa
+    // If validation passes, insert data into Supabase
+    // Include all required fields based on the table schema
+    const { data: insertData, error } = await supabase
+      .from("contact")
+      .insert([
+        {
+          name: data.name,
+          email: data.email,
+          subject: "Mensaje desde formulario de contacto", // Default subject
+          message: data.message,
+          read: false, // Default read status
+        },
+      ])
+      .select()
+
+    // Handle Supabase error
+    if (error) {
+      console.error("Error inserting contact form data:", error)
+
+      // Check for specific error types
+      if (error.code === "23505") {
+        return {
+          success: false,
+          message: "Ya existe un registro con esta información. Por favor intenta con datos diferentes.",
+          debug: error,
+        }
+      }
+
+      if (error.code === "23502") {
+        return {
+          success: false,
+          message: "Falta un campo requerido en el formulario.",
+          debug: error,
+        }
+      }
+
+      return {
+        success: false,
+        message: "Hubo un problema al enviar tu mensaje. Por favor intenta nuevamente.",
+        debug: error,
+      }
+    }
+
+    // Log successful insert
+    console.log("Contact form data inserted successfully:", insertData)
+
+    // Return successful response
     return {
       success: true,
       message: "¡Mensaje enviado! Gracias por contactarme, responderé a la brevedad.",
     }
   } catch (error) {
-    // Manejar errores inesperados
-    console.error("Error inesperado en el envío del formulario de contacto:", error)
+    // Handle unexpected errors
+    console.error("Unexpected error in contact form submission:", error)
     return {
       success: false,
       message: "Ocurrió un error inesperado. Por favor intenta nuevamente más tarde.",
+      debug: error instanceof Error ? error.message : String(error),
     }
   }
 }

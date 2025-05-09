@@ -38,10 +38,33 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                <Image src="/placeholder.svg?height=600&width=600" alt="Your Name" fill className="object-cover" />
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full -z-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/5 rounded-full -z-10"></div>
+
+              {/* Main image container with enhanced styling */}
+              <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-xl">
+                {/* Gradient overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl z-10"></div>
+
+                {/* The image */}
+                <Image
+                  src="/images/profile-illustration.png"
+                  alt="Developer illustration"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                />
+
+                {/* Subtle glow effect */}
+                <div className="absolute inset-0 bg-primary/5 mix-blend-overlay rounded-2xl"></div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl" />
+
+              {/* Code snippet decoration */}
+              <div className="absolute -bottom-2 -left-2 bg-background/90 backdrop-blur-sm p-3 rounded-lg border shadow-md transform rotate-3 hidden md:block">
+                <code className="text-xs text-primary font-mono">const developer = 'passionate';</code>
+              </div>
             </div>
           </motion.div>
 

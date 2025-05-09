@@ -81,7 +81,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </Button>
           </div>
 
-          <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] bg-background/90 backdrop-blur-md rounded-lg mx-4 my-2 p-6 shadow-lg">
+          <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] bg-background/90 backdrop-blur-md rounded-lg p-6 shadow-lg">
             <nav className="flex flex-col items-center space-y-6 mb-12">
               {navigationItems.map((item) => (
                 <button

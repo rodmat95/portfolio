@@ -12,7 +12,27 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 // Create a single Supabase client for the entire application
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    persistSession: false, // This can help with some auth-related issues
+  },
+})
+
+// Add a debug function to test the connection
+export const testSupabaseConnection = async () => {
+  try {
+    const { data, error } = await supabase.from("contact").select("count", { count: "exact" }).limit(0)
+    if (error) {
+      console.error("Supabase connection test failed:", error)
+      return { success: false, error }
+    }
+    console.log("Supabase connection successful")
+    return { success: true, data }
+  } catch (err) {
+    console.error("Supabase connection test exception:", err)
+    return { success: false, error: err }
+  }
+}
 
 // Export a function to get the client (useful for testing and mocking)
 export const getSupabaseClient = () => supabase

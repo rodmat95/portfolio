@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -12,6 +12,7 @@ import AnimatedButton from "./animated-button"
 import { submitContactForm, type SubmissionResponse } from "@/lib/actions"
 import { Loader2 } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { testSupabaseConnection } from "@/lib/supabaseClient"
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -19,7 +20,21 @@ export default function ContactForm() {
   const [formErrors, setFormErrors] = useState<Record<string, string[]>>({})
   const [formSuccess, setFormSuccess] = useState<string | null>(null)
   const [formError, setFormError] = useState<string | null>(null)
+  const [debugInfo, setDebugInfo] = useState<string | null>(null)
   const { t } = useLanguage()
+
+  // Test Supabase connection on component mount
+  useEffect(() => {
+    const testConnection = async () => {
+      const result = await testSupabaseConnection()
+      if (!result.success) {
+        console.error("Supabase connection test failed:", result.error)
+        setDebugInfo("Database connection issue detected. Please try again later.")
+      }
+    }
+
+    testConnection()
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -27,35 +42,45 @@ export default function ContactForm() {
     setFormErrors({})
     setFormSuccess(null)
     setFormError(null)
+    setDebugInfo(null)
 
     try {
-      // Obtener datos del formulario
+      // Log form data for debugging
       const formData = new FormData(e.currentTarget)
+      console.log("Form data being submitted:", {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      })
 
-      // Enviar datos del formulario usando la acción del servidor
+      // Send data to server action
       const response: SubmissionResponse = await submitContactForm(formData)
+      console.log("Server response:", response)
 
       if (response.success) {
-        // Mostrar mensaje de éxito
+        // Show success message
         setFormSuccess(response.message)
-        // Reiniciar formulario
+        // Reset form
         e.currentTarget.reset()
-        // Mostrar notificación toast
+        // Show toast notification
         toast({
           title: t("contact.form.success"),
           description: response.message,
         })
       } else {
-        // Mostrar mensaje de error
+        // Show error message
         setFormError(response.message)
-        // Establecer errores específicos de campo si están disponibles
+        // Set field-specific errors if available
         if (response.errors) {
           setFormErrors(response.errors)
         }
+        // Log detailed error for debugging
+        console.error("Form submission error:", response)
       }
     } catch (error) {
-      console.error("Error al enviar formulario:", error)
-      setFormError(t("contact.form.error") || "Ocurrió un error al enviar el formulario.")
+      console.error("Error submitting form:", error)
+      setFormError(t("contact.form.error") || "An error occurred while submitting the form.")
+      setDebugInfo(`Error details: ${error instanceof Error ? error.message : String(error)}`)
     } finally {
       setIsSubmitting(false)
     }
@@ -83,7 +108,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      {/* Mensaje de éxito */}
+      {/* Success message */}
       {formSuccess && (
         <Alert className="bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
           <AlertTitle className="text-green-800 dark:text-green-400">¡Mensaje enviado!</AlertTitle>
@@ -91,11 +116,21 @@ export default function ContactForm() {
         </Alert>
       )}
 
-      {/* Mensaje de error */}
+      {/* Error message */}
       {formError && (
         <Alert className="bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
           <AlertTitle className="text-red-800 dark:text-red-400">Error</AlertTitle>
           <AlertDescription className="text-red-700 dark:text-red-300">{formError}</AlertDescription>
+        </Alert>
+      )}
+
+      {/* Debug information (only shown when there's an issue) */}
+      {debugInfo && (
+        <Alert className="bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+          <AlertTitle className="text-blue-800 dark:text-blue-400">Debug Information</AlertTitle>
+          <AlertDescription className="text-blue-700 dark:text-blue-300 font-mono text-xs">
+            {debugInfo}
+          </AlertDescription>
         </Alert>
       )}
 
