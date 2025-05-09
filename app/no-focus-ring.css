@@ -1,0 +1,10 @@
+/* This file can be imported where needed */
+.no-focus-ring:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.no-focus-ring:focus-visible {
+  background-color: rgba(var(--primary), 0.05);
+  border-color: rgba(var(--primary), 0.3);
+}

@@ -39,7 +39,7 @@
     "paragraph3": "Actualmente, sigo perfeccionando mis habilidades en diseño UI, desarrollo responsivo y optimización SEO para ofrecer soluciones aún más efectivas. Mi objetivo es que cada sitio que creo sea una herramienta poderosa para el crecimiento del negocio de mis clientes.",
     "stats": {
       "experience": "Años de Experiencia",
-      "projects": "Web Pages",
+      "projects": "Paginas Web",
       "clients": "Clientes Satisfechos"
     }
   },
@@ -64,10 +64,10 @@
     "filters": {
       "all": "Todos los Proyectos",
       "web": "Desarrollo Web",
-      "mobile": "Apps Móviles",
-      "design": "Diseño UI/UX",
       "ecommerce": "E-commerce",
-      "saas": "SaaS"
+      "desktop": "Software de Escritorio",
+      "mobile": "Apps Móviles",
+      "saas": "SaaS"      
     },
     "viewProject": "Ver Proyecto",
     "code": "Código",

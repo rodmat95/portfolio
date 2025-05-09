@@ -16,7 +16,7 @@ export interface Project {
 }
 
 // Project categories for filtering - maintained in frontend
-export const projectCategories = ["all", "web", "mobile", "design", "ecommerce", "saas"]
+export const projectCategories = ["all", "web", "ecommerce", "desktop", "mobile", "saas"]
 
 // Fetch all projects from Supabase
 export async function getAllProjects(): Promise<Project[]> {

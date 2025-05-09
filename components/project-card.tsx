@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton"
 import { useLanguage } from "@/context/language-context"
 
 interface ProjectCardProps {
@@ -31,6 +32,8 @@ export default function ProjectCard({
   reverse = false,
 }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const mockupRef = useRef<HTMLDivElement>(null)
   const { t } = useLanguage()
 
@@ -47,6 +50,29 @@ export default function ProjectCard({
     if (mockupRef.current) {
       mockupRef.current.style.transform = "scale(1)"
     }
+  }
+
+  // Simulate loading state for demonstration
+  useEffect(() => {
+    // Start with loading state
+    setIsLoading(true)
+
+    // If image is empty or placeholder, keep loading state longer
+    const loadingTime =
+      image && !image.includes("placeholder")
+        ? Math.random() * 1000 + 500
+        : // Random time between 500ms and 1500ms
+          Math.random() * 2000 + 1000 // Longer time for placeholders
+
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, loadingTime)
+
+    return () => clearTimeout(timer)
+  }, [image])
+
+  const handleImageLoad = () => {
+    setImageLoaded(true)
   }
 
   return (
@@ -68,27 +94,40 @@ export default function ProjectCard({
 
           {/* Device frame */}
           <div className="absolute inset-2 rounded-md overflow-hidden border-2 border-foreground/10 bg-background/80 backdrop-blur-sm">
+            {/* Loading skeleton */}
+            {isLoading && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center">
+                <div className="w-full h-full">
+                  <Skeleton className="w-full h-full" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin"></div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Scrollable content */}
             <div
               ref={mockupRef}
-              className="absolute inset-0 transition-transform duration-700 ease-in-out"
-              style={{ transformOrigin: "center center", height: "100%" }}
+              className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
+                !imageLoaded && !isLoading ? "opacity-0" : "opacity-100"
+              }`}
+              style={{
+                transformOrigin: "center center",
+                height: "100%",
+                transition: "opacity 0.5s ease-in-out, transform 0.7s ease-in-out",
+              }}
             >
               <Image
                 src={image || "/placeholder.svg?height=800&width=600"}
                 alt={title}
                 fill
-                className="object-cover object-center"
+                className={`object-cover object-center transition-opacity duration-500 ${
+                  imageLoaded && !isLoading ? "opacity-100" : "opacity-0"
+                }`}
+                onLoad={handleImageLoad}
+                priority={false}
               />
-            </div>
-
-            {/* Browser chrome */}
-            <div className="absolute top-0 left-0 right-0 h-6 bg-foreground/5 border-b border-foreground/10 flex items-center px-2">
-              <div className="flex space-x-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
-                <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
-                <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
-              </div>
             </div>
           </div>
         </div>
@@ -121,12 +160,14 @@ export default function ProjectCard({
             </div>
           </div>
 
+          {/* 
           <div>
             <h4 className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-2">
               {t("projects.results")}
             </h4>
             <p className="text-editorial-body">{results}</p>
           </div>
+          */}
 
           <div className="flex flex-wrap gap-4 pt-2">
             <a

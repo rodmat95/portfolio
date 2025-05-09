@@ -1,9 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton"
 import { useLanguage } from "@/context/language-context"
 import type { Project } from "@/lib/projects"
 
@@ -15,7 +16,32 @@ interface ProjectCardCompactProps {
 
 export default function ProjectCardCompact({ project, index, onClick }: ProjectCardCompactProps) {
   const [isHovered, setIsHovered] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const { t } = useLanguage()
+
+  // Simulate loading state for demonstration
+  useEffect(() => {
+    // Start with loading state
+    setIsLoading(true)
+
+    // If image is empty or placeholder, keep loading state longer
+    const loadingTime =
+      project.image && !project.image.includes("placeholder")
+        ? Math.random() * 1000 + 500
+        : // Random time between 500ms and 1500ms
+          Math.random() * 2000 + 1000 // Longer time for placeholders
+
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, loadingTime)
+
+    return () => clearTimeout(timer)
+  }, [project.image])
+
+  const handleImageLoad = () => {
+    setImageLoaded(true)
+  }
 
   return (
     <motion.div
@@ -28,6 +54,16 @@ export default function ProjectCardCompact({ project, index, onClick }: ProjectC
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative aspect-[4/3] rounded-lg overflow-hidden border shadow-md transition-all duration-300 group-hover:shadow-lg">
+        {/* Loading skeleton */}
+        {isLoading && (
+          <div className="absolute inset-0 z-20 flex items-center justify-center">
+            <Skeleton className="w-full h-full" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full border-4 border-primary/30 border-t-primary animate-spin"></div>
+            </div>
+          </div>
+        )}
+
         {/* Overlay */}
         <div
           className={`absolute inset-0 bg-black/50 backdrop-blur-sm z-10 flex items-center justify-center transition-all duration-300 ${
@@ -58,7 +94,10 @@ export default function ProjectCardCompact({ project, index, onClick }: ProjectC
           src={project.image || "/placeholder.svg?height=800&width=600"}
           alt={project.title}
           fill
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className={`object-cover object-top transition-all duration-500 group-hover:scale-105 ${
+            imageLoaded && !isLoading ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={handleImageLoad}
         />
 
         {/* Gradient overlay */}

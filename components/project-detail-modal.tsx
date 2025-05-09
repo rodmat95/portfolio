@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, ExternalLink, Github } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton"
 import { useLanguage } from "@/context/language-context"
 import type { Project } from "@/lib/projects"
 
@@ -17,6 +18,26 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
   const { t } = useLanguage()
   const modalRef = useRef<HTMLDivElement>(null)
   const [headerOffset, setHeaderOffset] = useState("5rem")
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+
+  // Reset loading state when project changes
+  useEffect(() => {
+    if (project) {
+      setIsLoading(true)
+      setImageLoaded(false)
+
+      // Simulate loading time
+      const timer = setTimeout(
+        () => {
+          setIsLoading(false)
+        },
+        Math.random() * 1000 + 500,
+      )
+
+      return () => clearTimeout(timer)
+    }
+  }, [project])
 
   // Close on escape key
   useEffect(() => {
@@ -59,6 +80,10 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
     }
   }, [])
 
+  const handleImageLoad = () => {
+    setImageLoaded(true)
+  }
+
   if (!project) return null
 
   return (
@@ -79,11 +104,24 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
         >
           {/* Header with image */}
           <div className="relative h-64 sm:h-80">
+            {/* Loading skeleton */}
+            {isLoading && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center">
+                <Skeleton className="w-full h-full" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin"></div>
+                </div>
+              </div>
+            )}
+
             <Image
               src={project.image || "/placeholder.svg?height=800&width=600"}
               alt={project.title}
               fill
-              className="object-cover object-center"
+              className={`object-cover object-center transition-opacity duration-500 ${
+                imageLoaded && !isLoading ? "opacity-100" : "opacity-0"
+              }`}
+              onLoad={handleImageLoad}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
 
@@ -119,10 +157,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 <p className="text-foreground/80">{project.goal}</p>
               </div>
 
+              {/* 
               <div>
                 <h3 className="text-lg font-medium mb-2">{t("projects.results")}</h3>
                 <p className="text-foreground/80">{project.results}</p>
               </div>
+              */}
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <a

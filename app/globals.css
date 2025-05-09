@@ -85,6 +85,28 @@
   p {
     @apply leading-relaxed;
   }
+
+  /* Remove default focus styles while maintaining accessibility */
+  :focus {
+    outline: none !important;
+  }
+
+  /* Add subtle focus styles for keyboard navigation (for accessibility) */
+  :focus-visible {
+    outline: none !important;
+    @apply transition-colors duration-200;
+  }
+
+  /* Custom focus styles for interactive elements */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible,
+  [tabindex]:focus-visible {
+    @apply border-primary/50 bg-primary/5;
+  }
 }
 
 @layer utilities {

@@ -64,9 +64,9 @@
     "filters": {
       "all": "All Projects",
       "web": "Web Development",
-      "mobile": "Mobile Apps",
-      "design": "UI/UX Design",
       "ecommerce": "E-commerce",
+      "desktop": "Desktop Software",
+      "mobile": "Mobile Apps",
       "saas": "SaaS"
     },
     "viewProject": "View Project",

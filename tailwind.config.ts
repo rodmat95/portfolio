@@ -155,7 +155,32 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    ({ addBase, theme }) => {
+      addBase({
+        // Remove focus ring from all interactive elements
+        'button:focus, [type="button"]:focus, [type="reset"]:focus, [type="submit"]:focus': {
+          outline: "none",
+          boxShadow: "none",
+        },
+        "a:focus, input:focus, select:focus, textarea:focus": {
+          outline: "none",
+          boxShadow: "none",
+        },
+        // Add subtle focus styles for keyboard navigation (for accessibility)
+        'button:focus-visible, [type="button"]:focus-visible, [type="reset"]:focus-visible, [type="submit"]:focus-visible':
+          {
+            backgroundColor: theme("colors.primary.DEFAULT", "currentColor") + "10",
+            borderColor: theme("colors.primary.DEFAULT", "currentColor") + "50",
+          },
+        "a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible": {
+          backgroundColor: theme("colors.primary.DEFAULT", "currentColor") + "10",
+          borderColor: theme("colors.primary.DEFAULT", "currentColor") + "50",
+        },
+      })
+    },
+  ],
 } satisfies Config
 
 export default config
