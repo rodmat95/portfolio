@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import { useLanguage } from "@/context/language-context"
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll"
 import { useScrollLock } from "@/hooks/use-scroll-lock"
+import { useHeaderVisibility } from "@/context/header-visibility-context"
 import { useTheme } from "next-themes"
 import { X, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -17,6 +18,7 @@ export default function FixedMobileMenu({ isOpen, onClose }: FixedMobileMenuProp
   const { language, setLanguage, t } = useLanguage()
   const { theme, setTheme } = useTheme()
   const scrollToSection = useSmoothScroll()
+  const { setForceHeaderVisible, resetHeaderVisibility } = useHeaderVisibility()
 
   // Use our custom scroll lock hook
   useScrollLock(isOpen)
@@ -58,10 +60,16 @@ export default function FixedMobileMenu({ isOpen, onClose }: FixedMobileMenuProp
     // First close the menu
     onClose()
 
+    // Force the header to be visible when navigating
+    setForceHeaderVisible(true)
+
     // Add a small delay to ensure the menu is closed before scrolling
     setTimeout(() => {
       console.log(`Navigating to section: ${sectionId}`)
       scrollToSection(sectionId)
+
+      // Reset header visibility after scrolling completes
+      resetHeaderVisibility()
     }, 100)
   }
 
@@ -124,7 +132,6 @@ export default function FixedMobileMenu({ isOpen, onClose }: FixedMobileMenuProp
                 variant={language === "en" ? "default" : "outline"}
                 size="sm"
                 onClick={() => handleLanguageChange("en")}
-                className="min-w-[100px]"
                 className="min-w-[100px]"
               >
                 <span className="mr-2">🇺🇸</span>

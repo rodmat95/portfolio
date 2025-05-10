@@ -3,6 +3,7 @@ import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/context/language-context"
+import { HeaderVisibilityProvider } from "@/context/header-visibility-context"
 import esTranslations from "@/i18n/es.json"
 import enTranslations from "@/i18n/en.json"
 
@@ -35,7 +36,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${heading.variable} ${mono.variable}`}>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <LanguageProvider translations={{ es: esTranslations, en: enTranslations }}>{children}</LanguageProvider>
+          <LanguageProvider translations={{ es: esTranslations, en: enTranslations }}>
+            <HeaderVisibilityProvider>{children}</HeaderVisibilityProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
