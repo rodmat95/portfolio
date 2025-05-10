@@ -53,9 +53,16 @@ export default function FixedMobileMenu({ isOpen, onClose }: FixedMobileMenuProp
     { href: "contact", label: t("navigation.contact") },
   ]
 
+  // Update the handleNavClick function to ensure proper navigation
   const handleNavClick = (sectionId: string) => {
-    scrollToSection(sectionId)
+    // First close the menu
     onClose()
+
+    // Add a small delay to ensure the menu is closed before scrolling
+    setTimeout(() => {
+      console.log(`Navigating to section: ${sectionId}`)
+      scrollToSection(sectionId)
+    }, 100)
   }
 
   // Handle language change without closing the menu
@@ -117,6 +124,7 @@ export default function FixedMobileMenu({ isOpen, onClose }: FixedMobileMenuProp
                 variant={language === "en" ? "default" : "outline"}
                 size="sm"
                 onClick={() => handleLanguageChange("en")}
+                className="min-w-[100px]"
                 className="min-w-[100px]"
               >
                 <span className="mr-2">🇺🇸</span>
