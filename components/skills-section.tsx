@@ -32,90 +32,102 @@ export default function SkillsSection() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Code className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.technical.frontend.title")}</CardTitle>
+              <Code className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.technical.frontend.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2">
                 {t("skills.technical.frontend.skills").map((skill: string, index: number) => (
-                  <li key={index}>{skill}</li>
+                  <li key={index} className="break-words-fix">
+                    {skill}
+                  </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Server className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.technical.backend.title")}</CardTitle>
+              <Server className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.technical.backend.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2">
                 {t("skills.technical.backend.skills").map((skill: string, index: number) => (
-                  <li key={index}>{skill}</li>
+                  <li key={index} className="break-words-fix">
+                    {skill}
+                  </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Layers className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.technical.database.title")}</CardTitle>
+              <Layers className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.technical.database.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2">
                 {t("skills.technical.database.skills").map((skill: string, index: number) => (
-                  <li key={index}>{skill}</li>
+                  <li key={index} className="break-words-fix">
+                    {skill}
+                  </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Figma className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.technical.design.title")}</CardTitle>
+              <Figma className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.technical.design.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2">
                 {t("skills.technical.design.skills").map((skill: string, index: number) => (
-                  <li key={index}>{skill}</li>
+                  <li key={index} className="break-words-fix">
+                    {skill}
+                  </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <GitBranch className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.technical.devops.title")}</CardTitle>
+              <GitBranch className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.technical.devops.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2">
                 {t("skills.technical.devops.skills").map((skill: string, index: number) => (
-                  <li key={index}>{skill}</li>
+                  <li key={index} className="break-words-fix">
+                    {skill}
+                  </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Globe className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.technical.other.title")}</CardTitle>
+              <Globe className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.technical.other.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2">
                 {t("skills.technical.other.skills").map((skill: string, index: number) => (
-                  <li key={index}>{skill}</li>
+                  <li key={index} className="break-words-fix">
+                    {skill}
+                  </li>
                 ))}
               </ul>
             </CardContent>
@@ -126,9 +138,9 @@ export default function SkillsSection() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Puzzle className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.soft.problemSolving.title")}</CardTitle>
+              <Puzzle className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.soft.problemSolving.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -141,9 +153,9 @@ export default function SkillsSection() {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <MessageSquare className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.soft.communication.title")}</CardTitle>
+              <MessageSquare className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.soft.communication.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -156,9 +168,9 @@ export default function SkillsSection() {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Users className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.soft.collaboration.title")}</CardTitle>
+              <Users className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.soft.collaboration.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -171,9 +183,9 @@ export default function SkillsSection() {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Sparkles className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.soft.creativity.title")}</CardTitle>
+              <Sparkles className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.soft.creativity.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -186,9 +198,9 @@ export default function SkillsSection() {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Search className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.soft.attention.title")}</CardTitle>
+              <Search className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.soft.attention.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -201,9 +213,9 @@ export default function SkillsSection() {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center gap-2">
-              <Layers className="h-5 w-5 text-primary" />
-              <div>
-                <CardTitle>{t("skills.soft.adaptability.title")}</CardTitle>
+              <Layers className="h-5 w-5 text-primary flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <CardTitle className="truncate">{t("skills.soft.adaptability.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>

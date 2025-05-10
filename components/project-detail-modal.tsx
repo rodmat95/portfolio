@@ -56,7 +56,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
       }
     }
     window.addEventListener("mousedown", handleClickOutside)
-    return () => window.removeEventListener("mousedown", handleClickOutside)
+    return () => window.removeEventListener("keydown", handleClickOutside)
   }, [onClose])
 
   // Dynamically adjust modal position based on header height
@@ -96,7 +96,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
       >
         <motion.div
           ref={modalRef}
-          className="bg-background border rounded-lg shadow-xl w-full max-w-4xl overflow-y-auto my-auto"
+          className="bg-background border rounded-lg shadow-xl w-full max-w-4xl overflow-y-auto my-auto mx-4"
           initial={{ scale: 0.9, y: 20 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.9, y: 20 }}
@@ -136,12 +136,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
           </div>
 
           {/* Content */}
-          <div className="p-6 sm:p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{project.title}</h2>
+          <div className="p-6 sm:p-8 overflow-x-hidden">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 break-words-fix">{project.title}</h2>
 
             <div className="flex flex-wrap gap-2 mb-6">
               {project.technologies.map((tech, index) => (
-                <Badge key={index} variant="outline" className="bg-secondary text-secondary-foreground">
+                <Badge key={index} variant="outline" className="bg-secondary text-secondary-foreground break-words-fix">
                   {tech}
                 </Badge>
               ))}
@@ -149,12 +149,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
             <div className="space-y-6">
               <div>
-                <p className="text-foreground/90 text-lg leading-relaxed mb-6">{project.description}</p>
+                <p className="text-foreground/90 text-lg leading-relaxed mb-6 break-words-fix">{project.description}</p>
               </div>
 
               <div>
                 <h3 className="text-lg font-medium mb-2">{t("projects.goal")}</h3>
-                <p className="text-foreground/80">{project.goal}</p>
+                <p className="text-foreground/80 break-words-fix">{project.goal}</p>
               </div>
 
               {/* 

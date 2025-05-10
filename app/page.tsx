@@ -9,6 +9,10 @@ import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import { useEffect } from "react"
 import { useLanguage } from "@/context/language-context"
+import OverflowDetector from "@/components/overflow-detector"
+import MenuDebug from "@/components/menu-debug"
+import MenuTestButton from "@/components/menu-test-button"
+import ScrollLockTester from "@/components/scroll-lock-tester"
 
 export default function Home() {
   const { t } = useLanguage()
@@ -32,10 +36,10 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <StickyNav />
 
-      <main>
+      <main className="overflow-x-hidden">
         <HeroSection />
         <ProjectsSection />
         <AboutSection />
@@ -44,6 +48,20 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      {/* Only rendered in development mode */}
+      <OverflowDetector />
+
+      {/* Debug component for mobile menu */}
+      <MenuDebug />
+
+      {/* Test components for development */}
+      {process.env.NODE_ENV === "development" && (
+        <>
+          <MenuTestButton />
+          <ScrollLockTester />
+        </>
+      )}
     </div>
   )
 }

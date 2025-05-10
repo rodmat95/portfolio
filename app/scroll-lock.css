@@ -1,0 +1,18 @@
+/* Styles for when scrolling is locked */
+html.scroll-locked,
+body.scroll-locked {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Prevent content shifting when scrollbar disappears */
+html.scroll-locked body {
+  padding-right: var(--scrollbar-width, 0);
+}
+
+/* Ensure the menu content can scroll if needed */
+.menu-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* For iOS momentum scrolling */
+  overscroll-behavior: contain; /* Prevent scroll chaining */
+}

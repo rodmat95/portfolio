@@ -26,6 +26,8 @@ export default function ContactSection() {
     setSubmitted(true)
   }
 
+  const email = "rodmat0905@gmail.com"
+
   return (
     <section id="contact" className="section-spacing">
       <div className="editorial-container">
@@ -40,14 +42,14 @@ export default function ContactSection() {
             <h2 className="text-editorial-lg mb-4">{t("contact.title")}</h2>
             <p className="text-editorial-body mb-8">{t("contact.description")}</p>
 
-            <div className="space-y-6">
+            <div className="space-y-6 w-full overflow-hidden">
               <a href="mailto:rodmat0905@gmail.com" className="flex items-center group">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors flex-shrink-0">
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <div className="text-sm text-foreground/60">{t("contact.contactInfo.email")}</div>
-                  <div className="font-medium group-hover:text-primary transition-colors">rodmat0905@gmail.com</div>
+                  <div className="font-medium group-hover:text-primary transition-colors truncate">{email}</div>
                 </div>
               </a>
 
@@ -57,12 +59,14 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="flex items-center group"
               >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors flex-shrink-0">
                   <Github className="w-5 h-5 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <div className="text-sm text-foreground/60">{t("contact.contactInfo.github")}</div>
-                  <div className="font-medium group-hover:text-primary transition-colors">github.com/rodmat95</div>
+                  <div className="font-medium group-hover:text-primary transition-colors truncate">
+                    github.com/rodmat95
+                  </div>
                 </div>
               </a>
 
@@ -72,12 +76,12 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="flex items-center group"
               >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors flex-shrink-0">
                   <Linkedin className="w-5 h-5 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <div className="text-sm text-foreground/60">{t("contact.contactInfo.linkedin")}</div>
-                  <div className="font-medium group-hover:text-primary transition-colors">
+                  <div className="font-medium group-hover:text-primary transition-colors truncate">
                     linkedin.com/in/rodrigochavarry
                   </div>
                 </div>

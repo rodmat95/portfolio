@@ -18,6 +18,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const { theme, setTheme } = useTheme()
   const scrollToSection = useSmoothScroll()
 
+  useEffect(() => {
+    if (isOpen) {
+      console.log("Mobile menu opened")
+    }
+  }, [isOpen])
+
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -69,7 +75,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 bg-background/80 backdrop-blur-md md:hidden"
+          className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-md md:hidden overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -81,7 +87,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </Button>
           </div>
 
-          <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] bg-background/90 backdrop-blur-md rounded-lg p-6 shadow-lg">
+          <div className="flex flex-col items-center justify-center h-[calc(100vh-72px)] w-full bg-background/90 backdrop-blur-md rounded-lg p-6 shadow-lg overflow-y-auto">
             <nav className="flex flex-col items-center space-y-6 mb-12">
               {navigationItems.map((item) => (
                 <button

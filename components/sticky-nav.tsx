@@ -7,8 +7,9 @@ import { useLanguage } from "@/context/language-context"
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll"
 import { ThemeToggle } from "@/components/theme-toggle"
 import LanguageSwitcher from "@/components/language-switcher"
-import MobileMenu from "@/components/mobile-menu"
+import FixedMobileMenu from "@/components/fixed-mobile-menu"
 import { cn } from "@/lib/utils"
+import { Menu } from "lucide-react"
 
 export default function StickyNav() {
   const [scrolled, setScrolled] = useState(false)
@@ -16,6 +17,9 @@ export default function StickyNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { t } = useLanguage()
   const scrollToSection = useSmoothScroll()
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [visible, setVisible] = useState(true)
 
   const navigationItems = [
     { href: "home", label: t("navigation.home") },
@@ -25,16 +29,9 @@ export default function StickyNav() {
     { href: "contact", label: t("navigation.contact") },
   ]
 
-  // Prevent body scroll when menu is open
+  // Log when menu state changes (for debugging)
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
-    return () => {
-      document.body.style.overflow = ""
-    }
+    console.log("Mobile menu state changed:", mobileMenuOpen)
   }, [mobileMenuOpen])
 
   useEffect(() => {
@@ -60,85 +57,119 @@ export default function StickyNav() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Handle header visibility on scroll (hide on scroll down, show on scroll up)
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY
+      const isScrollingDown = currentScrollPos > prevScrollPos
+      const isScrollingUp = currentScrollPos < prevScrollPos
+      const isScrolledPastThreshold = currentScrollPos > 100
+
+      // Only hide header when scrolling down and past the threshold
+      if (isScrollingDown && isScrolledPastThreshold) {
+        setVisible(false)
+      } else if (isScrollingUp) {
+        setVisible(true)
+      }
+
+      setPrevScrollPos(currentScrollPos)
+    }
+
+    // Add throttling to improve performance
+    let ticking = false
+    const scrollListener = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener("scroll", scrollListener)
+    return () => window.removeEventListener("scroll", scrollListener)
+  }, [prevScrollPos])
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault()
     scrollToSection(sectionId)
   }
 
+  const toggleMobileMenu = () => {
+    console.log("Toggle mobile menu clicked, current state:", mobileMenuOpen)
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-background/80 backdrop-blur-md border-b py-4" : "bg-transparent py-6",
-        mobileMenuOpen ? "bg-background/90 backdrop-blur-md border-b" : "",
-      )}
-    >
-      <div className="editorial-container">
-        <div className="flex items-center justify-between">
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, "home")}
-            className="text-lg font-medium tracking-tight transition-colors hover:text-primary"
-          >
-            <span className="font-bold">Rodmat95</span>.dev
-          </a>
-
-          <nav className="hidden md:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              <a
-                key={item.href}
-                href={`#${item.href}`}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={cn(
-                  "text-sm font-medium transition-colors relative group",
-                  activeSection === item.href ? "text-primary" : "text-foreground/80 hover:text-foreground",
-                )}
-              >
-                {item.label}
-                <span
-                  className={cn(
-                    "absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300",
-                    activeSection === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
-                  )}
-                />
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center space-x-4">
-            <LanguageSwitcher />
-            <ThemeToggle />
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          scrolled ? "bg-background/80 backdrop-blur-md border-b py-4" : "bg-transparent py-6",
+          mobileMenuOpen ? "bg-background/90 backdrop-blur-md border-b" : "",
+          // Add this line for mobile header visibility
+          !visible ? "transform -translate-y-full md:transform-none" : "transform translate-y-0",
+        )}
+      >
+        <div className="editorial-container">
+          <div className="flex items-center justify-between">
             <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, "contact")}
-              className="hidden md:inline-flex items-center justify-center h-9 px-4 py-2 rounded-md text-sm font-medium transition-colors bg-primary text-primary-foreground hover:bg-primary/90"
+              href="#home"
+              onClick={(e) => handleNavClick(e, "home")}
+              className="text-lg font-medium tracking-tight transition-colors hover:text-primary"
             >
-              {t("navigation.letsTalk")}
+              <span className="font-bold">Rodmat95</span>.dev
             </a>
 
-            {/* Mobile menu button */}
-            <button className="md:hidden p-2 rounded-md hover:bg-accent" onClick={() => setMobileMenuOpen(true)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-menu"
+            <nav className="hidden md:flex items-center space-x-8">
+              {navigationItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={`#${item.href}`}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={cn(
+                    "text-sm font-medium transition-colors relative group",
+                    activeSection === item.href ? "text-primary" : "text-foreground/80 hover:text-foreground",
+                  )}
+                >
+                  {item.label}
+                  <span
+                    className={cn(
+                      "absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300",
+                      activeSection === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
+                    )}
+                  />
+                </a>
+              ))}
+            </nav>
+
+            <div className="flex items-center space-x-4">
+              <LanguageSwitcher />
+              <ThemeToggle />
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, "contact")}
+                className="hidden md:inline-flex items-center justify-center h-9 px-4 py-2 rounded-md text-sm font-medium transition-colors bg-primary text-primary-foreground hover:bg-primary/90"
               >
-                <line x1="4" x2="20" y1="12" y2="12"></line>
-                <line x1="4" x2="20" y1="6" y2="6"></line>
-                <line x1="4" x2="20" y1="18" y2="18"></line>
-              </svg>
-            </button>
+                {t("navigation.letsTalk")}
+              </a>
+
+              {/* Mobile menu button */}
+              <button
+                className="md:hidden p-2 rounded-md hover:bg-accent"
+                onClick={toggleMobileMenu}
+                aria-label="Toggle mobile menu"
+              >
+                <Menu className="h-6 w-6" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
-    </header>
+      </header>
+
+      {/* Render the fixed mobile menu */}
+      <FixedMobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+    </>
   )
 }
