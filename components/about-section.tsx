@@ -49,8 +49,8 @@ export default function AboutSection() {
 
                 {/* The image */}
                 <Image
-                  src="/images/profile-illustration.png"
-                  alt="Developer illustration"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%2017%20jul%202025%2C%2010_15_48%20p.m.-BJFOD88KlraBKmHt3xF5kGKe1dS3Ae.png"
+                  alt="Developer working at dual monitor setup"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
