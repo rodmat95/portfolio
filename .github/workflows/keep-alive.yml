@@ -1,0 +1,36 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    # Runs at 00:00 on Monday and Thursday (UTC)
+    - cron: '0 0 * * 1,4'
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  ping-database:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase URL
+        env:
+          SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY }}
+        run: |
+          # Makes a simple request to fetch 1 row from the 'projects' table
+          # accessing the REST API directly
+          
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
+            echo "Error: Secrets are not set."
+            exit 1
+          fi
+
+          echo "Pinging Supabase REST API..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" -X GET "$SUPABASE_URL/rest/v1/projects?select=id&limit=1" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY")
+          
+          if [ "$response" -eq 200 ] || [ "$response" -eq 206 ]; then
+            echo "Success! Database responded with $response"
+          else
+            echo "Failed! Database responded with $response"
+            exit 1
+          fi
