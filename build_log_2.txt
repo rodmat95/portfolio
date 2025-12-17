@@ -1,0 +1,81 @@
+
+> professional-portfolio-website@0.1.0 build E:\2. Projects\VS Code\professional-portfolio-website
+> next build
+
+  ▲ Next.js 15.0.0-rc.0
+  - Environments: .env
+
+   Creating an optimized production build ...
+(node:8256) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Failed to compile.
+
+app\layout.tsx
+An error occurred in `next/font`.
+
+Error: Cannot find module 'autoprefixer'
+Require stack:
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\index.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack-config.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack-build\impl.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1244:15)
+    at E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\server\require-hook.js:55:36
+    at Function.resolve (node:internal/modules/helpers:146:19)
+    at loadPlugin (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:49:32)
+    at E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:47)
+    at async E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\index.js:124:36
+    at async E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\loaders\next-font-loader\index.js:86:33
+    at async Span.traceAsyncFn (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\trace\trace.js:157:20)
+
+app\layout.tsx
+An error occurred in `next/font`.
+
+Error: Cannot find module 'autoprefixer'
+Require stack:
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\index.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack-config.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack-build\impl.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1244:15)
+    at E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\server\require-hook.js:55:36
+    at Function.resolve (node:internal/modules/helpers:146:19)
+    at loadPlugin (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:49:32)
+    at E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:47)
+    at async E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\index.js:124:36
+    at async E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\loaders\next-font-loader\index.js:86:33
+    at async Span.traceAsyncFn (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\trace\trace.js:157:20)
+
+app\layout.tsx
+An error occurred in `next/font`.
+
+Error: Cannot find module 'autoprefixer'
+Require stack:
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\index.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack-config.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack-build\impl.js
+- E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1244:15)
+    at E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\server\require-hook.js:55:36
+    at Function.resolve (node:internal/modules/helpers:146:19)
+    at loadPlugin (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:49:32)
+    at E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:47)
+    at async E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\config\blocks\css\index.js:124:36
+    at async E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\build\webpack\loaders\next-font-loader\index.js:86:33
+    at async Span.traceAsyncFn (E:\2. Projects\VS Code\professional-portfolio-website\node_modules\.pnpm\next@15.0.0-rc.0_@babel+cor_1c48cbdd71eb9384662eb48f26a08c1e\node_modules\next\dist\trace\trace.js:157:20)
+
+
+> Build failed because of webpack errors
+ ELIFECYCLE  Command failed with exit code 1.

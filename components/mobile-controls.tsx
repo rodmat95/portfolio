@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
 import { useLanguage } from "@/context/language-context"
-import { useScrollLock } from "@/hooks/use-scroll-lock"
 import { motion, AnimatePresence } from "framer-motion"
 import { Settings, X, Sun, Moon, Globe, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -16,8 +15,17 @@ export default function MobileControls() {
   const { language, setLanguage, t } = useLanguage()
   const scrollToSection = useSmoothScroll()
 
-  // Use our custom scroll lock hook
-  useScrollLock(isOpen)
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isOpen])
 
   // Close the menu when scrolling
   useEffect(() => {
@@ -58,7 +66,7 @@ export default function MobileControls() {
   return (
     <>
       {/* Floating Action Button */}
-      <div className="fixed bottom-6 right-6 z-[40] md:hidden">
+      <div className="fixed bottom-6 right-6 z-50 md:hidden">
         <motion.button
           className="w-14 h-14 rounded-full bg-gradient-professional dark:bg-gradient-dark text-white shadow-lg flex items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
@@ -66,8 +74,6 @@ export default function MobileControls() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3 }}
-          aria-label={isOpen ? "Close menu" : "Open settings menu"}
-          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Settings size={24} />}
         </motion.button>
@@ -77,16 +83,14 @@ export default function MobileControls() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-[40] bg-background/80 backdrop-blur-md md:hidden"
+            className="fixed inset-0 z-40 bg-background/80 backdrop-blur-md md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            aria-modal="true"
-            role="dialog"
           >
             <motion.div
-              className="fixed bottom-24 right-6 w-64 bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg overflow-hidden menu-content"
+              className="fixed bottom-24 right-6 w-64 bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg overflow-hidden"
               initial={{ opacity: 0, y: 20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -99,8 +103,6 @@ export default function MobileControls() {
                     activeTab === "menu" ? "bg-muted text-foreground" : "text-muted-foreground"
                   }`}
                   onClick={() => setActiveTab("menu")}
-                  aria-selected={activeTab === "menu"}
-                  role="tab"
                 >
                   <div className="flex items-center justify-center gap-2">
                     <Menu size={16} />
@@ -112,8 +114,6 @@ export default function MobileControls() {
                     activeTab === "settings" ? "bg-muted text-foreground" : "text-muted-foreground"
                   }`}
                   onClick={() => setActiveTab("settings")}
-                  aria-selected={activeTab === "settings"}
-                  role="tab"
                 >
                   <div className="flex items-center justify-center gap-2">
                     <Settings size={16} />
@@ -125,7 +125,7 @@ export default function MobileControls() {
               {/* Content */}
               <div className="p-5">
                 {activeTab === "menu" && (
-                  <div className="space-y-3" role="tabpanel">
+                  <div className="space-y-3">
                     {navigationItems.map((item) => (
                       <button
                         key={item.href}
@@ -139,7 +139,7 @@ export default function MobileControls() {
                 )}
 
                 {activeTab === "settings" && (
-                  <div className="space-y-6" role="tabpanel">
+                  <div className="space-y-6">
                     {/* Theme Selection */}
                     <div className="pb-5 border-b">
                       <h3 className="text-sm font-medium mb-3">{t("themeToggle.title") || "Theme"}</h3>

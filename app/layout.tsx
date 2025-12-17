@@ -3,9 +3,9 @@ import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/context/language-context"
-import { HeaderVisibilityProvider } from "@/context/header-visibility-context"
 import esTranslations from "@/i18n/es.json"
 import enTranslations from "@/i18n/en.json"
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +28,7 @@ const mono = Inter({
 export const metadata = {
   title: "Rodrigo Chavarry",
   description: "Rodrigo Chavarry's Professional Web Developer Portfolio",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -36,9 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${heading.variable} ${mono.variable}`}>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <LanguageProvider translations={{ es: esTranslations, en: enTranslations }}>
-            <HeaderVisibilityProvider>{children}</HeaderVisibilityProvider>
-          </LanguageProvider>
+          <LanguageProvider translations={{ es: esTranslations, en: enTranslations }}>{children}</LanguageProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

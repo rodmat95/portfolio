@@ -15,20 +15,18 @@ export default function ProcessSection() {
             <span className="text-4xl font-bold text-primary">1</span>
           </div>
           <CardHeader className="flex flex-row items-center gap-2">
-            <Lightbulb className="h-5 w-5 text-primary flex-shrink-0" />
-            <div className="min-w-0 flex-1">
-              <CardTitle className="truncate">{t("process.steps.discovery.title")}</CardTitle>
+            <Lightbulb className="h-5 w-5 text-primary" />
+            <div>
+              <CardTitle>{t("process.steps.discovery.title")}</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground break-words-fix">{t("process.steps.discovery.description")}</p>
+            <p className="text-muted-foreground">{t("process.steps.discovery.description")}</p>
             <div className="mt-4 space-y-2">
               <h4 className="font-medium">{t("process.steps.discovery.activities")}</h4>
               <ul className="list-disc pl-5 text-sm text-muted-foreground">
                 {t("process.steps.discovery.activitiesList").map((activity: string, index: number) => (
-                  <li key={index} className="break-words-fix">
-                    {activity}
-                  </li>
+                  <li key={index}>{activity}</li>
                 ))}
               </ul>
             </div>
@@ -39,20 +37,18 @@ export default function ProcessSection() {
             <span className="text-4xl font-bold text-primary">2</span>
           </div>
           <CardHeader className="flex flex-row items-center gap-2">
-            <Search className="h-5 w-5 text-primary flex-shrink-0" />
-            <div className="min-w-0 flex-1">
-              <CardTitle className="truncate">{t("process.steps.research.title")}</CardTitle>
+            <Search className="h-5 w-5 text-primary" />
+            <div>
+              <CardTitle>{t("process.steps.research.title")}</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground break-words-fix">{t("process.steps.research.description")}</p>
+            <p className="text-muted-foreground">{t("process.steps.research.description")}</p>
             <div className="mt-4 space-y-2">
               <h4 className="font-medium">{t("process.steps.research.activities")}</h4>
               <ul className="list-disc pl-5 text-sm text-muted-foreground">
                 {t("process.steps.research.activitiesList").map((activity: string, index: number) => (
-                  <li key={index} className="break-words-fix">
-                    {activity}
-                  </li>
+                  <li key={index}>{activity}</li>
                 ))}
               </ul>
             </div>
@@ -63,20 +59,18 @@ export default function ProcessSection() {
             <span className="text-4xl font-bold text-primary">3</span>
           </div>
           <CardHeader className="flex flex-row items-center gap-2">
-            <PenTool className="h-5 w-5 text-primary flex-shrink-0" />
-            <div className="min-w-0 flex-1">
-              <CardTitle className="truncate">{t("process.steps.design.title")}</CardTitle>
+            <PenTool className="h-5 w-5 text-primary" />
+            <div>
+              <CardTitle>{t("process.steps.design.title")}</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground break-words-fix">{t("process.steps.design.description")}</p>
+            <p className="text-muted-foreground">{t("process.steps.design.description")}</p>
             <div className="mt-4 space-y-2">
               <h4 className="font-medium">{t("process.steps.design.activities")}</h4>
               <ul className="list-disc pl-5 text-sm text-muted-foreground">
                 {t("process.steps.design.activitiesList").map((activity: string, index: number) => (
-                  <li key={index} className="break-words-fix">
-                    {activity}
-                  </li>
+                  <li key={index}>{activity}</li>
                 ))}
               </ul>
             </div>
@@ -87,20 +81,18 @@ export default function ProcessSection() {
             <span className="text-4xl font-bold text-primary">4</span>
           </div>
           <CardHeader className="flex flex-row items-center gap-2">
-            <CodeIcon className="h-5 w-5 text-primary flex-shrink-0" />
-            <div className="min-w-0 flex-1">
-              <CardTitle className="truncate">{t("process.steps.development.title")}</CardTitle>
+            <CodeIcon className="h-5 w-5 text-primary" />
+            <div>
+              <CardTitle>{t("process.steps.development.title")}</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground break-words-fix">{t("process.steps.development.description")}</p>
+            <p className="text-muted-foreground">{t("process.steps.development.description")}</p>
             <div className="mt-4 space-y-2">
               <h4 className="font-medium">{t("process.steps.development.activities")}</h4>
               <ul className="list-disc pl-5 text-sm text-muted-foreground">
                 {t("process.steps.development.activitiesList").map((activity: string, index: number) => (
-                  <li key={index} className="break-words-fix">
-                    {activity}
-                  </li>
+                  <li key={index}>{activity}</li>
                 ))}
               </ul>
             </div>
@@ -111,20 +103,18 @@ export default function ProcessSection() {
             <span className="text-4xl font-bold text-primary">5</span>
           </div>
           <CardHeader className="flex flex-row items-center gap-2">
-            <Zap className="h-5 w-5 text-primary flex-shrink-0" />
-            <div className="min-w-0 flex-1">
-              <CardTitle className="truncate">{t("process.steps.testing.title")}</CardTitle>
+            <Zap className="h-5 w-5 text-primary" />
+            <div>
+              <CardTitle>{t("process.steps.testing.title")}</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground break-words-fix">{t("process.steps.testing.description")}</p>
+            <p className="text-muted-foreground">{t("process.steps.testing.description")}</p>
             <div className="mt-4 space-y-2">
               <h4 className="font-medium">{t("process.steps.testing.activities")}</h4>
               <ul className="list-disc pl-5 text-sm text-muted-foreground">
                 {t("process.steps.testing.activitiesList").map((activity: string, index: number) => (
-                  <li key={index} className="break-words-fix">
-                    {activity}
-                  </li>
+                  <li key={index}>{activity}</li>
                 ))}
               </ul>
             </div>
@@ -135,20 +125,18 @@ export default function ProcessSection() {
             <span className="text-4xl font-bold text-primary">6</span>
           </div>
           <CardHeader className="flex flex-row items-center gap-2">
-            <BarChart className="h-5 w-5 text-primary flex-shrink-0" />
-            <div className="min-w-0 flex-1">
-              <CardTitle className="truncate">{t("process.steps.launch.title")}</CardTitle>
+            <BarChart className="h-5 w-5 text-primary" />
+            <div>
+              <CardTitle>{t("process.steps.launch.title")}</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground break-words-fix">{t("process.steps.launch.description")}</p>
+            <p className="text-muted-foreground">{t("process.steps.launch.description")}</p>
             <div className="mt-4 space-y-2">
               <h4 className="font-medium">{t("process.steps.launch.activities")}</h4>
               <ul className="list-disc pl-5 text-sm text-muted-foreground">
                 {t("process.steps.launch.activitiesList").map((activity: string, index: number) => (
-                  <li key={index} className="break-words-fix">
-                    {activity}
-                  </li>
+                  <li key={index}>{activity}</li>
                 ))}
               </ul>
             </div>

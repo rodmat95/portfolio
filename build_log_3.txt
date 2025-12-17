@@ -1,0 +1,35 @@
+
+> professional-portfolio-website@0.1.0 build E:\2. Projects\VS Code\professional-portfolio-website
+> next build
+
+  ▲ Next.js 15.0.0-rc.0
+  - Environments: .env
+
+   Creating an optimized production build ...
+(node:7424) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:16268) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ✓ Compiled successfully
+   Skipping validation of types
+   Linting ...
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    135 kB          224 kB
+└ ○ /_not-found                          896 B          89.8 kB
++ First Load JS shared by all            88.9 kB
+  ├ chunks/90018ad3-dd7a85aaed429c6d.js  51.5 kB
+  ├ chunks/932-0f37edf71c7baca6.js       35.5 kB
+  └ other shared chunks (total)          1.91 kB
+
+
+○  (Static)  prerendered as static content
+

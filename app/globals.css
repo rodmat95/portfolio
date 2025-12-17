@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./scroll-lock.css";
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -35,9 +33,6 @@
     --ring: 199 100% 56%;
 
     --radius: 0.4rem;
-
-    /* Calculate scrollbar width */
-    --scrollbar-width: calc(100vw - 100%);
   }
 
   .dark {
@@ -75,19 +70,10 @@
   * {
     @apply border-border;
   }
-
-  /* Fix for horizontal overflow */
-  html,
-  body {
-    @apply overflow-x-hidden max-w-full;
-    position: relative;
-  }
-
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
-
   h1,
   h2,
   h3,
@@ -96,7 +82,6 @@
   h6 {
     @apply font-heading tracking-tight;
   }
-
   p {
     @apply leading-relaxed;
   }
@@ -248,7 +233,7 @@
   }
 
   .editorial-container {
-    @apply px-4 md:px-8 lg:px-12 max-w-7xl mx-auto w-full;
+    @apply px-4 md:px-8 lg:px-12 max-w-7xl mx-auto;
   }
 
   .section-spacing {
@@ -278,19 +263,4 @@
   .text-editorial-caption {
     @apply text-sm text-foreground/60 leading-normal;
   }
-
-  /* Mobile-specific fixes */
-  .mobile-container-fix {
-    @apply max-w-full overflow-hidden;
-  }
-
-  /* Fix for long words and URLs */
-  .break-words-fix {
-    @apply break-words overflow-wrap-anywhere;
-  }
-}
-
-/* Add this at the end of the file */
-.overflow-wrap-anywhere {
-  overflow-wrap: anywhere;
 }

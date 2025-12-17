@@ -9,26 +9,9 @@ import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import { useEffect } from "react"
 import { useLanguage } from "@/context/language-context"
-import OverflowDetector from "@/components/overflow-detector"
-import MenuDebug from "@/components/menu-debug"
-import MenuTestButton from "@/components/menu-test-button"
-import ScrollLockTester from "@/components/scroll-lock-tester"
-import SectionDebug from "@/components/section-debug"
 
 export default function Home() {
   const { t } = useLanguage()
-
-  // Add debugging for section IDs
-  useEffect(() => {
-    if (typeof window === "undefined") return
-
-    // Log all section IDs for debugging
-    const sections = document.querySelectorAll("section[id]")
-    console.log(
-      "Available section IDs:",
-      Array.from(sections).map((s) => s.id),
-    )
-  }, [])
 
   // Smooth scrolling setup
   useEffect(() => {
@@ -49,10 +32,10 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative">
       <StickyNav />
 
-      <main className="overflow-x-hidden">
+      <main>
         <HeroSection />
         <ProjectsSection />
         <AboutSection />
@@ -61,23 +44,6 @@ export default function Home() {
       </main>
 
       <Footer />
-
-      {/* Only rendered in development mode */}
-      <OverflowDetector />
-
-      {/* Debug component for mobile menu */}
-      <MenuDebug />
-
-      {/* Section debug tool */}
-      {process.env.NODE_ENV === "development" && <SectionDebug />}
-
-      {/* Test components for development */}
-      {process.env.NODE_ENV === "development" && (
-        <>
-          <MenuTestButton />
-          <ScrollLockTester />
-        </>
-      )}
     </div>
   )
 }

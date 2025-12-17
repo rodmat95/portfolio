@@ -89,7 +89,7 @@ export default function ProjectCard({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="relative aspect-[4/3] rounded-lg overflow-hidden border shadow-lg transition-all duration-500 hover:shadow-xl max-w-full">
+        <div className="relative aspect-[4/3] rounded-lg overflow-hidden border shadow-lg transition-all duration-500 hover:shadow-xl">
           <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent z-10" />
 
           {/* Device frame */}
@@ -151,9 +151,9 @@ export default function ProjectCard({
             <h4 className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-2">
               {t("projects.technologies")}
             </h4>
-            <div className="flex flex-wrap gap-2 mb-6 max-w-full">
+            <div className="flex flex-wrap gap-2">
               {technologies.map((tech, index) => (
-                <Badge key={index} variant="outline" className="bg-secondary text-secondary-foreground break-words-fix">
+                <Badge key={index} variant="outline" className="bg-secondary text-secondary-foreground">
                   {tech}
                 </Badge>
               ))}

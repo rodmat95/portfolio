@@ -53,7 +53,7 @@ export default function ProjectCardCompact({ project, index, onClick }: ProjectC
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative aspect-[4/3] rounded-lg overflow-hidden border shadow-md transition-all duration-300 group-hover:shadow-lg max-w-full">
+      <div className="relative aspect-[4/3] rounded-lg overflow-hidden border shadow-md transition-all duration-300 group-hover:shadow-lg">
         {/* Loading skeleton */}
         {isLoading && (
           <div className="absolute inset-0 z-20 flex items-center justify-center">
@@ -104,7 +104,7 @@ export default function ProjectCardCompact({ project, index, onClick }: ProjectC
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent z-[5]" />
 
         {/* Tech badges */}
-        <div className="absolute top-3 left-3 right-3 z-[6] flex flex-wrap gap-1 max-w-[calc(100%-24px)]">
+        <div className="absolute top-3 left-3 right-3 z-[6] flex flex-wrap gap-1">
           {project.technologies.slice(0, 2).map((tech, i) => (
             <Badge key={i} variant="secondary" className="bg-background/80 backdrop-blur-sm text-xs">
               {tech}
@@ -118,11 +118,9 @@ export default function ProjectCardCompact({ project, index, onClick }: ProjectC
         </div>
       </div>
 
-      <div className="mt-4 max-w-full">
-        <h3 className="font-medium text-lg mb-1 transition-colors group-hover:text-primary break-words-fix">
-          {project.title}
-        </h3>
-        <p className="text-foreground/70 text-sm line-clamp-2 break-words-fix">{project.description}</p>
+      <div className="mt-4">
+        <h3 className="font-medium text-lg mb-1 transition-colors group-hover:text-primary">{project.title}</h3>
+        <p className="text-foreground/70 text-sm line-clamp-2">{project.description}</p>
       </div>
     </motion.div>
   )
