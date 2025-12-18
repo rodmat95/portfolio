@@ -70,9 +70,12 @@
   * {
     @apply border-border;
   }
+  html,
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
   h1,
   h2,
@@ -237,7 +240,7 @@
   }
 
   .section-spacing {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-12 md:py-24 lg:py-32;
   }
 
   .text-editorial-xl {

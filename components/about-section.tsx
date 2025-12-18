@@ -85,7 +85,7 @@ export default function AboutSection() {
               <p className="text-editorial-body">{t("about.paragraph3")}</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}

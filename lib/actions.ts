@@ -28,10 +28,8 @@ export type SubmissionResponse = {
 }
 
 export async function submitContactForm(formData: FormData): Promise<SubmissionResponse> {
-  console.log("--- Inicio de submitContactForm ---")
   try {
     const apiKey = process.env.RESEND_API_KEY
-    console.log("🔑 Checking Resend API Key:", apiKey ? `Presente (${apiKey.substring(0, 4)}...)` : "MISSING")
     
     // Extraer datos del formulario
     const data = {
@@ -45,15 +43,12 @@ export async function submitContactForm(formData: FormData): Promise<SubmissionR
 
     // Si la validación falla, devolver errores
     if (!validationResult.success) {
-      console.log("❌ Validación fallida:", validationResult.error.flatten())
       return {
         success: false,
         message: "Por favor corrige los errores en el formulario",
         errors: validationResult.error.flatten().fieldErrors,
       }
     }
-
-    console.log("✅ Validación exitosa. Integrando con Supabase...")
 
     // Si la validación pasa, insertar datos en Supabase
     const { error } = await supabase.from("contact").insert([
@@ -66,9 +61,7 @@ export async function submitContactForm(formData: FormData): Promise<SubmissionR
 
     // Enviar email con Resend (sin bloquear si falla, pero registrando el error)
     if (!error) {
-      console.log("✅ Datos guardados en Supabase. Intentando enviar email con Resend...")
       try {
-        console.log(`📧 Enviando email a: ${process.env.CONTACT_EMAIL || "delivered@resend.dev"} desde: onboarding@resend.dev`)
         const emailResponse = await resend.emails.send({
           from: "Portfolio Contact Form <onboarding@resend.dev>",
           to: process.env.CONTACT_EMAIL || "delivered@resend.dev",
@@ -82,7 +75,6 @@ export async function submitContactForm(formData: FormData): Promise<SubmissionR
             <p>${data.message}</p>
           `,
         })
-        console.log("✅ Email enviado exitosamente con Resend:", emailResponse)
       } catch (emailError) {
         console.error("❌ Error CRÍTICO al enviar email con Resend:", emailError)
       }

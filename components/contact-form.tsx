@@ -23,7 +23,6 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log("🖱️ Client: Formulario enviado por el usuario")
     setIsSubmitting(true)
     setFormErrors({})
     setFormSuccess(null)
@@ -34,9 +33,7 @@ export default function ContactForm() {
       const formData = new FormData(e.currentTarget)
 
       // Enviar datos del formulario usando la acción del servidor
-      console.log("📤 Client: Llamando a server action submitContactForm...")
       const response: SubmissionResponse = await submitContactForm(formData)
-      console.log("📥 Client: Respuesta recibida del servidor:", response)
 
       if (response.success) {
         // Mostrar mensaje de éxito

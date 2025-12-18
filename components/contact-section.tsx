@@ -20,15 +20,12 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log("🖱️ Kontakt Section: Formulario enviado")
     setIsSubmitting(true)
 
     try {
       const formData = new FormData(e.currentTarget)
       
-      console.log("📤 Contact Section: Llamando a server action...")
       const response = await submitContactForm(formData)
-      console.log("📥 Contact Section: Respuesta del servidor:", response)
 
       if (response.success) {
         setSubmitted(true)
