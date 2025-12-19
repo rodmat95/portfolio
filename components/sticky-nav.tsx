@@ -14,7 +14,8 @@ export default function StickyNav() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [translateY, setTranslateY] = useState(0)
+  const headerRef = useRef<HTMLElement>(null)
+  const currentTranslateY = useRef(0)
   const lastScrollY = useRef(0)
   const { t } = useLanguage()
   const scrollToSection = useSmoothScroll()
@@ -45,16 +46,21 @@ export default function StickyNav() {
       setScrolled(currentScrollY > 20)
 
       // Calculate translation (progressive hide/show)
-      // Only apply if scrolled past the top area to avoid conflict with initial state
       if (currentScrollY > 0) {
         const delta = currentScrollY - lastScrollY.current
-        setTranslateY((prev) => {
-          const newY = prev - delta
-          // Clamp between -100 (approx header height) and 0
-          return Math.max(-100, Math.min(0, newY))
-        })
+        const newY = currentTranslateY.current - delta
+        // Clamp between -100 and 0
+        currentTranslateY.current = Math.max(-100, Math.min(0, newY))
+
+        // Direct DOM update for performance
+        if (headerRef.current) {
+          headerRef.current.style.setProperty("--header-y", `${currentTranslateY.current}px`)
+        }
       } else {
-        setTranslateY(0)
+        currentTranslateY.current = 0
+        if (headerRef.current) {
+          headerRef.current.style.setProperty("--header-y", "0px")
+        }
       }
       
       lastScrollY.current = currentScrollY
@@ -84,12 +90,12 @@ export default function StickyNav() {
 
   return (
     <header
-      style={{ "--header-y": `${translateY}px` } as React.CSSProperties}
+      ref={headerRef}
       className={cn(
-        "sticky top-0 left-0 right-0 z-50 transition-colors duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled ? "bg-background/80 backdrop-blur-md border-b py-4" : "bg-transparent py-6",
         mobileMenuOpen ? "bg-background/90 backdrop-blur-md border-b" : "",
-        !mobileMenuOpen && "translate-y-[var(--header-y)] md:translate-y-0 will-change-transform"
+        !mobileMenuOpen && "translate-y-[var(--header-y,0px)] md:translate-y-0 will-change-transform"
       )}
     >
       <div className="editorial-container">
