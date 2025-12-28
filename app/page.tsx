@@ -13,17 +13,17 @@ import { useLanguage } from "@/context/language-context"
 export default function Home() {
   const { t } = useLanguage()
 
-  // Smooth scrolling setup
+  // * [LOGIC] Smooth scrolling setup
   useEffect(() => {
-    if (typeof window === "undefined") return // Avoid errors in SSR
-    // Handle initial hash in URL
+    if (typeof window === "undefined") return // ? [INFO] Prevent SSR errors
+    // * [LOGIC] Handle initial hash in URL
     const hash = window.location.hash
     if (hash) {
       const id = hash.replace("#", "")
       const element = document.getElementById(id)
       if (element) {
         setTimeout(() => {
-          const yOffset = -80 // Header height offset
+          const yOffset = -80 // ? [CONFIG] Header height offset
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
           window.scrollTo({ top: y, behavior: "smooth" })
         }, 100)

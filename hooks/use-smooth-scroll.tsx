@@ -7,7 +7,7 @@ export function useSmoothScroll() {
     const element = document.getElementById(sectionId)
 
     if (element) {
-      // Get header height to adjust scroll position
+      // ? [INFO] Get header height to adjust scroll position
       const header = document.querySelector("header")
       const headerHeight = header ? header.offsetHeight : 0
 

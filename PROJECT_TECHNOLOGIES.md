@@ -1,6 +1,6 @@
 # Project Technologies
 
-This document outlines the technologies and libraries used in the `portfolio-web` project.
+This document outlines the technologies and libraries used in the `my-portfolio-web` project.
 
 ## Core Framework & Language
 - **Framework**: [Next.js 15.2.4](https://nextjs.org/) (App Router)

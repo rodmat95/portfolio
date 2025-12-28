@@ -28,7 +28,7 @@ export function LanguageProvider({ children, initialLanguage = "es", translation
   const [currentTranslations, setCurrentTranslations] = useState<Translations>(translations[initialLanguage])
 
   useEffect(() => {
-    // Check if there's a saved language preference in localStorage
+    // * [LOGIC] Check if there's a saved language preference in localStorage
     const savedLanguage = localStorage.getItem("language") as Language | null
     if (savedLanguage && (savedLanguage === "es" || savedLanguage === "en")) {
       setLanguage(savedLanguage)
@@ -36,13 +36,13 @@ export function LanguageProvider({ children, initialLanguage = "es", translation
   }, [])
 
   useEffect(() => {
-    // Update translations when language changes
+    // * [LOGIC] Update translations when language changes
     setCurrentTranslations(translations[language])
-    // Save language preference to localStorage
+    // ? [INFO] Save language preference to localStorage
     localStorage.setItem("language", language)
   }, [language, translations])
 
-  // Function to get nested translations using dot notation
+  // * [UTIL] Function to get nested translations using dot notation
   const t = (key: string): string => {
     const keys = key.split(".")
     let value: any = currentTranslations

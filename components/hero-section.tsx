@@ -69,7 +69,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* * [UI] Scroll indicator */}
       <motion.div
         className="absolute bottom-12 left-1/2 transform -translate-x-1/2 cursor-pointer"
         initial={{ opacity: 0 }}
@@ -80,7 +80,7 @@ export default function HeroSection() {
         <ArrowDown className="w-6 h-6 text-foreground/60 animate-scroll-down" />
       </motion.div>
 
-      {/* Background elements */}
+      {/* * [UI] Background elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-background/95" />
       </div>

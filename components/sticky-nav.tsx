@@ -28,7 +28,7 @@ export default function StickyNav() {
     { href: "contact", label: t("navigation.contact") },
   ]
 
-  // Prevent body scroll when menu is open
+  // * [LOGIC] Prevent body scroll when menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden"
@@ -45,14 +45,14 @@ export default function StickyNav() {
       const currentScrollY = window.scrollY
       setScrolled(currentScrollY > 20)
 
-      // Calculate translation (progressive hide/show)
+      // * [ANIMATION] Calculate translation (progressive hide/show)
       if (currentScrollY > 0) {
         const delta = currentScrollY - lastScrollY.current
         const newY = currentTranslateY.current - delta
         // Clamp between -100 and 0
         currentTranslateY.current = Math.max(-100, Math.min(0, newY))
 
-        // Direct DOM update for performance
+        // ? [INFO] Direct DOM update for performance
         if (headerRef.current) {
           headerRef.current.style.setProperty("--header-y", `${currentTranslateY.current}px`)
         }
@@ -65,7 +65,7 @@ export default function StickyNav() {
       
       lastScrollY.current = currentScrollY
 
-      // Determine active section
+      // * [LOGIC] Determine active section
       const sections = navigationItems.map((item) => item.href)
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -141,7 +141,7 @@ export default function StickyNav() {
               {t("navigation.letsTalk")}
             </a>
 
-            {/* Mobile menu button */}
+            {/* * [UI] Mobile menu button */}
             <button className="md:hidden p-2 rounded-md hover:bg-accent" onClick={() => setMobileMenuOpen(true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -25,6 +25,7 @@ const mono = Inter({
   display: "swap",
 })
 
+// * [CONFIG] Metadata configuration
 export const metadata = {
   title: {
     default: "Rodrigo Chavarry | Professional Web Developer",
@@ -86,6 +87,7 @@ export const metadata = {
   metadataBase: new URL("https://rodmat95.dev"),
 }
 
+// * [LAYOUT] Root Layout Component
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
     "@context": "https://schema.org",

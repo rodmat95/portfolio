@@ -10,12 +10,12 @@ export default function AboutSection() {
 
   const stats = [
     {
-      value: "2+",
+      value: "3+",
       label: t("about.stats.experience"),
       icon: <Code className="w-5 h-5 text-primary" />,
     },
     {
-      value: "7",
+      value: "14",
       label: t("about.stats.projects"),
       icon: <Zap className="w-5 h-5 text-primary" />,
     },

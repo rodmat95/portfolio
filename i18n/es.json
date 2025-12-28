@@ -10,6 +10,73 @@
     "menu": "Menú",
     "services": "Servicios"
   },
+  "admin": {
+    "title": "Panel Admin",
+    "dashboard": "Tablero",
+    "projects": "Proyectos",
+    "messages": "Mensajes",
+    "appearance": "Apariencia",
+    "language": "Idioma",
+    "logout": "Cerrar Sesión",
+    "dashboardView": {
+      "welcome": "Bienvenido de nuevo",
+      "projectsTitle": "Proyectos",
+      "projectsAction": "Gestionar",
+      "projectsDesc": "Añadir, editar o eliminar proyectos",
+      "messagesTitle": "Mensajes",
+      "messagesAction": "Revisar",
+      "messagesDesc": "Leer consultas del formulario"
+    },
+    "projectsView": {
+      "title": "Proyectos",
+      "subtitle": "Gestiona los proyectos de tu portafolio.",
+      "add": "Añadir Proyecto",
+      "table": {
+        "title": "Título",
+        "category": "Categoría",
+        "featured": "Destacado",
+        "actions": "Acciones",
+        "yes": "Sí",
+        "no": "No",
+        "empty": "No se encontraron proyectos.",
+        "edit": "Editar",
+        "delete": "Eliminar"
+      },
+      "form": {
+        "editTitle": "Editar Proyecto",
+        "createTitle": "Crear Proyecto",
+        "image": "Imagen del Proyecto",
+        "uploadNew": "Sube una nueva imagen para reemplazar la actual.",
+        "title": "Título",
+        "slug": "Slug",
+        "description": "Descripción",
+        "goal": "Objetivo",
+        "results": "Resultados",
+        "technologies": "Tecnologías",
+        "demoUrl": "URL Demo",
+        "repoUrl": "URL Repositorio",
+        "category": "Categoría",
+        "featured": "Proyecto Destacado",
+        "featuredDesc": "Este proyecto se mostrará en la página de inicio.",
+        "saving": "Guardando...",
+        "save": "Guardar Proyecto",
+        "create": "Crear Proyecto",
+        "cancel": "Cancelar"
+      }
+    },
+    "contactView": {
+      "title": "Mensajes",
+      "subtitle": "Ver y gestionar los mensajes de contacto.",
+      "table": {
+        "date": "Fecha",
+        "name": "Nombre",
+        "email": "Email",
+        "message": "Mensaje",
+        "actions": "Acciones",
+        "empty": "No se encontraron mensajes."
+      }
+    }
+  },
   "settings": {
     "title": "Ajustes"
   },

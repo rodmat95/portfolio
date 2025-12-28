@@ -10,6 +10,73 @@
     "menu": "Menu",
     "services": "Services"
   },
+  "admin": {
+    "title": "Admin Panel",
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "messages": "Messages",
+    "appearance": "Appearance",
+    "language": "Language",
+    "logout": "Logout",
+    "dashboardView": {
+      "welcome": "Welcome back",
+      "projectsTitle": "Projects",
+      "projectsAction": "Manage",
+      "projectsDesc": "Add, edit or remove portfolio projects",
+      "messagesTitle": "Messages",
+      "messagesAction": "Check",
+      "messagesDesc": "Read inquiries from contact form"
+    },
+    "projectsView": {
+      "title": "Projects",
+      "subtitle": "Manage your portfolio projects.",
+      "add": "Add Project",
+      "table": {
+        "title": "Title",
+        "category": "Category",
+        "featured": "Featured",
+        "actions": "Actions",
+        "yes": "Yes",
+        "no": "No",
+        "empty": "No projects found.",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "form": {
+        "editTitle": "Edit Project",
+        "createTitle": "Create Project",
+        "image": "Project Image",
+        "uploadNew": "Upload a new image to replace the current one.",
+        "title": "Title",
+        "slug": "Slug",
+        "description": "Description",
+        "goal": "Goal",
+        "results": "Results",
+        "technologies": "Technologies",
+        "demoUrl": "Demo URL",
+        "repoUrl": "Repository URL",
+        "category": "Category",
+        "featured": "Featured Project",
+        "featuredDesc": "This project will be displayed on the home page.",
+        "saving": "Saving...",
+        "save": "Save Project",
+        "create": "Create Project",
+        "cancel": "Cancel"
+      }
+    },
+    "contactView": {
+      "title": "Messages",
+      "subtitle": "View and manage contact form submissions.",
+      "table": {
+        "date": "Date",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "actions": "Actions",
+        "empty": "No messages found."
+      }
+    }
+  },
   "settings": {
     "title": "Settings"
   },
