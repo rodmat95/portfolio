@@ -1,6 +1,6 @@
 "use client"
 
-import { ProjectForm } from '../project-form'
+import { ProjectForm } from './project-form'
 import { useLanguage } from '@/context/language-context'
 
 export function NewProjectView() {
