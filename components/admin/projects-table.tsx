@@ -4,8 +4,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Plus, Pencil, Trash } from "lucide-react"
-import { deleteProject } from "@/app/admin/projects/actions"
+import { deleteProject, toggleProjectFeatured } from "@/app/admin/projects/actions"
 import { useLanguage } from "@/context/language-context"
+import { Switch } from "@/components/ui/switch"
+import { useTransition } from "react"
+import { toast } from "sonner"
 
 // * [TYPE] Project definition
 interface Project {
@@ -50,7 +53,9 @@ export function ProjectsTable({ projects }: { projects: Project[] | null }) {
               <TableRow key={project.id}>
                 <TableCell className="font-medium">{project.title}</TableCell>
                 <TableCell>{project.category}</TableCell>
-                <TableCell>{project.featured ? t('admin.projectsView.table.yes') : t('admin.projectsView.table.no')}</TableCell>
+                <TableCell>
+                  <FeaturedToggle project={project} />
+                </TableCell>
                 <TableCell className="text-right">
                   <div className="flex justify-end gap-2">
                     <Button variant="ghost" size="icon" asChild title={t('admin.projectsView.table.edit')}>
@@ -90,5 +95,28 @@ function DeleteButton({ id }: { id: number }) {
          <span className="sr-only">Delete</span>
       </Button>
     </form>
+  )
+}
+
+function FeaturedToggle({ project }: { project: Project }) {
+  const [isPending, startTransition] = useTransition()
+
+  const handleToggle = (checked: boolean) => {
+    startTransition(async () => {
+      const result = await toggleProjectFeatured(project.id, checked)
+      if (result?.error) {
+        toast.error(result.error)
+      } else {
+        toast.success(`Project "${project.title}" ${checked ? 'featured' : 'unfeatured'}`)
+      }
+    })
+  }
+
+  return (
+    <Switch 
+      checked={project.featured} 
+      onCheckedChange={handleToggle}
+      disabled={isPending}
+    />
   )
 }

@@ -170,3 +170,21 @@ export async function deleteProject(id: string) {
   revalidatePath('/admin/projects')
   revalidatePath('/')
 }
+
+export async function toggleProjectFeatured(id: number, featured: boolean) {
+  const supabase = await createClient()
+  
+  const { error } = await supabase
+    .from('projects')
+    .update({ featured })
+    .eq('id', id)
+
+  if (error) {
+    return { error: error.message }
+  }
+
+  revalidatePath('/admin/projects')
+  revalidatePath('/')
+  return { success: true }
+}
+

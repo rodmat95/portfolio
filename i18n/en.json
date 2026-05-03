@@ -1,4 +1,15 @@
 {
+  "auth": {
+    "login": {
+      "title": "Login",
+      "description": "Enter your credentials to access the admin panel.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Login",
+      "loading": "Logging in...",
+      "error": "Invalid credentials"
+    }
+  },
   "navigation": {
     "home": "Home",
     "about": "About",

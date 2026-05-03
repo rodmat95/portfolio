@@ -43,7 +43,7 @@ export function LoginForm() {
         <CardContent className="grid gap-4">
           {error && (
             <Alert variant="destructive">
-              <AlertDescription>{error}</AlertDescription>
+              <AlertDescription>{t('auth.login.error')}</AlertDescription>
             </Alert>
           )}
           <div className="grid gap-2">

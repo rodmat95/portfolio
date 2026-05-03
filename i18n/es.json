@@ -1,4 +1,15 @@
 {
+  "auth": {
+    "login": {
+      "title": "Iniciar Sesión",
+      "description": "Ingresa tus credenciales para acceder al panel de administración.",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "submit": "Entrar",
+      "loading": "Iniciando sesión...",
+      "error": "Credenciales inválidas"
+    }
+  },
   "navigation": {
     "home": "Inicio",
     "about": "Sobre Mí",
