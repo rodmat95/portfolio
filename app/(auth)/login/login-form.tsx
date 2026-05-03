@@ -19,12 +19,12 @@ export function LoginForm() {
     event.preventDefault()
     setLoading(true)
     setError(null)
-    
+
     // ? [INFO] Create FormData from event.currentTarget since strict mode might complain about direct form usage
     const formData = new FormData(event.currentTarget)
-    
+
     const result = await login(formData)
-    
+
     if (result?.error) {
       setError(result.error)
       setLoading(false)

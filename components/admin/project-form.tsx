@@ -24,13 +24,13 @@ export function ProjectForm({ project }: { project?: any }) {
     event.preventDefault()
     setLoading(true)
     setError(null)
-    
+
     const formData = new FormData(event.currentTarget)
-    
-    const result = project 
-      ? await updateProject(project.id, formData) 
+
+    const result = project
+      ? await updateProject(project.id, formData)
       : await createProject(formData)
-    
+
     if (result?.error) {
       setError(result.error)
       setLoading(false)
@@ -40,9 +40,9 @@ export function ProjectForm({ project }: { project?: any }) {
   const { t } = useLanguage()
 
   // Pre-process technologies array to string if editing
-  const defaultTechnologies = project?.technologies 
-    ? Array.isArray(project.technologies) 
-      ? project.technologies.join(', ') 
+  const defaultTechnologies = project?.technologies
+    ? Array.isArray(project.technologies)
+      ? project.technologies.join(', ')
       : project.technologies
     : ''
 
@@ -59,7 +59,7 @@ export function ProjectForm({ project }: { project?: any }) {
           <Label htmlFor="title">{t('admin.projectsView.form.title')}</Label>
           <Input id="title" name="title" defaultValue={project?.title} required />
         </div>
-        
+
         <div className="space-y-2">
           <Label htmlFor="category">{t('admin.projectsView.form.category')}</Label>
           <Select name="category" defaultValue={project?.category || "web"}>
@@ -92,12 +92,12 @@ export function ProjectForm({ project }: { project?: any }) {
 
       <div className="space-y-2">
         <Label htmlFor="technologies">{t('admin.projectsView.form.technologies')} (comma separated)</Label>
-        <Input 
-          id="technologies" 
-          name="technologies" 
-          defaultValue={defaultTechnologies} 
+        <Input
+          id="technologies"
+          name="technologies"
+          defaultValue={defaultTechnologies}
           placeholder="React, Next.js, TypeScript"
-          required 
+          required
         />
       </div>
 
@@ -107,9 +107,9 @@ export function ProjectForm({ project }: { project?: any }) {
           <Label htmlFor="image">{t('admin.projectsView.form.image')}</Label>
           <div className="flex flex-col gap-2">
             {project?.image && (
-               <div className="relative aspect-video w-full overflow-hidden rounded-md border">
-                  <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
-               </div>
+              <div className="relative aspect-video w-full overflow-hidden rounded-md border">
+                <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
+              </div>
             )}
             <Input id="image" name="image" type="file" accept="image/*" />
             <input type="hidden" name="existing_image" value={project?.image || ''} />

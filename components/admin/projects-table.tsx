@@ -86,13 +86,13 @@ export function ProjectsTable({ projects }: { projects: Project[] | null }) {
 function DeleteButton({ id }: { id: number }) {
   const { t } = useLanguage()
   // ! [WARNING] Ensure ID is passed as string if expected by action, or cast to any to satisfy TS for server action usage
-  const deleteAction = deleteProject.bind(null, id.toString()) as any 
+  const deleteAction = deleteProject.bind(null, id.toString()) as any
 
   return (
     <form action={deleteAction}>
       <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive" title={t('admin.projectsView.table.delete')}>
-         <Trash className="size-4" />
-         <span className="sr-only">Delete</span>
+        <Trash className="size-4" />
+        <span className="sr-only">Delete</span>
       </Button>
     </form>
   )
@@ -113,8 +113,8 @@ function FeaturedToggle({ project }: { project: Project }) {
   }
 
   return (
-    <Switch 
-      checked={project.featured} 
+    <Switch
+      checked={project.featured}
       onCheckedChange={handleToggle}
       disabled={isPending}
     />
